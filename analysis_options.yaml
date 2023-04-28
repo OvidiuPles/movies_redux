@@ -1,0 +1,32 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
+    todo: ignore
+
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "**/generated/**/*"
+    - "**/generated/*"
+
+linter:
+  rules:
+    always_put_control_body_on_new_line: true
+    always_put_required_named_parameters_first: false
+    always_specify_types: true
+    avoid_implementing_value_types: true
+    implicit_call_tearoffs: false
+    depend_on_referenced_packages: true
+    lines_longer_than_80_chars: false
+    omit_local_variable_types: false
+    prefer_foreach: true
+    public_member_api_docs: false
+    unnecessary_constructor_name: true
+    unsafe_html: true
+    use_test_throws_matchers: true
+    use_string_in_part_of_directives: false
