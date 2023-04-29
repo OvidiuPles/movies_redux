@@ -108,12 +108,12 @@ class _MoviesPageState extends State<MoviesPage> {
                     ),
                   ],
                   onChanged: (String? selection) {
-                      StoreProvider.of<AppState>(context).dispatch(
-                        GetMoviesStart(
-                          page: MoviesPage.page,
-                          genre: selection,
-                        ),
-                      );
+                    StoreProvider.of<AppState>(context).dispatch(
+                      GetMoviesStart(
+                        page: MoviesPage.page,
+                        genre: selection,
+                      ),
+                    );
                   },
                 ),
                 DropdownButton<String>(

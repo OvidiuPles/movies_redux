@@ -20,30 +20,22 @@ mixin _$GetMovies {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,21 +63,18 @@ mixin _$GetMovies {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetMoviesCopyWith<GetMovies> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetMoviesCopyWith<GetMovies> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetMoviesCopyWith<$Res> {
-  factory $GetMoviesCopyWith(GetMovies value, $Res Function(GetMovies) then) =
-      _$GetMoviesCopyWithImpl<$Res, GetMovies>;
+  factory $GetMoviesCopyWith(GetMovies value, $Res Function(GetMovies) then) = _$GetMoviesCopyWithImpl<$Res, GetMovies>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetMoviesCopyWithImpl<$Res, $Val extends GetMovies>
-    implements $GetMoviesCopyWith<$Res> {
+class _$GetMoviesCopyWithImpl<$Res, $Val extends GetMovies> implements $GetMoviesCopyWith<$Res> {
   _$GetMoviesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -108,10 +97,8 @@ class _$GetMoviesCopyWithImpl<$Res, $Val extends GetMovies>
 }
 
 /// @nodoc
-abstract class _$$GetMoviesStartCopyWith<$Res>
-    implements $GetMoviesCopyWith<$Res> {
-  factory _$$GetMoviesStartCopyWith(
-          _$GetMoviesStart value, $Res Function(_$GetMoviesStart) then) =
+abstract class _$$GetMoviesStartCopyWith<$Res> implements $GetMoviesCopyWith<$Res> {
+  factory _$$GetMoviesStartCopyWith(_$GetMoviesStart value, $Res Function(_$GetMoviesStart) then) =
       __$$GetMoviesStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -119,12 +106,9 @@ abstract class _$$GetMoviesStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMoviesStartCopyWithImpl<$Res>
-    extends _$GetMoviesCopyWithImpl<$Res, _$GetMoviesStart>
+class __$$GetMoviesStartCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res, _$GetMoviesStart>
     implements _$$GetMoviesStartCopyWith<$Res> {
-  __$$GetMoviesStartCopyWithImpl(
-      _$GetMoviesStart _value, $Res Function(_$GetMoviesStart) _then)
-      : super(_value, _then);
+  __$$GetMoviesStartCopyWithImpl(_$GetMoviesStart _value, $Res Function(_$GetMoviesStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -153,8 +137,7 @@ class __$$GetMoviesStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetMoviesStart implements GetMoviesStart {
-  const _$GetMoviesStart(
-      {this.page, this.genre = '', this.pendingId = _kGetMoviesPendingId});
+  const _$GetMoviesStart({this.page, this.genre = '', this.pendingId = _kGetMoviesPendingId});
 
   @override
   final int? page;
@@ -177,8 +160,7 @@ class _$GetMoviesStart implements GetMoviesStart {
             other is _$GetMoviesStart &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.genre, genre) || other.genre == genre) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -194,12 +176,8 @@ class _$GetMoviesStart implements GetMoviesStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(page, genre, pendingId);
   }
@@ -208,10 +186,8 @@ class _$GetMoviesStart implements GetMoviesStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(page, genre, pendingId);
   }
@@ -220,10 +196,8 @@ class _$GetMoviesStart implements GetMoviesStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -268,10 +242,7 @@ class _$GetMoviesStart implements GetMoviesStart {
 }
 
 abstract class GetMoviesStart implements GetMovies, ActionStart {
-  const factory GetMoviesStart(
-      {final int? page,
-      final String? genre,
-      final String pendingId}) = _$GetMoviesStart;
+  const factory GetMoviesStart({final int? page, final String? genre, final String pendingId}) = _$GetMoviesStart;
 
   int? get page;
   String? get genre;
@@ -279,15 +250,12 @@ abstract class GetMoviesStart implements GetMovies, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetMoviesStartCopyWith<_$GetMoviesStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetMoviesStartCopyWith<_$GetMoviesStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetMoviesSuccessfulCopyWith<$Res>
-    implements $GetMoviesCopyWith<$Res> {
-  factory _$$GetMoviesSuccessfulCopyWith(_$GetMoviesSuccessful value,
-          $Res Function(_$GetMoviesSuccessful) then) =
+abstract class _$$GetMoviesSuccessfulCopyWith<$Res> implements $GetMoviesCopyWith<$Res> {
+  factory _$$GetMoviesSuccessfulCopyWith(_$GetMoviesSuccessful value, $Res Function(_$GetMoviesSuccessful) then) =
       __$$GetMoviesSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -295,11 +263,9 @@ abstract class _$$GetMoviesSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMoviesSuccessfulCopyWithImpl<$Res>
-    extends _$GetMoviesCopyWithImpl<$Res, _$GetMoviesSuccessful>
+class __$$GetMoviesSuccessfulCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res, _$GetMoviesSuccessful>
     implements _$$GetMoviesSuccessfulCopyWith<$Res> {
-  __$$GetMoviesSuccessfulCopyWithImpl(
-      _$GetMoviesSuccessful _value, $Res Function(_$GetMoviesSuccessful) _then)
+  __$$GetMoviesSuccessfulCopyWithImpl(_$GetMoviesSuccessful _value, $Res Function(_$GetMoviesSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -330,9 +296,7 @@ class __$$GetMoviesSuccessfulCopyWithImpl<$Res>
 
 class _$GetMoviesSuccessful implements GetMoviesSuccessful {
   const _$GetMoviesSuccessful(
-      {this.genre,
-      final List<Movie> movies = const <Movie>[],
-      this.pendingId = _kGetMoviesPendingId})
+      {this.genre, final List<Movie> movies = const <Movie>[], this.pendingId = _kGetMoviesPendingId})
       : _movies = movies;
 
   @override
@@ -362,31 +326,24 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
             other is _$GetMoviesSuccessful &&
             (identical(other.genre, genre) || other.genre == genre) &&
             const DeepCollectionEquality().equals(other._movies, _movies) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, genre,
-      const DeepCollectionEquality().hash(_movies), pendingId);
+  int get hashCode => Object.hash(runtimeType, genre, const DeepCollectionEquality().hash(_movies), pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetMoviesSuccessfulCopyWith<_$GetMoviesSuccessful> get copyWith =>
-      __$$GetMoviesSuccessfulCopyWithImpl<_$GetMoviesSuccessful>(
-          this, _$identity);
+      __$$GetMoviesSuccessfulCopyWithImpl<_$GetMoviesSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(genre, movies, pendingId);
   }
@@ -395,10 +352,8 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(genre, movies, pendingId);
   }
@@ -407,10 +362,8 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -455,10 +408,8 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
 }
 
 abstract class GetMoviesSuccessful implements GetMovies, ActionDone {
-  const factory GetMoviesSuccessful(
-      {final String? genre,
-      final List<Movie> movies,
-      final String pendingId}) = _$GetMoviesSuccessful;
+  const factory GetMoviesSuccessful({final String? genre, final List<Movie> movies, final String pendingId}) =
+      _$GetMoviesSuccessful;
 
   String? get genre;
   List<Movie> get movies;
@@ -466,15 +417,12 @@ abstract class GetMoviesSuccessful implements GetMovies, ActionDone {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetMoviesSuccessfulCopyWith<_$GetMoviesSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetMoviesSuccessfulCopyWith<_$GetMoviesSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetMoviesErrorCopyWith<$Res>
-    implements $GetMoviesCopyWith<$Res> {
-  factory _$$GetMoviesErrorCopyWith(
-          _$GetMoviesError value, $Res Function(_$GetMoviesError) then) =
+abstract class _$$GetMoviesErrorCopyWith<$Res> implements $GetMoviesCopyWith<$Res> {
+  factory _$$GetMoviesErrorCopyWith(_$GetMoviesError value, $Res Function(_$GetMoviesError) then) =
       __$$GetMoviesErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -482,12 +430,9 @@ abstract class _$$GetMoviesErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMoviesErrorCopyWithImpl<$Res>
-    extends _$GetMoviesCopyWithImpl<$Res, _$GetMoviesError>
+class __$$GetMoviesErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res, _$GetMoviesError>
     implements _$$GetMoviesErrorCopyWith<$Res> {
-  __$$GetMoviesErrorCopyWithImpl(
-      _$GetMoviesError _value, $Res Function(_$GetMoviesError) _then)
-      : super(_value, _then);
+  __$$GetMoviesErrorCopyWithImpl(_$GetMoviesError _value, $Res Function(_$GetMoviesError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -513,8 +458,7 @@ class __$$GetMoviesErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetMoviesError implements GetMoviesError {
-  const _$GetMoviesError(this.error, this.stackTrace,
-      [this.pendingId = _kGetMoviesPendingId]);
+  const _$GetMoviesError(this.error, this.stackTrace, [this.pendingId = _kGetMoviesPendingId]);
 
   @override
   final Object error;
@@ -535,15 +479,12 @@ class _$GetMoviesError implements GetMoviesError {
         (other.runtimeType == runtimeType &&
             other is _$GetMoviesError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -555,12 +496,8 @@ class _$GetMoviesError implements GetMoviesError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -569,10 +506,8 @@ class _$GetMoviesError implements GetMoviesError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -581,10 +516,8 @@ class _$GetMoviesError implements GetMoviesError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -629,8 +562,8 @@ class _$GetMoviesError implements GetMoviesError {
 }
 
 abstract class GetMoviesError implements GetMovies, ActionDone, ErrorAction {
-  const factory GetMoviesError(final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$GetMoviesError;
+  const factory GetMoviesError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$GetMoviesError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -638,8 +571,7 @@ abstract class GetMoviesError implements GetMovies, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetMoviesErrorCopyWith<_$GetMoviesError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetMoviesErrorCopyWith<_$GetMoviesError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -649,25 +581,21 @@ mixin _$GetDescription {
   TResult when<TResult extends Object?>({
     required TResult Function(int? id, String pendingId) start,
     required TResult Function(String description, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? id, String pendingId)? start,
     TResult? Function(String description, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? id, String pendingId)? start,
     TResult Function(String description, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -695,22 +623,19 @@ mixin _$GetDescription {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetDescriptionCopyWith<GetDescription> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetDescriptionCopyWith<GetDescription> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetDescriptionCopyWith<$Res> {
-  factory $GetDescriptionCopyWith(
-          GetDescription value, $Res Function(GetDescription) then) =
+  factory $GetDescriptionCopyWith(GetDescription value, $Res Function(GetDescription) then) =
       _$GetDescriptionCopyWithImpl<$Res, GetDescription>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetDescriptionCopyWithImpl<$Res, $Val extends GetDescription>
-    implements $GetDescriptionCopyWith<$Res> {
+class _$GetDescriptionCopyWithImpl<$Res, $Val extends GetDescription> implements $GetDescriptionCopyWith<$Res> {
   _$GetDescriptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -733,10 +658,8 @@ class _$GetDescriptionCopyWithImpl<$Res, $Val extends GetDescription>
 }
 
 /// @nodoc
-abstract class _$$GetDescriptionStartCopyWith<$Res>
-    implements $GetDescriptionCopyWith<$Res> {
-  factory _$$GetDescriptionStartCopyWith(_$GetDescriptionStart value,
-          $Res Function(_$GetDescriptionStart) then) =
+abstract class _$$GetDescriptionStartCopyWith<$Res> implements $GetDescriptionCopyWith<$Res> {
+  factory _$$GetDescriptionStartCopyWith(_$GetDescriptionStart value, $Res Function(_$GetDescriptionStart) then) =
       __$$GetDescriptionStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -744,11 +667,9 @@ abstract class _$$GetDescriptionStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDescriptionStartCopyWithImpl<$Res>
-    extends _$GetDescriptionCopyWithImpl<$Res, _$GetDescriptionStart>
+class __$$GetDescriptionStartCopyWithImpl<$Res> extends _$GetDescriptionCopyWithImpl<$Res, _$GetDescriptionStart>
     implements _$$GetDescriptionStartCopyWith<$Res> {
-  __$$GetDescriptionStartCopyWithImpl(
-      _$GetDescriptionStart _value, $Res Function(_$GetDescriptionStart) _then)
+  __$$GetDescriptionStartCopyWithImpl(_$GetDescriptionStart _value, $Res Function(_$GetDescriptionStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -773,8 +694,7 @@ class __$$GetDescriptionStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDescriptionStart implements GetDescriptionStart {
-  const _$GetDescriptionStart(
-      {this.id, this.pendingId = _kGetDescriptionPendingId});
+  const _$GetDescriptionStart({this.id, this.pendingId = _kGetDescriptionPendingId});
 
   @override
   final int? id;
@@ -793,8 +713,7 @@ class _$GetDescriptionStart implements GetDescriptionStart {
         (other.runtimeType == runtimeType &&
             other is _$GetDescriptionStart &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -804,17 +723,14 @@ class _$GetDescriptionStart implements GetDescriptionStart {
   @override
   @pragma('vm:prefer-inline')
   _$$GetDescriptionStartCopyWith<_$GetDescriptionStart> get copyWith =>
-      __$$GetDescriptionStartCopyWithImpl<_$GetDescriptionStart>(
-          this, _$identity);
+      __$$GetDescriptionStartCopyWithImpl<_$GetDescriptionStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? id, String pendingId) start,
     required TResult Function(String description, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(id, pendingId);
   }
@@ -824,8 +740,7 @@ class _$GetDescriptionStart implements GetDescriptionStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? id, String pendingId)? start,
     TResult? Function(String description, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(id, pendingId);
   }
@@ -835,8 +750,7 @@ class _$GetDescriptionStart implements GetDescriptionStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? id, String pendingId)? start,
     TResult Function(String description, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -881,23 +795,20 @@ class _$GetDescriptionStart implements GetDescriptionStart {
 }
 
 abstract class GetDescriptionStart implements GetDescription, ActionStart {
-  const factory GetDescriptionStart({final int? id, final String pendingId}) =
-      _$GetDescriptionStart;
+  const factory GetDescriptionStart({final int? id, final String pendingId}) = _$GetDescriptionStart;
 
   int? get id;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDescriptionStartCopyWith<_$GetDescriptionStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDescriptionStartCopyWith<_$GetDescriptionStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDescriptionSuccessfulCopyWith<$Res>
-    implements $GetDescriptionCopyWith<$Res> {
-  factory _$$GetDescriptionSuccessfulCopyWith(_$GetDescriptionSuccessful value,
-          $Res Function(_$GetDescriptionSuccessful) then) =
+abstract class _$$GetDescriptionSuccessfulCopyWith<$Res> implements $GetDescriptionCopyWith<$Res> {
+  factory _$$GetDescriptionSuccessfulCopyWith(
+          _$GetDescriptionSuccessful value, $Res Function(_$GetDescriptionSuccessful) then) =
       __$$GetDescriptionSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -908,8 +819,8 @@ abstract class _$$GetDescriptionSuccessfulCopyWith<$Res>
 class __$$GetDescriptionSuccessfulCopyWithImpl<$Res>
     extends _$GetDescriptionCopyWithImpl<$Res, _$GetDescriptionSuccessful>
     implements _$$GetDescriptionSuccessfulCopyWith<$Res> {
-  __$$GetDescriptionSuccessfulCopyWithImpl(_$GetDescriptionSuccessful _value,
-      $Res Function(_$GetDescriptionSuccessful) _then)
+  __$$GetDescriptionSuccessfulCopyWithImpl(
+      _$GetDescriptionSuccessful _value, $Res Function(_$GetDescriptionSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -935,8 +846,7 @@ class __$$GetDescriptionSuccessfulCopyWithImpl<$Res>
 
 class _$GetDescriptionSuccessful implements GetDescriptionSuccessful {
   const _$GetDescriptionSuccessful(
-      [this.description = 'No description available',
-      this.pendingId = _kGetDescriptionPendingId]);
+      [this.description = 'No description available', this.pendingId = _kGetDescriptionPendingId]);
 
   @override
   @JsonKey()
@@ -955,10 +865,8 @@ class _$GetDescriptionSuccessful implements GetDescriptionSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetDescriptionSuccessful &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -967,19 +875,15 @@ class _$GetDescriptionSuccessful implements GetDescriptionSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetDescriptionSuccessfulCopyWith<_$GetDescriptionSuccessful>
-      get copyWith =>
-          __$$GetDescriptionSuccessfulCopyWithImpl<_$GetDescriptionSuccessful>(
-              this, _$identity);
+  _$$GetDescriptionSuccessfulCopyWith<_$GetDescriptionSuccessful> get copyWith =>
+      __$$GetDescriptionSuccessfulCopyWithImpl<_$GetDescriptionSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? id, String pendingId) start,
     required TResult Function(String description, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(description, pendingId);
   }
@@ -989,8 +893,7 @@ class _$GetDescriptionSuccessful implements GetDescriptionSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? id, String pendingId)? start,
     TResult? Function(String description, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(description, pendingId);
   }
@@ -1000,8 +903,7 @@ class _$GetDescriptionSuccessful implements GetDescriptionSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? id, String pendingId)? start,
     TResult Function(String description, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1046,24 +948,20 @@ class _$GetDescriptionSuccessful implements GetDescriptionSuccessful {
 }
 
 abstract class GetDescriptionSuccessful implements GetDescription, ActionDone {
-  const factory GetDescriptionSuccessful(
-      [final String description,
-      final String pendingId]) = _$GetDescriptionSuccessful;
+  const factory GetDescriptionSuccessful([final String description, final String pendingId]) =
+      _$GetDescriptionSuccessful;
 
   String get description;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDescriptionSuccessfulCopyWith<_$GetDescriptionSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetDescriptionSuccessfulCopyWith<_$GetDescriptionSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDescriptionErrorCopyWith<$Res>
-    implements $GetDescriptionCopyWith<$Res> {
-  factory _$$GetDescriptionErrorCopyWith(_$GetDescriptionError value,
-          $Res Function(_$GetDescriptionError) then) =
+abstract class _$$GetDescriptionErrorCopyWith<$Res> implements $GetDescriptionCopyWith<$Res> {
+  factory _$$GetDescriptionErrorCopyWith(_$GetDescriptionError value, $Res Function(_$GetDescriptionError) then) =
       __$$GetDescriptionErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1071,11 +969,9 @@ abstract class _$$GetDescriptionErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDescriptionErrorCopyWithImpl<$Res>
-    extends _$GetDescriptionCopyWithImpl<$Res, _$GetDescriptionError>
+class __$$GetDescriptionErrorCopyWithImpl<$Res> extends _$GetDescriptionCopyWithImpl<$Res, _$GetDescriptionError>
     implements _$$GetDescriptionErrorCopyWith<$Res> {
-  __$$GetDescriptionErrorCopyWithImpl(
-      _$GetDescriptionError _value, $Res Function(_$GetDescriptionError) _then)
+  __$$GetDescriptionErrorCopyWithImpl(_$GetDescriptionError _value, $Res Function(_$GetDescriptionError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1102,8 +998,7 @@ class __$$GetDescriptionErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDescriptionError implements GetDescriptionError {
-  const _$GetDescriptionError(this.error, this.stackTrace,
-      [this.pendingId = _kGetDescriptionPendingId]);
+  const _$GetDescriptionError(this.error, this.stackTrace, [this.pendingId = _kGetDescriptionPendingId]);
 
   @override
   final Object error;
@@ -1124,31 +1019,25 @@ class _$GetDescriptionError implements GetDescriptionError {
         (other.runtimeType == runtimeType &&
             other is _$GetDescriptionError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetDescriptionErrorCopyWith<_$GetDescriptionError> get copyWith =>
-      __$$GetDescriptionErrorCopyWithImpl<_$GetDescriptionError>(
-          this, _$identity);
+      __$$GetDescriptionErrorCopyWithImpl<_$GetDescriptionError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? id, String pendingId) start,
     required TResult Function(String description, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -1158,8 +1047,7 @@ class _$GetDescriptionError implements GetDescriptionError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? id, String pendingId)? start,
     TResult? Function(String description, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -1169,8 +1057,7 @@ class _$GetDescriptionError implements GetDescriptionError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? id, String pendingId)? start,
     TResult Function(String description, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1214,11 +1101,9 @@ class _$GetDescriptionError implements GetDescriptionError {
   }
 }
 
-abstract class GetDescriptionError
-    implements GetDescription, ActionDone, ErrorAction {
-  const factory GetDescriptionError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$GetDescriptionError;
+abstract class GetDescriptionError implements GetDescription, ActionDone, ErrorAction {
+  const factory GetDescriptionError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$GetDescriptionError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -1226,8 +1111,7 @@ abstract class GetDescriptionError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDescriptionErrorCopyWith<_$GetDescriptionError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDescriptionErrorCopyWith<_$GetDescriptionError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1236,30 +1120,22 @@ mixin _$GetMoreMovies {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1287,22 +1163,19 @@ mixin _$GetMoreMovies {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetMoreMoviesCopyWith<GetMoreMovies> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetMoreMoviesCopyWith<GetMoreMovies> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetMoreMoviesCopyWith<$Res> {
-  factory $GetMoreMoviesCopyWith(
-          GetMoreMovies value, $Res Function(GetMoreMovies) then) =
+  factory $GetMoreMoviesCopyWith(GetMoreMovies value, $Res Function(GetMoreMovies) then) =
       _$GetMoreMoviesCopyWithImpl<$Res, GetMoreMovies>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetMoreMoviesCopyWithImpl<$Res, $Val extends GetMoreMovies>
-    implements $GetMoreMoviesCopyWith<$Res> {
+class _$GetMoreMoviesCopyWithImpl<$Res, $Val extends GetMoreMovies> implements $GetMoreMoviesCopyWith<$Res> {
   _$GetMoreMoviesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1325,10 +1198,8 @@ class _$GetMoreMoviesCopyWithImpl<$Res, $Val extends GetMoreMovies>
 }
 
 /// @nodoc
-abstract class _$$GetMoreMoviesStartCopyWith<$Res>
-    implements $GetMoreMoviesCopyWith<$Res> {
-  factory _$$GetMoreMoviesStartCopyWith(_$GetMoreMoviesStart value,
-          $Res Function(_$GetMoreMoviesStart) then) =
+abstract class _$$GetMoreMoviesStartCopyWith<$Res> implements $GetMoreMoviesCopyWith<$Res> {
+  factory _$$GetMoreMoviesStartCopyWith(_$GetMoreMoviesStart value, $Res Function(_$GetMoreMoviesStart) then) =
       __$$GetMoreMoviesStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1336,11 +1207,9 @@ abstract class _$$GetMoreMoviesStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMoreMoviesStartCopyWithImpl<$Res>
-    extends _$GetMoreMoviesCopyWithImpl<$Res, _$GetMoreMoviesStart>
+class __$$GetMoreMoviesStartCopyWithImpl<$Res> extends _$GetMoreMoviesCopyWithImpl<$Res, _$GetMoreMoviesStart>
     implements _$$GetMoreMoviesStartCopyWith<$Res> {
-  __$$GetMoreMoviesStartCopyWithImpl(
-      _$GetMoreMoviesStart _value, $Res Function(_$GetMoreMoviesStart) _then)
+  __$$GetMoreMoviesStartCopyWithImpl(_$GetMoreMoviesStart _value, $Res Function(_$GetMoreMoviesStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1370,8 +1239,7 @@ class __$$GetMoreMoviesStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetMoreMoviesStart implements GetMoreMoviesStart {
-  const _$GetMoreMoviesStart(
-      {this.page, this.genre = '', this.pendingId = _kGetMoreMoviesPendingId});
+  const _$GetMoreMoviesStart({this.page, this.genre = '', this.pendingId = _kGetMoreMoviesPendingId});
 
   @override
   final int? page;
@@ -1394,8 +1262,7 @@ class _$GetMoreMoviesStart implements GetMoreMoviesStart {
             other is _$GetMoreMoviesStart &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.genre, genre) || other.genre == genre) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -1405,19 +1272,14 @@ class _$GetMoreMoviesStart implements GetMoreMoviesStart {
   @override
   @pragma('vm:prefer-inline')
   _$$GetMoreMoviesStartCopyWith<_$GetMoreMoviesStart> get copyWith =>
-      __$$GetMoreMoviesStartCopyWithImpl<_$GetMoreMoviesStart>(
-          this, _$identity);
+      __$$GetMoreMoviesStartCopyWithImpl<_$GetMoreMoviesStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(page, genre, pendingId);
   }
@@ -1426,10 +1288,8 @@ class _$GetMoreMoviesStart implements GetMoreMoviesStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(page, genre, pendingId);
   }
@@ -1438,10 +1298,8 @@ class _$GetMoreMoviesStart implements GetMoreMoviesStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -1486,10 +1344,8 @@ class _$GetMoreMoviesStart implements GetMoreMoviesStart {
 }
 
 abstract class GetMoreMoviesStart implements GetMoreMovies, ActionStart {
-  const factory GetMoreMoviesStart(
-      {final int? page,
-      final String? genre,
-      final String pendingId}) = _$GetMoreMoviesStart;
+  const factory GetMoreMoviesStart({final int? page, final String? genre, final String pendingId}) =
+      _$GetMoreMoviesStart;
 
   int? get page;
   String? get genre;
@@ -1497,15 +1353,13 @@ abstract class GetMoreMoviesStart implements GetMoreMovies, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetMoreMoviesStartCopyWith<_$GetMoreMoviesStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetMoreMoviesStartCopyWith<_$GetMoreMoviesStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetMoreMoviesSuccessfulCopyWith<$Res>
-    implements $GetMoreMoviesCopyWith<$Res> {
-  factory _$$GetMoreMoviesSuccessfulCopyWith(_$GetMoreMoviesSuccessful value,
-          $Res Function(_$GetMoreMoviesSuccessful) then) =
+abstract class _$$GetMoreMoviesSuccessfulCopyWith<$Res> implements $GetMoreMoviesCopyWith<$Res> {
+  factory _$$GetMoreMoviesSuccessfulCopyWith(
+          _$GetMoreMoviesSuccessful value, $Res Function(_$GetMoreMoviesSuccessful) then) =
       __$$GetMoreMoviesSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1513,11 +1367,10 @@ abstract class _$$GetMoreMoviesSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMoreMoviesSuccessfulCopyWithImpl<$Res>
-    extends _$GetMoreMoviesCopyWithImpl<$Res, _$GetMoreMoviesSuccessful>
+class __$$GetMoreMoviesSuccessfulCopyWithImpl<$Res> extends _$GetMoreMoviesCopyWithImpl<$Res, _$GetMoreMoviesSuccessful>
     implements _$$GetMoreMoviesSuccessfulCopyWith<$Res> {
-  __$$GetMoreMoviesSuccessfulCopyWithImpl(_$GetMoreMoviesSuccessful _value,
-      $Res Function(_$GetMoreMoviesSuccessful) _then)
+  __$$GetMoreMoviesSuccessfulCopyWithImpl(
+      _$GetMoreMoviesSuccessful _value, $Res Function(_$GetMoreMoviesSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1548,9 +1401,7 @@ class __$$GetMoreMoviesSuccessfulCopyWithImpl<$Res>
 
 class _$GetMoreMoviesSuccessful implements GetMoreMoviesSuccessful {
   const _$GetMoreMoviesSuccessful(
-      {this.genre,
-      final List<Movie> movies = const <Movie>[],
-      this.pendingId = _kGetMoreMoviesPendingId})
+      {this.genre, final List<Movie> movies = const <Movie>[], this.pendingId = _kGetMoreMoviesPendingId})
       : _movies = movies;
 
   @override
@@ -1580,31 +1431,24 @@ class _$GetMoreMoviesSuccessful implements GetMoreMoviesSuccessful {
             other is _$GetMoreMoviesSuccessful &&
             (identical(other.genre, genre) || other.genre == genre) &&
             const DeepCollectionEquality().equals(other._movies, _movies) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, genre,
-      const DeepCollectionEquality().hash(_movies), pendingId);
+  int get hashCode => Object.hash(runtimeType, genre, const DeepCollectionEquality().hash(_movies), pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetMoreMoviesSuccessfulCopyWith<_$GetMoreMoviesSuccessful> get copyWith =>
-      __$$GetMoreMoviesSuccessfulCopyWithImpl<_$GetMoreMoviesSuccessful>(
-          this, _$identity);
+      __$$GetMoreMoviesSuccessfulCopyWithImpl<_$GetMoreMoviesSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(genre, movies, pendingId);
   }
@@ -1613,10 +1457,8 @@ class _$GetMoreMoviesSuccessful implements GetMoreMoviesSuccessful {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(genre, movies, pendingId);
   }
@@ -1625,10 +1467,8 @@ class _$GetMoreMoviesSuccessful implements GetMoreMoviesSuccessful {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1673,10 +1513,8 @@ class _$GetMoreMoviesSuccessful implements GetMoreMoviesSuccessful {
 }
 
 abstract class GetMoreMoviesSuccessful implements GetMoreMovies, ActionDone {
-  const factory GetMoreMoviesSuccessful(
-      {final String? genre,
-      final List<Movie> movies,
-      final String pendingId}) = _$GetMoreMoviesSuccessful;
+  const factory GetMoreMoviesSuccessful({final String? genre, final List<Movie> movies, final String pendingId}) =
+      _$GetMoreMoviesSuccessful;
 
   String? get genre;
   List<Movie> get movies;
@@ -1684,15 +1522,12 @@ abstract class GetMoreMoviesSuccessful implements GetMoreMovies, ActionDone {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetMoreMoviesSuccessfulCopyWith<_$GetMoreMoviesSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetMoreMoviesSuccessfulCopyWith<_$GetMoreMoviesSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetMoreMoviesErrorCopyWith<$Res>
-    implements $GetMoreMoviesCopyWith<$Res> {
-  factory _$$GetMoreMoviesErrorCopyWith(_$GetMoreMoviesError value,
-          $Res Function(_$GetMoreMoviesError) then) =
+abstract class _$$GetMoreMoviesErrorCopyWith<$Res> implements $GetMoreMoviesCopyWith<$Res> {
+  factory _$$GetMoreMoviesErrorCopyWith(_$GetMoreMoviesError value, $Res Function(_$GetMoreMoviesError) then) =
       __$$GetMoreMoviesErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1700,11 +1535,9 @@ abstract class _$$GetMoreMoviesErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMoreMoviesErrorCopyWithImpl<$Res>
-    extends _$GetMoreMoviesCopyWithImpl<$Res, _$GetMoreMoviesError>
+class __$$GetMoreMoviesErrorCopyWithImpl<$Res> extends _$GetMoreMoviesCopyWithImpl<$Res, _$GetMoreMoviesError>
     implements _$$GetMoreMoviesErrorCopyWith<$Res> {
-  __$$GetMoreMoviesErrorCopyWithImpl(
-      _$GetMoreMoviesError _value, $Res Function(_$GetMoreMoviesError) _then)
+  __$$GetMoreMoviesErrorCopyWithImpl(_$GetMoreMoviesError _value, $Res Function(_$GetMoreMoviesError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1731,8 +1564,7 @@ class __$$GetMoreMoviesErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetMoreMoviesError implements GetMoreMoviesError {
-  const _$GetMoreMoviesError(this.error, this.stackTrace,
-      [this.pendingId = _kGetMoreMoviesPendingId]);
+  const _$GetMoreMoviesError(this.error, this.stackTrace, [this.pendingId = _kGetMoreMoviesPendingId]);
 
   @override
   final Object error;
@@ -1753,33 +1585,25 @@ class _$GetMoreMoviesError implements GetMoreMoviesError {
         (other.runtimeType == runtimeType &&
             other is _$GetMoreMoviesError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetMoreMoviesErrorCopyWith<_$GetMoreMoviesError> get copyWith =>
-      __$$GetMoreMoviesErrorCopyWithImpl<_$GetMoreMoviesError>(
-          this, _$identity);
+      __$$GetMoreMoviesErrorCopyWithImpl<_$GetMoreMoviesError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? genre, String pendingId) start,
-    required TResult Function(
-            String? genre, List<Movie> movies, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? genre, List<Movie> movies, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -1788,10 +1612,8 @@ class _$GetMoreMoviesError implements GetMoreMoviesError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? genre, String pendingId)? start,
-    TResult? Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -1800,10 +1622,8 @@ class _$GetMoreMoviesError implements GetMoreMoviesError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? genre, String pendingId)? start,
-    TResult Function(String? genre, List<Movie> movies, String pendingId)?
-        successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(String? genre, List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1847,11 +1667,9 @@ class _$GetMoreMoviesError implements GetMoreMoviesError {
   }
 }
 
-abstract class GetMoreMoviesError
-    implements GetMoreMovies, ActionDone, ErrorAction {
-  const factory GetMoreMoviesError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$GetMoreMoviesError;
+abstract class GetMoreMoviesError implements GetMoreMovies, ActionDone, ErrorAction {
+  const factory GetMoreMoviesError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$GetMoreMoviesError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -1859,6 +1677,5 @@ abstract class GetMoreMoviesError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetMoreMoviesErrorCopyWith<_$GetMoreMoviesError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetMoreMoviesErrorCopyWith<_$GetMoreMoviesError> get copyWith => throw _privateConstructorUsedError;
 }
