@@ -1,5 +1,5 @@
 import 'package:movies_redux/src/actions/index.dart';
-import 'package:movies_redux/src/data/details_api.dart';
+import 'package:movies_redux/src/data/description_api.dart';
 import 'package:movies_redux/src/data/movies_api.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:redux_epics/redux_epics.dart';
@@ -10,11 +10,11 @@ import 'package:rxdart/rxdart.dart';
 class AppEpics implements EpicClass<AppState> {
   const AppEpics({
     required this.moviesApi,
-    required this.detailsApi,
+    required this.descriptionApi,
   });
 
   final MoviesApi moviesApi;
-  final DetailsApi detailsApi;
+  final DescriptionApi descriptionApi;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -41,7 +41,7 @@ class AppEpics implements EpicClass<AppState> {
   Stream<AppAction> _getDescription(Stream<GetDescriptionStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetDescriptionStart action) {
       return Stream<void>.value(null).asyncMap((_) async {
-        final String? response = await detailsApi.getDescription(
+        final String? response = await descriptionApi.getDescription(
           id: action.id,
         );
 

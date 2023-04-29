@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
 import 'package:movies_redux/src/actions/index.dart';
-import 'package:movies_redux/src/data/details_api.dart';
+import 'package:movies_redux/src/data/description_api.dart';
 import 'package:movies_redux/src/data/movies_api.dart';
 import 'package:movies_redux/src/epics/app_epics.dart';
 import 'package:movies_redux/src/models/index.dart';
@@ -17,13 +17,13 @@ void main() {
 
   final Client httpClient = Client();
   final MoviesApi moviesApi = MoviesApi(client: httpClient);
-  final DetailsApi detailsApi = DetailsApi(client: httpClient);
+  final DescriptionApi descriptionApi = DescriptionApi(client: httpClient);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
     initialState: const AppState(),
     middleware: <Middleware<AppState>>[
-      EpicMiddleware<AppState>(AppEpics(moviesApi: moviesApi, detailsApi: detailsApi)),
+      EpicMiddleware<AppState>(AppEpics(moviesApi: moviesApi, descriptionApi: descriptionApi)),
       TypedMiddleware<AppState, AppAction>((Store<AppState> store, AppAction action, NextDispatcher next) {
         next(action);
         actions.add(action);

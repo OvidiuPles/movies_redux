@@ -525,34 +525,34 @@ abstract class MoviesState$ implements MoviesState {
       throw _privateConstructorUsedError;
 }
 
-MovieDescription _$MovieDescriptionFromJson(Map<String, dynamic> json) {
-  return MovieDescription$.fromJson(json);
+Description _$DescriptionFromJson(Map<String, dynamic> json) {
+  return Description$.fromJson(json);
 }
 
 /// @nodoc
-mixin _$MovieDescription {
+mixin _$Description {
   @JsonKey(name: 'description_intro')
   String? get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieDescriptionCopyWith<MovieDescription> get copyWith =>
+  $DescriptionCopyWith<Description> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MovieDescriptionCopyWith<$Res> {
-  factory $MovieDescriptionCopyWith(
-          MovieDescription value, $Res Function(MovieDescription) then) =
-      _$MovieDescriptionCopyWithImpl<$Res, MovieDescription>;
+abstract class $DescriptionCopyWith<$Res> {
+  factory $DescriptionCopyWith(
+          Description value, $Res Function(Description) then) =
+      _$DescriptionCopyWithImpl<$Res, Description>;
   @useResult
   $Res call({@JsonKey(name: 'description_intro') String? description});
 }
 
 /// @nodoc
-class _$MovieDescriptionCopyWithImpl<$Res, $Val extends MovieDescription>
-    implements $MovieDescriptionCopyWith<$Res> {
-  _$MovieDescriptionCopyWithImpl(this._value, this._then);
+class _$DescriptionCopyWithImpl<$Res, $Val extends Description>
+    implements $DescriptionCopyWith<$Res> {
+  _$DescriptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -574,22 +574,22 @@ class _$MovieDescriptionCopyWithImpl<$Res, $Val extends MovieDescription>
 }
 
 /// @nodoc
-abstract class _$$MovieDescription$CopyWith<$Res>
-    implements $MovieDescriptionCopyWith<$Res> {
-  factory _$$MovieDescription$CopyWith(
-          _$MovieDescription$ value, $Res Function(_$MovieDescription$) then) =
-      __$$MovieDescription$CopyWithImpl<$Res>;
+abstract class _$$Description$CopyWith<$Res>
+    implements $DescriptionCopyWith<$Res> {
+  factory _$$Description$CopyWith(
+          _$Description$ value, $Res Function(_$Description$) then) =
+      __$$Description$CopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'description_intro') String? description});
 }
 
 /// @nodoc
-class __$$MovieDescription$CopyWithImpl<$Res>
-    extends _$MovieDescriptionCopyWithImpl<$Res, _$MovieDescription$>
-    implements _$$MovieDescription$CopyWith<$Res> {
-  __$$MovieDescription$CopyWithImpl(
-      _$MovieDescription$ _value, $Res Function(_$MovieDescription$) _then)
+class __$$Description$CopyWithImpl<$Res>
+    extends _$DescriptionCopyWithImpl<$Res, _$Description$>
+    implements _$$Description$CopyWith<$Res> {
+  __$$Description$CopyWithImpl(
+      _$Description$ _value, $Res Function(_$Description$) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -597,7 +597,7 @@ class __$$MovieDescription$CopyWithImpl<$Res>
   $Res call({
     Object? description = freezed,
   }) {
-    return _then(_$MovieDescription$(
+    return _then(_$Description$(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -608,12 +608,11 @@ class __$$MovieDescription$CopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MovieDescription$ implements MovieDescription$ {
-  const _$MovieDescription$(
-      {@JsonKey(name: 'description_intro') this.description});
+class _$Description$ implements Description$ {
+  const _$Description$({@JsonKey(name: 'description_intro') this.description});
 
-  factory _$MovieDescription$.fromJson(Map<String, dynamic> json) =>
-      _$$MovieDescription$FromJson(json);
+  factory _$Description$.fromJson(Map<String, dynamic> json) =>
+      _$$Description$FromJson(json);
 
   @override
   @JsonKey(name: 'description_intro')
@@ -621,14 +620,14 @@ class _$MovieDescription$ implements MovieDescription$ {
 
   @override
   String toString() {
-    return 'MovieDescription(description: $description)';
+    return 'Description(description: $description)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MovieDescription$ &&
+            other is _$Description$ &&
             (identical(other.description, description) ||
                 other.description == description));
   }
@@ -640,37 +639,37 @@ class _$MovieDescription$ implements MovieDescription$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MovieDescription$CopyWith<_$MovieDescription$> get copyWith =>
-      __$$MovieDescription$CopyWithImpl<_$MovieDescription$>(this, _$identity);
+  _$$Description$CopyWith<_$Description$> get copyWith =>
+      __$$Description$CopyWithImpl<_$Description$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MovieDescription$ToJson(
+    return _$$Description$ToJson(
       this,
     );
   }
 }
 
-abstract class MovieDescription$ implements MovieDescription {
-  const factory MovieDescription$(
+abstract class Description$ implements Description {
+  const factory Description$(
           {@JsonKey(name: 'description_intro') final String? description}) =
-      _$MovieDescription$;
+      _$Description$;
 
-  factory MovieDescription$.fromJson(Map<String, dynamic> json) =
-      _$MovieDescription$.fromJson;
+  factory Description$.fromJson(Map<String, dynamic> json) =
+      _$Description$.fromJson;
 
   @override
   @JsonKey(name: 'description_intro')
   String? get description;
   @override
   @JsonKey(ignore: true)
-  _$$MovieDescription$CopyWith<_$MovieDescription$> get copyWith =>
+  _$$Description$CopyWith<_$Description$> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$DescriptionState {
-  MovieDescription get description => throw _privateConstructorUsedError;
+  Description get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DescriptionStateCopyWith<DescriptionState> get copyWith =>
@@ -683,9 +682,9 @@ abstract class $DescriptionStateCopyWith<$Res> {
           DescriptionState value, $Res Function(DescriptionState) then) =
       _$DescriptionStateCopyWithImpl<$Res, DescriptionState>;
   @useResult
-  $Res call({MovieDescription description});
+  $Res call({Description description});
 
-  $MovieDescriptionCopyWith<$Res> get description;
+  $DescriptionCopyWith<$Res> get description;
 }
 
 /// @nodoc
@@ -707,14 +706,14 @@ class _$DescriptionStateCopyWithImpl<$Res, $Val extends DescriptionState>
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as MovieDescription,
+              as Description,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MovieDescriptionCopyWith<$Res> get description {
-    return $MovieDescriptionCopyWith<$Res>(_value.description, (value) {
+  $DescriptionCopyWith<$Res> get description {
+    return $DescriptionCopyWith<$Res>(_value.description, (value) {
       return _then(_value.copyWith(description: value) as $Val);
     });
   }
@@ -728,10 +727,10 @@ abstract class _$$DescriptionState$CopyWith<$Res>
       __$$DescriptionState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MovieDescription description});
+  $Res call({Description description});
 
   @override
-  $MovieDescriptionCopyWith<$Res> get description;
+  $DescriptionCopyWith<$Res> get description;
 }
 
 /// @nodoc
@@ -751,7 +750,7 @@ class __$$DescriptionState$CopyWithImpl<$Res>
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as MovieDescription,
+              as Description,
     ));
   }
 }
@@ -759,11 +758,11 @@ class __$$DescriptionState$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$DescriptionState$ implements DescriptionState$ {
-  const _$DescriptionState$({this.description = const MovieDescription()});
+  const _$DescriptionState$({this.description = const Description()});
 
   @override
   @JsonKey()
-  final MovieDescription description;
+  final Description description;
 
   @override
   String toString() {
@@ -790,11 +789,11 @@ class _$DescriptionState$ implements DescriptionState$ {
 }
 
 abstract class DescriptionState$ implements DescriptionState {
-  const factory DescriptionState$({final MovieDescription description}) =
+  const factory DescriptionState$({final Description description}) =
       _$DescriptionState$;
 
   @override
-  MovieDescription get description;
+  Description get description;
   @override
   @JsonKey(ignore: true)
   _$$DescriptionState$CopyWith<_$DescriptionState$> get copyWith =>

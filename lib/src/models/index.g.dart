@@ -22,12 +22,12 @@ Map<String, dynamic> _$$Movie$ToJson(_$Movie$ instance) => <String, dynamic>{
       'title_english': instance.titleEnglish,
     };
 
-_$MovieDescription$ _$$MovieDescription$FromJson(Map<String, dynamic> json) =>
-    _$MovieDescription$(
+_$Description$ _$$Description$FromJson(Map<String, dynamic> json) =>
+    _$Description$(
       description: json['description_intro'] as String?,
     );
 
-Map<String, dynamic> _$$MovieDescription$ToJson(_$MovieDescription$ instance) =>
+Map<String, dynamic> _$$Description$ToJson(_$Description$ instance) =>
     <String, dynamic>{
       'description_intro': instance.description,
     };

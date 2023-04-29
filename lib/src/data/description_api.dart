@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
-class DetailsApi {
-  const DetailsApi({required Client client}) : _client = client;
+class DescriptionApi {
+  const DescriptionApi({required Client client}) : _client = client;
 
   final Client _client;
 

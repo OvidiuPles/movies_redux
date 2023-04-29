@@ -8,6 +8,6 @@ Reducer<DescriptionState> descriptionReducer = combineReducers(<Reducer<Descript
 
 DescriptionState _getDescriptionSuccessful(DescriptionState state, GetDescriptionSuccessful action) {
   return state.copyWith(
-    description: MovieDescription(description: action.description),
+    description: Description(description: action.description),
   );
 }
