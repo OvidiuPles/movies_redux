@@ -58,7 +58,10 @@ class MoviesList extends StatelessWidget {
                 ),
                 onTap: () {
                   StoreProvider.of<AppState>(context).dispatch(GetDescriptionStart(id: movie.id));
-                  showDescription(context);
+                  showDescription(
+                    context: context,
+                    movie: movie,
+                  );
                 },
               ),
             );
@@ -68,18 +71,46 @@ class MoviesList extends StatelessWidget {
     );
   }
 
-  void showDescription(BuildContext context) {
+  void showDescription({required BuildContext context, required Movie movie}) {
+    //final DescriptionText descriptionText = DescriptionText();
+    //final String description = '$descriptionText\n\n\nRelease year: ${movie.year}\n\nIMDb rating: ${movie.rating}';
+
     showDialog<Widget>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: const Text(
-            'asdasd',
+          title: Text(
+            movie.titleEnglish,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 26),
+            style: const TextStyle(fontSize: 26),
           ),
-          content: const DescriptionText(),
+          content: Column(
+            children: <Widget>[
+              Image.network(
+                movie.imageLink,
+                width: 300,
+                height: 300,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const DescriptionText(),
+                        const SizedBox(height: 20),
+                        Text('Release year: ${movie.year}'),
+                        const SizedBox(height: 20),
+                        Text('Rating: ${movie.rating}')
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
           actions: <TextButton>[
             TextButton(
               child: const Center(
