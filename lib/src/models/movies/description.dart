@@ -6,6 +6,5 @@ class Description with _$Description {
     @JsonKey(name: 'description_intro') String? description,
   }) = Description$;
 
-  factory Description.fromJson(Map<dynamic, dynamic> json) =>
-      _$DescriptionFromJson(Map<String, dynamic>.from(json));
+  factory Description.fromJson(Map<dynamic, dynamic> json) => _$DescriptionFromJson(Map<String, dynamic>.from(json));
 }
