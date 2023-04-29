@@ -12,23 +12,27 @@ class MoviesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MoviesContainer(
-      builder: (BuildContext context, List<Movie> movies) {
+      builder: (BuildContext context, MoviesState moviesState) {
         return ListView.builder(
           physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
           shrinkWrap: true,
-          itemCount: movies.length,
+          itemCount: moviesState.movies.length,
           itemBuilder: (BuildContext context, int index) {
-            if (index == movies.length - 1) {
+            if (index == moviesState.movies.length - 1) {
               return TextButton(
                 onPressed: () {
-                  StoreProvider.of<AppState>(context).dispatch(GetMoviesStart(page: MoviesPage.page));
-                  MoviesPage.page++;
+                  StoreProvider.of<AppState>(context).dispatch(
+                    GetMoreMoviesStart(
+                      page: MoviesPage.page,
+                      genre: moviesState.genre,
+                    ),
+                  );
                 },
                 child: const Text('Mai multe filme'),
               );
             }
 
-            final Movie movie = movies[index];
+            final Movie movie = moviesState.movies[index];
 
             return Card(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

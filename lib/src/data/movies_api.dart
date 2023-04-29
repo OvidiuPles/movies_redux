@@ -8,12 +8,16 @@ class MoviesApi {
 
   final Client _client;
 
-  Future<List<Movie>> getMovies({int? page}) async {
+  Future<List<Movie>> getMovies({
+    int? page,
+    String? genre,
+  }) async {
     final Uri url = Uri.https(
       'yts.mx',
       'api/v2/list_movies.json',
       <String, dynamic>{
         'page': '$page',
+        'genre': genre,
       },
     );
 

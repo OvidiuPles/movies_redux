@@ -20,6 +20,7 @@ class AppEpics implements EpicClass<AppState> {
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics<AppState>(<Epic<AppState>>[
       TypedEpic<AppState, GetMoviesStart>(_getMovies),
+      TypedEpic<AppState, GetMoreMoviesStart>(_getMoreMovies),
       TypedEpic<AppState, GetDescriptionStart>(_getDescription),
     ])(actions, store);
   }
@@ -29,12 +30,34 @@ class AppEpics implements EpicClass<AppState> {
       return Stream<void>.value(null).asyncMap((_) async {
         final List<Movie> response = await moviesApi.getMovies(
           page: action.page,
+          genre: action.genre,
         );
 
         return response;
       }).map<GetMovies>((List<Movie> movies) {
-        return GetMoviesSuccessful(movies);
+        return GetMoviesSuccessful(
+          movies: movies,
+          genre: action.genre,
+        );
       }).onErrorReturnWith(GetMoviesError.new);
+    });
+  }
+
+  Stream<AppAction> _getMoreMovies(Stream<GetMoreMoviesStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GetMoreMoviesStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        final List<Movie> response = await moviesApi.getMovies(
+          page: action.page,
+          genre: action.genre,
+        );
+
+        return response;
+      }).map<GetMoreMovies>((List<Movie> movies) {
+        return GetMoreMoviesSuccessful(
+          movies: movies,
+          genre: action.genre,
+        );
+      }).onErrorReturnWith(GetMoreMoviesError.new);
     });
   }
 

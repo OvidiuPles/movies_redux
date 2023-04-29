@@ -6,6 +6,7 @@ import 'package:movies_redux/src/models/index.dart';
 part 'index.freezed.dart';
 part 'movies/get_movies.dart';
 part 'movies/get_description.dart';
+part 'movies/get_more_movies.dart';
 
 abstract class AppAction {}
 

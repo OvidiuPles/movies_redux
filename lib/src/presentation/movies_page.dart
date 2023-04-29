@@ -6,6 +6,7 @@ import 'package:movies_redux/src/presentation/movies_list.dart';
 
 class MoviesPage extends StatefulWidget {
   const MoviesPage({super.key});
+
   static int page = 1;
 
   @override
@@ -21,8 +22,10 @@ class _MoviesPageState extends State<MoviesPage> {
 
   @override
   Widget build(BuildContext context) {
-    StoreProvider.of<AppState>(context).dispatch(GetMoviesStart(page: MoviesPage.page));
-    MoviesPage.page++;
+    StoreProvider.of<AppState>(context).dispatch(
+      GetMoviesStart(page: MoviesPage.page),
+    );
+    //MoviesPage.page++;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Movies'),
@@ -61,6 +64,7 @@ class _MoviesPageState extends State<MoviesPage> {
                   onChanged: (String? selection) {
                     setState(() {
                       quality = selection;
+
                       MoviesPage.page = 1;
                     });
                   },
@@ -104,10 +108,12 @@ class _MoviesPageState extends State<MoviesPage> {
                     ),
                   ],
                   onChanged: (String? selection) {
-                    setState(() {
-                      genre = selection;
-                      MoviesPage.page = 1;
-                    });
+                      StoreProvider.of<AppState>(context).dispatch(
+                        GetMoviesStart(
+                          page: MoviesPage.page,
+                          genre: selection,
+                        ),
+                      );
                   },
                 ),
                 DropdownButton<String>(
