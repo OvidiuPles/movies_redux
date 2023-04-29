@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/containers/movies_container.dart';
 import 'package:movies_redux/src/models/index.dart';
+import 'package:movies_redux/src/presentation/description_text.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({super.key});
@@ -53,10 +56,43 @@ class MoviesList extends StatelessWidget {
                     ),
                   ],
                 ),
-                onTap: () async {},
+                onTap: () {
+                  StoreProvider.of<AppState>(context).dispatch(GetDescriptionStart(id: movie.id));
+                  showDescription(context);
+                },
               ),
             );
           },
+        );
+      },
+    );
+  }
+
+  void showDescription(BuildContext context) {
+    showDialog<Widget>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          title: const Text(
+            'asdasd',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 26),
+          ),
+          content: const DescriptionText(),
+          actions: <TextButton>[
+            TextButton(
+              child: const Center(
+                child: Text(
+                  'Close',
+                  style: TextStyle(color: Colors.cyan),
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
         );
       },
     );

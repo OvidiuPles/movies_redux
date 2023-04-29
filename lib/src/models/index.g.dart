@@ -23,7 +23,7 @@ Map<String, dynamic> _$$Movie$ToJson(_$Movie$ instance) => <String, dynamic>{
     };
 
 _$Description$ _$$Description$FromJson(Map<String, dynamic> json) => _$Description$(
-      description: json['description_intro'] as String?,
+      description: json['description_intro'] as String? ?? 'No description available',
     );
 
 Map<String, dynamic> _$$Description$ToJson(_$Description$ instance) => <String, dynamic>{

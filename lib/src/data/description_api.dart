@@ -7,7 +7,7 @@ class DescriptionApi {
 
   final Client _client;
 
-  Future<String?> getDescription({int? id}) async {
+  Future<String> getDescription({int? id}) async {
     final Uri url = Uri.https(
       'yts.mx',
       'api/v2/movie_details.json',

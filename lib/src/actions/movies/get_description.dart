@@ -12,7 +12,7 @@ class GetDescription with _$GetDescription implements AppAction {
 
   @Implements<ActionDone>()
   const factory GetDescription.successful([
-    String? description,
+    @Default('No description available') String description,
     @Default(_kGetDescriptionPendingId) String pendingId,
   ]) = GetDescriptionSuccessful;
 

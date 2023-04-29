@@ -41,12 +41,12 @@ class AppEpics implements EpicClass<AppState> {
   Stream<AppAction> _getDescription(Stream<GetDescriptionStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetDescriptionStart action) {
       return Stream<void>.value(null).asyncMap((_) async {
-        final String? response = await descriptionApi.getDescription(
+        final String response = await descriptionApi.getDescription(
           id: action.id,
         );
 
         return response;
-      }).map<GetDescription>((String? description) {
+      }).map<GetDescription>((String description) {
         return GetDescriptionSuccessful(description);
       }).onErrorReturnWith(GetDescriptionError.new);
     });

@@ -493,7 +493,7 @@ Description _$DescriptionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Description {
   @JsonKey(name: 'description_intro')
-  String? get description => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -505,7 +505,7 @@ abstract class $DescriptionCopyWith<$Res> {
   factory $DescriptionCopyWith(Description value, $Res Function(Description) then) =
       _$DescriptionCopyWithImpl<$Res, Description>;
   @useResult
-  $Res call({@JsonKey(name: 'description_intro') String? description});
+  $Res call({@JsonKey(name: 'description_intro') String description});
 }
 
 /// @nodoc
@@ -520,13 +520,13 @@ class _$DescriptionCopyWithImpl<$Res, $Val extends Description> implements $Desc
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -537,7 +537,7 @@ abstract class _$$Description$CopyWith<$Res> implements $DescriptionCopyWith<$Re
       __$$Description$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'description_intro') String? description});
+  $Res call({@JsonKey(name: 'description_intro') String description});
 }
 
 /// @nodoc
@@ -548,13 +548,13 @@ class __$$Description$CopyWithImpl<$Res> extends _$DescriptionCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
+    Object? description = null,
   }) {
     return _then(_$Description$(
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -562,13 +562,13 @@ class __$$Description$CopyWithImpl<$Res> extends _$DescriptionCopyWithImpl<$Res,
 /// @nodoc
 @JsonSerializable()
 class _$Description$ implements Description$ {
-  const _$Description$({@JsonKey(name: 'description_intro') this.description});
+  const _$Description$({@JsonKey(name: 'description_intro') this.description = 'No description available'});
 
   factory _$Description$.fromJson(Map<String, dynamic> json) => _$$Description$FromJson(json);
 
   @override
   @JsonKey(name: 'description_intro')
-  final String? description;
+  final String description;
 
   @override
   String toString() {
@@ -602,13 +602,13 @@ class _$Description$ implements Description$ {
 }
 
 abstract class Description$ implements Description {
-  const factory Description$({@JsonKey(name: 'description_intro') final String? description}) = _$Description$;
+  const factory Description$({@JsonKey(name: 'description_intro') final String description}) = _$Description$;
 
   factory Description$.fromJson(Map<String, dynamic> json) = _$Description$.fromJson;
 
   @override
   @JsonKey(name: 'description_intro')
-  String? get description;
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$$Description$CopyWith<_$Description$> get copyWith => throw _privateConstructorUsedError;
