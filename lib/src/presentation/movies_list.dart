@@ -4,6 +4,7 @@ import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/containers/movies_container.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:movies_redux/src/presentation/description_text.dart';
+import 'package:movies_redux/src/presentation/movies_page.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({super.key});
@@ -17,6 +18,16 @@ class MoviesList extends StatelessWidget {
           shrinkWrap: true,
           itemCount: movies.length,
           itemBuilder: (BuildContext context, int index) {
+            if (index == movies.length - 1) {
+              return TextButton(
+                onPressed: () {
+                  StoreProvider.of<AppState>(context).dispatch(GetMoviesStart(page: MoviesPage.page));
+                  MoviesPage.page++;
+                },
+                child: const Text('Mai multe filme'),
+              );
+            }
+
             final Movie movie = movies[index];
 
             return Card(
