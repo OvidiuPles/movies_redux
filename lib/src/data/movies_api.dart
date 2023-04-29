@@ -11,13 +11,20 @@ class MoviesApi {
   Future<List<Movie>> getMovies({
     int? page,
     String? genre,
+    String? quality,
+    String? sortBy,
+    String? orderBy,
   }) async {
     final Uri url = Uri.https(
       'yts.mx',
       'api/v2/list_movies.json',
       <String, dynamic>{
+        'limit': '6',
         'page': '$page',
         'genre': genre,
+        'quality': quality,
+        'sort_by': sortBy,
+        'order_by': orderBy,
       },
     );
 

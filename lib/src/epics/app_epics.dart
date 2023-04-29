@@ -22,6 +22,7 @@ class AppEpics implements EpicClass<AppState> {
       TypedEpic<AppState, GetMoviesStart>(_getMovies),
       TypedEpic<AppState, GetMoreMoviesStart>(_getMoreMovies),
       TypedEpic<AppState, GetDescriptionStart>(_getDescription),
+      TypedEpic<AppState, ResetFiltersStart>(_resetFilters),
     ])(actions, store);
   }
 
@@ -31,6 +32,9 @@ class AppEpics implements EpicClass<AppState> {
         final List<Movie> response = await moviesApi.getMovies(
           page: action.page,
           genre: action.genre,
+          quality: action.quality,
+          sortBy: action.sortBy,
+          orderBy: action.orderBy,
         );
 
         return response;
@@ -38,6 +42,9 @@ class AppEpics implements EpicClass<AppState> {
         return GetMoviesSuccessful(
           movies: movies,
           genre: action.genre,
+          quality: action.quality,
+          sortBy: action.sortBy,
+          orderBy: action.orderBy,
         );
       }).onErrorReturnWith(GetMoviesError.new);
     });
@@ -49,6 +56,9 @@ class AppEpics implements EpicClass<AppState> {
         final List<Movie> response = await moviesApi.getMovies(
           page: action.page,
           genre: action.genre,
+          quality: action.quality,
+          sortBy: action.sortBy,
+          orderBy: action.orderBy,
         );
 
         return response;
@@ -56,6 +66,9 @@ class AppEpics implements EpicClass<AppState> {
         return GetMoreMoviesSuccessful(
           movies: movies,
           genre: action.genre,
+          quality: action.quality,
+          sortBy: action.sortBy,
+          orderBy: action.orderBy,
         );
       }).onErrorReturnWith(GetMoreMoviesError.new);
     });
@@ -72,6 +85,21 @@ class AppEpics implements EpicClass<AppState> {
       }).map<GetDescription>((String description) {
         return GetDescriptionSuccessful(description);
       }).onErrorReturnWith(GetDescriptionError.new);
+    });
+  }
+
+  Stream<AppAction> _resetFilters(Stream<ResetFiltersStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ResetFiltersStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        return true;
+      }).map<ResetFilters>((_) {
+        return const ResetFiltersSuccessful(
+          quality: 'All',
+          sortBy: 'date_added',
+          genre: '',
+          orderBy: '',
+        );
+      }).onErrorReturnWith(ResetFiltersError.new);
     });
   }
 }

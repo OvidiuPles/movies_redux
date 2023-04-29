@@ -5,12 +5,16 @@ import 'package:redux/redux.dart';
 Reducer<MoviesState> moviesReducer = combineReducers(<Reducer<MoviesState>>[
   TypedReducer<MoviesState, GetMoviesSuccessful>(_getMoviesSuccessful),
   TypedReducer<MoviesState, GetMoreMoviesSuccessful>(_getMoreMoviesSuccessful),
+  TypedReducer<MoviesState, ResetFiltersSuccessful>(_resetFiltersSuccessful),
 ]);
 
 MoviesState _getMoviesSuccessful(MoviesState state, GetMoviesSuccessful action) {
   return state.copyWith(
     movies: action.movies,
     genre: action.genre,
+    quality: action.quality,
+    sortBy: action.sortBy,
+    orderBy: action.orderBy,
   );
 }
 
@@ -18,5 +22,17 @@ MoviesState _getMoreMoviesSuccessful(MoviesState state, GetMoreMoviesSuccessful 
   return state.copyWith(
     movies: <Movie>[...state.movies, ...action.movies],
     genre: action.genre,
+    quality: action.quality,
+    sortBy: action.sortBy,
+    orderBy: action.orderBy,
+  );
+}
+
+MoviesState _resetFiltersSuccessful(MoviesState state, ResetFiltersSuccessful action) {
+  return state.copyWith(
+    genre: action.genre,
+    quality: action.quality,
+    sortBy: action.sortBy,
+    orderBy: action.orderBy,
   );
 }
