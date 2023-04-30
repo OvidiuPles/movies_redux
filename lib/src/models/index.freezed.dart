@@ -378,6 +378,7 @@ mixin _$MoviesState {
   String? get genre => throw _privateConstructorUsedError;
   String? get sortBy => throw _privateConstructorUsedError;
   String? get orderBy => throw _privateConstructorUsedError;
+  String? get searchText => throw _privateConstructorUsedError;
   List<Movie> get movies => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -389,7 +390,7 @@ abstract class $MoviesStateCopyWith<$Res> {
   factory $MoviesStateCopyWith(MoviesState value, $Res Function(MoviesState) then) =
       _$MoviesStateCopyWithImpl<$Res, MoviesState>;
   @useResult
-  $Res call({String? quality, String? genre, String? sortBy, String? orderBy, List<Movie> movies});
+  $Res call({String? quality, String? genre, String? sortBy, String? orderBy, String? searchText, List<Movie> movies});
 }
 
 /// @nodoc
@@ -408,6 +409,7 @@ class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState> implements $Movi
     Object? genre = freezed,
     Object? sortBy = freezed,
     Object? orderBy = freezed,
+    Object? searchText = freezed,
     Object? movies = null,
   }) {
     return _then(_value.copyWith(
@@ -427,6 +429,10 @@ class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState> implements $Movi
           ? _value.orderBy
           : orderBy // ignore: cast_nullable_to_non_nullable
               as String?,
+      searchText: freezed == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String?,
       movies: null == movies
           ? _value.movies
           : movies // ignore: cast_nullable_to_non_nullable
@@ -441,7 +447,7 @@ abstract class _$$MoviesState$CopyWith<$Res> implements $MoviesStateCopyWith<$Re
       __$$MoviesState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? quality, String? genre, String? sortBy, String? orderBy, List<Movie> movies});
+  $Res call({String? quality, String? genre, String? sortBy, String? orderBy, String? searchText, List<Movie> movies});
 }
 
 /// @nodoc
@@ -456,6 +462,7 @@ class __$$MoviesState$CopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res,
     Object? genre = freezed,
     Object? sortBy = freezed,
     Object? orderBy = freezed,
+    Object? searchText = freezed,
     Object? movies = null,
   }) {
     return _then(_$MoviesState$(
@@ -475,6 +482,10 @@ class __$$MoviesState$CopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res,
           ? _value.orderBy
           : orderBy // ignore: cast_nullable_to_non_nullable
               as String?,
+      searchText: freezed == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String?,
       movies: null == movies
           ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
@@ -487,7 +498,12 @@ class __$$MoviesState$CopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res,
 
 class _$MoviesState$ implements MoviesState$ {
   const _$MoviesState$(
-      {this.quality, this.genre, this.sortBy, this.orderBy, final List<Movie> movies = const <Movie>[]})
+      {this.quality,
+      this.genre,
+      this.sortBy,
+      this.orderBy,
+      this.searchText,
+      final List<Movie> movies = const <Movie>[]})
       : _movies = movies;
 
   @override
@@ -498,6 +514,8 @@ class _$MoviesState$ implements MoviesState$ {
   final String? sortBy;
   @override
   final String? orderBy;
+  @override
+  final String? searchText;
   final List<Movie> _movies;
   @override
   @JsonKey()
@@ -509,7 +527,7 @@ class _$MoviesState$ implements MoviesState$ {
 
   @override
   String toString() {
-    return 'MoviesState(quality: $quality, genre: $genre, sortBy: $sortBy, orderBy: $orderBy, movies: $movies)';
+    return 'MoviesState(quality: $quality, genre: $genre, sortBy: $sortBy, orderBy: $orderBy, searchText: $searchText, movies: $movies)';
   }
 
   @override
@@ -521,12 +539,13 @@ class _$MoviesState$ implements MoviesState$ {
             (identical(other.genre, genre) || other.genre == genre) &&
             (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
             (identical(other.orderBy, orderBy) || other.orderBy == orderBy) &&
+            (identical(other.searchText, searchText) || other.searchText == searchText) &&
             const DeepCollectionEquality().equals(other._movies, _movies));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, quality, genre, sortBy, orderBy, const DeepCollectionEquality().hash(_movies));
+  int get hashCode => Object.hash(
+      runtimeType, quality, genre, sortBy, orderBy, searchText, const DeepCollectionEquality().hash(_movies));
 
   @JsonKey(ignore: true)
   @override
@@ -541,6 +560,7 @@ abstract class MoviesState$ implements MoviesState {
       final String? genre,
       final String? sortBy,
       final String? orderBy,
+      final String? searchText,
       final List<Movie> movies}) = _$MoviesState$;
 
   @override
@@ -551,6 +571,8 @@ abstract class MoviesState$ implements MoviesState {
   String? get sortBy;
   @override
   String? get orderBy;
+  @override
+  String? get searchText;
   @override
   List<Movie> get movies;
   @override

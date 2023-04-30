@@ -14,6 +14,7 @@ class MoviesApi {
     String? quality,
     String? sortBy,
     String? orderBy,
+    String? searchText,
   }) async {
     final Uri url = Uri.https(
       'yts.mx',
@@ -25,6 +26,7 @@ class MoviesApi {
         'quality': quality,
         'sort_by': sortBy,
         'order_by': orderBy,
+        'query_term': searchText,
       },
     );
 

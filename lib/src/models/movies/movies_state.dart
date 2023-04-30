@@ -7,6 +7,7 @@ class MoviesState with _$MoviesState {
     String? genre,
     String? sortBy,
     String? orderBy,
+    String? searchText,
     @Default(<Movie>[]) List<Movie> movies,
   }) = MoviesState$;
 }

@@ -35,6 +35,7 @@ class AppEpics implements EpicClass<AppState> {
           quality: action.quality,
           sortBy: action.sortBy,
           orderBy: action.orderBy,
+          searchText: action.searchText,
         );
 
         return response;
@@ -45,6 +46,7 @@ class AppEpics implements EpicClass<AppState> {
           quality: action.quality,
           sortBy: action.sortBy,
           orderBy: action.orderBy,
+          searchText: action.searchText,
         );
       }).onErrorReturnWith(GetMoviesError.new);
     });
@@ -59,6 +61,7 @@ class AppEpics implements EpicClass<AppState> {
           quality: action.quality,
           sortBy: action.sortBy,
           orderBy: action.orderBy,
+          searchText: action.searchText,
         );
 
         return response;
@@ -69,6 +72,7 @@ class AppEpics implements EpicClass<AppState> {
           quality: action.quality,
           sortBy: action.sortBy,
           orderBy: action.orderBy,
+          searchText: action.searchText,
         );
       }).onErrorReturnWith(GetMoreMoviesError.new);
     });

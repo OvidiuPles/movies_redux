@@ -50,6 +50,7 @@ class MoviesList extends StatelessWidget {
                           quality: selection,
                           sortBy: moviesState.sortBy,
                           orderBy: moviesState.orderBy,
+                          searchText: moviesState.searchText,
                         ),
                       );
                     },
@@ -100,6 +101,7 @@ class MoviesList extends StatelessWidget {
                           quality: moviesState.quality,
                           sortBy: moviesState.sortBy,
                           orderBy: moviesState.orderBy,
+                          searchText: moviesState.searchText,
                         ),
                       );
                     },
@@ -130,6 +132,7 @@ class MoviesList extends StatelessWidget {
                           quality: moviesState.quality,
                           sortBy: 'rating',
                           orderBy: selection,
+                          searchText: moviesState.searchText,
                         ),
                       );
                     },
@@ -138,7 +141,12 @@ class MoviesList extends StatelessWidget {
                     //resets filters
                     onPressed: () {
                       StoreProvider.of<AppState>(context).dispatch(const ResetFiltersStart());
-                      StoreProvider.of<AppState>(context).dispatch(GetMoviesStart(page: MoviesPage.page));
+                      StoreProvider.of<AppState>(context).dispatch(
+                        GetMoviesStart(
+                          page: MoviesPage.page,
+                          searchText: moviesState.searchText,
+                        ),
+                      );
                     },
                     child: const Text(
                       'Reset',
@@ -159,7 +167,15 @@ class MoviesList extends StatelessWidget {
                   ),
                   filled: true,
                 ),
-                onSubmitted: (String text) {},
+                onSubmitted: (String text) {
+                  StoreProvider.of<AppState>(context).dispatch(
+                    GetMoviesStart(
+                      quality: moviesState.quality,
+                      genre: moviesState.genre,
+                      searchText: text,
+                    ),
+                  );
+                },
               ),
             ),
             Expanded(
@@ -176,6 +192,7 @@ class MoviesList extends StatelessWidget {
                             page: MoviesPage.page,
                             genre: moviesState.genre,
                             quality: moviesState.quality,
+                            searchText: moviesState.searchText,
                           ),
                         );
                       },

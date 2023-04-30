@@ -15,6 +15,7 @@ MoviesState _getMoviesSuccessful(MoviesState state, GetMoviesSuccessful action) 
     quality: action.quality,
     sortBy: action.sortBy,
     orderBy: action.orderBy,
+    searchText: action.searchText,
   );
 }
 
@@ -25,6 +26,7 @@ MoviesState _getMoreMoviesSuccessful(MoviesState state, GetMoreMoviesSuccessful 
     quality: action.quality,
     sortBy: action.sortBy,
     orderBy: action.orderBy,
+    searchText: action.searchText,
   );
 }
 

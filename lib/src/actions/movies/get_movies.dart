@@ -11,6 +11,7 @@ class GetMovies with _$GetMovies implements AppAction {
     @Default('') String? orderBy,
     @Default('All') String? quality,
     @Default('') String? genre,
+    @Default('0') String? searchText,
     @Default(_kGetMoviesPendingId) String pendingId,
   }) = GetMoviesStart;
 
@@ -20,6 +21,7 @@ class GetMovies with _$GetMovies implements AppAction {
     String? orderBy,
     String? quality,
     String? genre,
+    String? searchText,
     @Default(<Movie>[]) List<Movie> movies,
     @Default(_kGetMoviesPendingId) String pendingId,
   }) = GetMoviesSuccessful;
