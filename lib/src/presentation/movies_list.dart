@@ -173,6 +173,8 @@ class MoviesList extends StatelessWidget {
                       quality: moviesState.quality,
                       genre: moviesState.genre,
                       searchText: text,
+                      sortBy: moviesState.sortBy,
+                      orderBy: moviesState.orderBy,
                     ),
                   );
                 },
