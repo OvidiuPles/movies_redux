@@ -2445,15 +2445,23 @@ class __$$ResetFiltersSuccessfulCopyWithImpl<$Res> extends _$ResetFiltersCopyWit
 
 class _$ResetFiltersSuccessful implements ResetFiltersSuccessful {
   const _$ResetFiltersSuccessful(
-      {this.sortBy, this.orderBy, this.quality, this.genre, this.pendingId = _kResetFiltersPendingId});
+      {this.sortBy = 'date_added',
+      this.orderBy = '',
+      this.quality = 'All',
+      this.genre = '',
+      this.pendingId = _kResetFiltersPendingId});
 
   @override
+  @JsonKey()
   final String? sortBy;
   @override
+  @JsonKey()
   final String? orderBy;
   @override
+  @JsonKey()
   final String? quality;
   @override
+  @JsonKey()
   final String? genre;
   @override
   @JsonKey()

@@ -108,12 +108,7 @@ class AppEpics implements EpicClass<AppState> {
       return Stream<void>.value(null).asyncMap((_) async {
         return true;
       }).map<ResetFilters>((_) {
-        return const ResetFiltersSuccessful(
-          quality: 'All',
-          sortBy: 'date_added',
-          genre: '',
-          orderBy: '',
-        );
+        return const ResetFiltersSuccessful();
       }).onErrorReturnWith(ResetFiltersError.new);
     });
   }

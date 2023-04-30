@@ -11,10 +11,10 @@ class ResetFilters with _$ResetFilters implements AppAction {
 
   @Implements<ActionDone>()
   const factory ResetFilters.successful({
-    String? sortBy,
-    String? orderBy,
-    String? quality,
-    String? genre,
+    @Default('date_added') String? sortBy,
+    @Default('') String? orderBy,
+    @Default('All') String? quality,
+    @Default('') String? genre,
     @Default(_kResetFiltersPendingId) String pendingId,
   }) = ResetFiltersSuccessful;
 
