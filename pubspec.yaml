@@ -30,4 +30,7 @@ dev_dependencies:
   very_good_analysis: ^4.0.0+1
 
 flutter:
+  assets:
+    - assets/
+
   uses-material-design: true
