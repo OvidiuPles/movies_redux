@@ -31,9 +31,14 @@ class GetMovies with _$GetMovies implements AppAction {
   @Implements<ErrorAction>()
   const factory GetMovies.error(
     Object error,
-    StackTrace stackTrace, [
+    StackTrace stackTrace, {
+    String? sortBy,
+    String? orderBy,
+    String? quality,
+    String? genre,
     @Default(_kGetMoviesPendingId) String pendingId,
-  ]) = GetMoviesError;
+    @Default(<Movie>[]) List<Movie> movies,
+  }) = GetMoviesError;
 
   static String get pendingKey => _kGetMoviesPendingId;
 }

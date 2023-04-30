@@ -4,7 +4,6 @@ import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/containers/movies_container.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:movies_redux/src/presentation/description_text.dart';
-import 'package:movies_redux/src/presentation/movies_page.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({super.key});
@@ -45,7 +44,6 @@ class MoviesList extends StatelessWidget {
                     onChanged: (String? selection) {
                       StoreProvider.of<AppState>(context).dispatch(
                         GetMoviesStart(
-                          page: MoviesPage.page,
                           genre: moviesState.genre,
                           quality: selection,
                           sortBy: moviesState.sortBy,
@@ -96,7 +94,6 @@ class MoviesList extends StatelessWidget {
                     onChanged: (String? selection) {
                       StoreProvider.of<AppState>(context).dispatch(
                         GetMoviesStart(
-                          page: MoviesPage.page,
                           genre: selection,
                           quality: moviesState.quality,
                           sortBy: moviesState.sortBy,
@@ -127,7 +124,6 @@ class MoviesList extends StatelessWidget {
                     onChanged: (String? selection) {
                       StoreProvider.of<AppState>(context).dispatch(
                         GetMoviesStart(
-                          page: MoviesPage.page,
                           genre: moviesState.genre,
                           quality: moviesState.quality,
                           sortBy: 'rating',
@@ -143,7 +139,6 @@ class MoviesList extends StatelessWidget {
                       StoreProvider.of<AppState>(context).dispatch(const ResetFiltersStart());
                       StoreProvider.of<AppState>(context).dispatch(
                         GetMoviesStart(
-                          page: MoviesPage.page,
                           searchText: moviesState.searchText,
                         ),
                       );
@@ -261,9 +256,6 @@ class MoviesList extends StatelessWidget {
   }
 
   void showDescription({required BuildContext context, required Movie movie}) {
-    //final DescriptionText descriptionText = DescriptionText();
-    //final String description = '$descriptionText\n\n\nRelease year: ${movie.year}\n\nIMDb rating: ${movie.rating}';
-
     showDialog<Widget>(
       context: context,
       builder: (BuildContext context) {

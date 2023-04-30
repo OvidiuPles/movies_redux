@@ -7,8 +7,6 @@ import 'package:movies_redux/src/presentation/movies_list.dart';
 class MoviesPage extends StatefulWidget {
   const MoviesPage({super.key});
 
-  static int page = 1;
-
   @override
   State<MoviesPage> createState() => _MoviesPageState();
 }
@@ -16,7 +14,7 @@ class MoviesPage extends StatefulWidget {
 class _MoviesPageState extends State<MoviesPage> {
   @override
   Widget build(BuildContext context) {
-    StoreProvider.of<AppState>(context).dispatch(GetMoviesStart(page: MoviesPage.page));
+    StoreProvider.of<AppState>(context).dispatch(const GetMoviesStart(page: 1));
     return Scaffold(
       appBar: AppBar(
         title: const Text('Movies'),

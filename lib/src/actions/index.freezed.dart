@@ -16,6 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GetMovies {
+  String? get sortBy => throw _privateConstructorUsedError;
+  String? get orderBy => throw _privateConstructorUsedError;
+  String? get quality => throw _privateConstructorUsedError;
+  String? get genre => throw _privateConstructorUsedError;
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -25,7 +29,9 @@ mixin _$GetMovies {
     required TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre,
             String? searchText, List<Movie> movies, String pendingId)
         successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,7 +42,9 @@ mixin _$GetMovies {
     TResult? Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult? Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,7 +55,9 @@ mixin _$GetMovies {
     TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,7 +92,7 @@ mixin _$GetMovies {
 abstract class $GetMoviesCopyWith<$Res> {
   factory $GetMoviesCopyWith(GetMovies value, $Res Function(GetMovies) then) = _$GetMoviesCopyWithImpl<$Res, GetMovies>;
   @useResult
-  $Res call({String pendingId});
+  $Res call({String? sortBy, String? orderBy, String? quality, String? genre, String pendingId});
 }
 
 /// @nodoc
@@ -97,9 +107,29 @@ class _$GetMoviesCopyWithImpl<$Res, $Val extends GetMovies> implements $GetMovie
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? sortBy = freezed,
+    Object? orderBy = freezed,
+    Object? quality = freezed,
+    Object? genre = freezed,
     Object? pendingId = null,
   }) {
     return _then(_value.copyWith(
+      sortBy: freezed == sortBy
+          ? _value.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      orderBy: freezed == orderBy
+          ? _value.orderBy
+          : orderBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quality: freezed == quality
+          ? _value.quality
+          : quality // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genre: freezed == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String?,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -244,7 +274,9 @@ class _$GetMoviesStart implements GetMoviesStart {
     required TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre,
             String? searchText, List<Movie> movies, String pendingId)
         successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)
+        error,
   }) {
     return start(page, sortBy, orderBy, quality, genre, searchText, pendingId);
   }
@@ -258,7 +290,9 @@ class _$GetMoviesStart implements GetMoviesStart {
     TResult? Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult? Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
   }) {
     return start?.call(page, sortBy, orderBy, quality, genre, searchText, pendingId);
   }
@@ -272,7 +306,9 @@ class _$GetMoviesStart implements GetMoviesStart {
     TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -327,9 +363,13 @@ abstract class GetMoviesStart implements GetMovies, ActionStart {
       final String pendingId}) = _$GetMoviesStart;
 
   int? get page;
+  @override
   String? get sortBy;
+  @override
   String? get orderBy;
+  @override
   String? get quality;
+  @override
   String? get genre;
   String? get searchText;
   @override
@@ -489,7 +529,9 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
     required TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre,
             String? searchText, List<Movie> movies, String pendingId)
         successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)
+        error,
   }) {
     return successful(page, sortBy, orderBy, quality, genre, searchText, movies, pendingId);
   }
@@ -503,7 +545,9 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
     TResult? Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult? Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
   }) {
     return successful?.call(page, sortBy, orderBy, quality, genre, searchText, movies, pendingId);
   }
@@ -517,7 +561,9 @@ class _$GetMoviesSuccessful implements GetMoviesSuccessful {
     TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -573,9 +619,13 @@ abstract class GetMoviesSuccessful implements GetMovies, ActionDone {
       final String pendingId}) = _$GetMoviesSuccessful;
 
   int? get page;
+  @override
   String? get sortBy;
+  @override
   String? get orderBy;
+  @override
   String? get quality;
+  @override
   String? get genre;
   String? get searchText;
   List<Movie> get movies;
@@ -592,7 +642,15 @@ abstract class _$$GetMoviesErrorCopyWith<$Res> implements $GetMoviesCopyWith<$Re
       __$$GetMoviesErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Object error, StackTrace stackTrace, String pendingId});
+  $Res call(
+      {Object error,
+      StackTrace stackTrace,
+      String? sortBy,
+      String? orderBy,
+      String? quality,
+      String? genre,
+      String pendingId,
+      List<Movie> movies});
 }
 
 /// @nodoc
@@ -605,7 +663,12 @@ class __$$GetMoviesErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res,
   $Res call({
     Object? error = null,
     Object? stackTrace = null,
+    Object? sortBy = freezed,
+    Object? orderBy = freezed,
+    Object? quality = freezed,
+    Object? genre = freezed,
     Object? pendingId = null,
+    Object? movies = null,
   }) {
     return _then(_$GetMoviesError(
       null == error ? _value.error : error,
@@ -613,10 +676,30 @@ class __$$GetMoviesErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res,
           ? _value.stackTrace
           : stackTrace // ignore: cast_nullable_to_non_nullable
               as StackTrace,
-      null == pendingId
+      sortBy: freezed == sortBy
+          ? _value.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      orderBy: freezed == orderBy
+          ? _value.orderBy
+          : orderBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quality: freezed == quality
+          ? _value.quality
+          : quality // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genre: freezed == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
+      movies: null == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
     ));
   }
 }
@@ -624,19 +707,42 @@ class __$$GetMoviesErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res,
 /// @nodoc
 
 class _$GetMoviesError implements GetMoviesError {
-  const _$GetMoviesError(this.error, this.stackTrace, [this.pendingId = _kGetMoviesPendingId]);
+  const _$GetMoviesError(this.error, this.stackTrace,
+      {this.sortBy,
+      this.orderBy,
+      this.quality,
+      this.genre,
+      this.pendingId = _kGetMoviesPendingId,
+      final List<Movie> movies = const <Movie>[]})
+      : _movies = movies;
 
   @override
   final Object error;
   @override
   final StackTrace stackTrace;
   @override
+  final String? sortBy;
+  @override
+  final String? orderBy;
+  @override
+  final String? quality;
+  @override
+  final String? genre;
+  @override
   @JsonKey()
   final String pendingId;
+  final List<Movie> _movies;
+  @override
+  @JsonKey()
+  List<Movie> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
 
   @override
   String toString() {
-    return 'GetMovies.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+    return 'GetMovies.error(error: $error, stackTrace: $stackTrace, sortBy: $sortBy, orderBy: $orderBy, quality: $quality, genre: $genre, pendingId: $pendingId, movies: $movies)';
   }
 
   @override
@@ -646,11 +752,17 @@ class _$GetMoviesError implements GetMoviesError {
             other is _$GetMoviesError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.orderBy, orderBy) || other.orderBy == orderBy) &&
+            (identical(other.quality, quality) || other.quality == quality) &&
+            (identical(other.genre, genre) || other.genre == genre) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId) &&
+            const DeepCollectionEquality().equals(other._movies, _movies));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, sortBy, orderBy,
+      quality, genre, pendingId, const DeepCollectionEquality().hash(_movies));
 
   @JsonKey(ignore: true)
   @override
@@ -667,9 +779,11 @@ class _$GetMoviesError implements GetMoviesError {
     required TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre,
             String? searchText, List<Movie> movies, String pendingId)
         successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)
+        error,
   }) {
-    return error(this.error, stackTrace, pendingId);
+    return error(this.error, stackTrace, sortBy, orderBy, quality, genre, pendingId, movies);
   }
 
   @override
@@ -681,9 +795,11 @@ class _$GetMoviesError implements GetMoviesError {
     TResult? Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult? Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
   }) {
-    return error?.call(this.error, stackTrace, pendingId);
+    return error?.call(this.error, stackTrace, sortBy, orderBy, quality, genre, pendingId, movies);
   }
 
   @override
@@ -695,11 +811,13 @@ class _$GetMoviesError implements GetMoviesError {
     TResult Function(int? page, String? sortBy, String? orderBy, String? quality, String? genre, String? searchText,
             List<Movie> movies, String pendingId)?
         successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String? sortBy, String? orderBy, String? quality,
+            String? genre, String pendingId, List<Movie> movies)?
+        error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error, stackTrace, pendingId);
+      return error(this.error, stackTrace, sortBy, orderBy, quality, genre, pendingId, movies);
     }
     return orElse();
   }
@@ -740,13 +858,27 @@ class _$GetMoviesError implements GetMoviesError {
 }
 
 abstract class GetMoviesError implements GetMovies, ActionDone, ErrorAction {
-  const factory GetMoviesError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
-      _$GetMoviesError;
+  const factory GetMoviesError(final Object error, final StackTrace stackTrace,
+      {final String? sortBy,
+      final String? orderBy,
+      final String? quality,
+      final String? genre,
+      final String pendingId,
+      final List<Movie> movies}) = _$GetMoviesError;
 
   Object get error;
   StackTrace get stackTrace;
   @override
+  String? get sortBy;
+  @override
+  String? get orderBy;
+  @override
+  String? get quality;
+  @override
+  String? get genre;
+  @override
   String get pendingId;
+  List<Movie> get movies;
   @override
   @JsonKey(ignore: true)
   _$$GetMoviesErrorCopyWith<_$GetMoviesError> get copyWith => throw _privateConstructorUsedError;

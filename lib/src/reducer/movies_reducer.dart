@@ -6,6 +6,7 @@ Reducer<MoviesState> moviesReducer = combineReducers(<Reducer<MoviesState>>[
   TypedReducer<MoviesState, GetMoviesSuccessful>(_getMoviesSuccessful),
   TypedReducer<MoviesState, GetMoreMoviesSuccessful>(_getMoreMoviesSuccessful),
   TypedReducer<MoviesState, ResetFiltersSuccessful>(_resetFiltersSuccessful),
+  TypedReducer<MoviesState, GetMoviesError>(_getMoviesError),
 ]);
 
 MoviesState _getMoviesSuccessful(MoviesState state, GetMoviesSuccessful action) {
@@ -40,5 +41,15 @@ MoviesState _resetFiltersSuccessful(MoviesState state, ResetFiltersSuccessful ac
     quality: action.quality,
     sortBy: action.sortBy,
     orderBy: action.orderBy,
+  );
+}
+
+MoviesState _getMoviesError(MoviesState state, GetMoviesError action) {
+  return state.copyWith(
+    movies: action.movies,
+    sortBy: action.sortBy,
+    orderBy: action.orderBy,
+    genre: action.genre,
+    quality: action.quality,
   );
 }

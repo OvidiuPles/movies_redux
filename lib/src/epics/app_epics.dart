@@ -49,7 +49,16 @@ class AppEpics implements EpicClass<AppState> {
           orderBy: action.orderBy,
           searchText: action.searchText,
         );
-      }).onErrorReturnWith(GetMoviesError.new);
+      }).onErrorReturnWith((Object error, StackTrace stackTrace) {
+        return GetMoviesError(
+          error,
+          stackTrace,
+          genre: action.genre,
+          quality: action.quality,
+          sortBy: action.sortBy,
+          orderBy: action.orderBy,
+        );
+      });
     });
   }
 
