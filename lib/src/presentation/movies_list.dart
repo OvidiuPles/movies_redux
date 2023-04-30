@@ -191,10 +191,12 @@ class MoviesList extends StatelessWidget {
                       onPressed: () {
                         StoreProvider.of<AppState>(context).dispatch(
                           GetMoreMoviesStart(
-                            page: MoviesPage.page,
+                            page: moviesState.page,
                             genre: moviesState.genre,
                             quality: moviesState.quality,
                             searchText: moviesState.searchText,
+                            sortBy: moviesState.sortBy,
+                            orderBy: moviesState.orderBy,
                           ),
                         );
                       },

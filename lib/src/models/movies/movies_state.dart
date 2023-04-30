@@ -3,6 +3,7 @@ part of models;
 @freezed
 class MoviesState with _$MoviesState {
   const factory MoviesState({
+    int? page,
     String? quality,
     String? genre,
     String? sortBy,

@@ -42,6 +42,7 @@ class AppEpics implements EpicClass<AppState> {
       }).map<GetMovies>((List<Movie> movies) {
         return GetMoviesSuccessful(
           movies: movies,
+          page: action.page,
           genre: action.genre,
           quality: action.quality,
           sortBy: action.sortBy,
@@ -68,6 +69,7 @@ class AppEpics implements EpicClass<AppState> {
       }).map<GetMoreMovies>((List<Movie> movies) {
         return GetMoreMoviesSuccessful(
           movies: movies,
+          page: action.page,
           genre: action.genre,
           quality: action.quality,
           sortBy: action.sortBy,

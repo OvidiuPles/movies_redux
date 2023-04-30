@@ -6,7 +6,7 @@ const String _kGetMoviesPendingId = 'GetMovies';
 class GetMovies with _$GetMovies implements AppAction {
   @Implements<ActionStart>()
   const factory GetMovies.start({
-    int? page,
+    @Default(1) int? page,
     @Default('date_added') String? sortBy,
     @Default('') String? orderBy,
     @Default('All') String? quality,
@@ -17,6 +17,7 @@ class GetMovies with _$GetMovies implements AppAction {
 
   @Implements<ActionDone>()
   const factory GetMovies.successful({
+    int? page,
     String? sortBy,
     String? orderBy,
     String? quality,

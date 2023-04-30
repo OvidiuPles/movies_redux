@@ -9,8 +9,10 @@ Reducer<MoviesState> moviesReducer = combineReducers(<Reducer<MoviesState>>[
 ]);
 
 MoviesState _getMoviesSuccessful(MoviesState state, GetMoviesSuccessful action) {
+  final int nextPage = action.page! + 1;
   return state.copyWith(
     movies: action.movies,
+    page: nextPage,
     genre: action.genre,
     quality: action.quality,
     sortBy: action.sortBy,
@@ -20,8 +22,10 @@ MoviesState _getMoviesSuccessful(MoviesState state, GetMoviesSuccessful action) 
 }
 
 MoviesState _getMoreMoviesSuccessful(MoviesState state, GetMoreMoviesSuccessful action) {
+  final int nextPage = action.page! + 1;
   return state.copyWith(
     movies: <Movie>[...state.movies, ...action.movies],
+    page: nextPage,
     genre: action.genre,
     quality: action.quality,
     sortBy: action.sortBy,
