@@ -42,15 +42,11 @@ class RegisterPage extends StatelessWidget {
                 ),
                 onPressed: () async {
                   final FirebaseFirestore db = FirebaseFirestore.instance;
-                  try {
-                    await db.collection('users').doc('marian3').set(<String, String>{
-                      'name': 'mariann',
-                      'email': 'johndoe@example.com',
-                    });
-                    print('Data added successfully!');
-                  } catch (e) {
-                    print('Error adding data: $e');
-                  }
+
+                  await db.collection('users').doc('marian3').set(<String, String>{
+                    'name': 'mariann',
+                    'email': 'johndoe@example.com',
+                  });
                 },
               ),
             ),
@@ -69,15 +65,11 @@ class RegisterPage extends StatelessWidget {
                 ),
                 onPressed: () async {
                   final FirebaseFirestore db = FirebaseFirestore.instance;
-                  try {
-                    await db.collection('users').doc('marian3').set(<String, String>{
-                      'name': 'mariann',
-                      'email': 'johndoe@example.com',
-                    });
-                    print('Data added successfully!');
-                  } catch (e) {
-                    print('Error adding data: $e');
-                  }
+
+                  await db.collection('users').doc('marian3').set(<String, String>{
+                    'name': 'mariann',
+                    'email': 'johndoe@example.com',
+                  });
                 },
               ),
             ),

@@ -1,6 +1,5 @@
 class UserModel {
-
-  UserModel({ required this.uid });
+  UserModel({required this.uid});
 
   final String uid;
 }

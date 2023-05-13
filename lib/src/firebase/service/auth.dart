@@ -11,8 +11,7 @@ class AuthService {
 
   // auth change user stream
   Stream<UserModel?>? get user {
-    return _auth.authStateChanges()
-    .map(_userFromFirebaseUser);
+    return _auth.authStateChanges().map(_userFromFirebaseUser);
     //.map((FirebaseUser user) => _userFromFirebaseUser(user));
   }
 
@@ -23,7 +22,6 @@ class AuthService {
       final User? user = result.user;
       return user;
     } catch (e) {
-      print(e.toString());
       return null;
     }
   }

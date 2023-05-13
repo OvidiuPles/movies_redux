@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_redux/src/firebase/service/auth.dart';
 
@@ -22,11 +21,7 @@ class _SignInState extends State<SignIn> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
         child: TextButton(
-          onPressed: () async {
-            final User? result = await auth.signInAnon();
-            print('signed in anon');
-            print(result!.uid);
-          },
+          onPressed: () async {},
           child: const Text('Sign in'),
         ),
       ),

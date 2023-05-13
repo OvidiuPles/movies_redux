@@ -7,8 +7,6 @@ import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/data/description_api.dart';
 import 'package:movies_redux/src/data/movies_api.dart';
 import 'package:movies_redux/src/epics/app_epics.dart';
-import 'package:movies_redux/src/firebase/screens/wrapper.dart';
-import 'package:movies_redux/src/firebase_freestyle/register_page.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:movies_redux/src/presentation/movies_home.dart';
 import 'package:movies_redux/src/reducer/reducer.dart';
@@ -19,14 +17,14 @@ import 'package:rxdart/rxdart.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    // options: const FirebaseOptions(
-    //   apiKey: 'AIzaSyD7CyxvPaaDWlp9lAcyzcLeMYsxTDvrJH4',
-    //   appId: '1:660647461189:android:2f7b8a99ea95cacb423e2c',
-    //   messagingSenderId: '660647461189',
-    //   projectId: 'movies-9004b',
-    //   databaseURL: 'https://movies-9004b/users/',
-    // ),
-  );
+      // options: const FirebaseOptions(
+      //   apiKey: 'AIzaSyD7CyxvPaaDWlp9lAcyzcLeMYsxTDvrJH4',
+      //   appId: '1:660647461189:android:2f7b8a99ea95cacb423e2c',
+      //   messagingSenderId: '660647461189',
+      //   projectId: 'movies-9004b',
+      //   databaseURL: 'https://movies-9004b/users/',
+      // ),
+      );
   final BehaviorSubject<AppAction> actions = BehaviorSubject<AppAction>();
   FirebaseDatabase.instance.setPersistenceEnabled(true);
 
