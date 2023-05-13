@@ -1,6 +1,7 @@
 import 'package:movies_redux/src/actions/index.dart';
-import 'package:movies_redux/src/data/description_api.dart';
-import 'package:movies_redux/src/data/movies_api.dart';
+import 'package:movies_redux/src/data/auth/auth_service.dart';
+import 'package:movies_redux/src/data/movies/description_api.dart';
+import 'package:movies_redux/src/data/movies/movies_api.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
@@ -11,10 +12,12 @@ class AppEpics implements EpicClass<AppState> {
   const AppEpics({
     required this.moviesApi,
     required this.descriptionApi,
+    required this.authService,
   });
 
   final MoviesApi moviesApi;
   final DescriptionApi descriptionApi;
+  final AuthService authService;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -23,6 +26,7 @@ class AppEpics implements EpicClass<AppState> {
       TypedEpic<AppState, GetMoreMoviesStart>(_getMoreMovies),
       TypedEpic<AppState, GetDescriptionStart>(_getDescription),
       TypedEpic<AppState, ResetFiltersStart>(_resetFilters),
+      //TypedEpic<AppState, RegisterStart>(_register),
     ])(actions, store);
   }
 
@@ -112,4 +116,34 @@ class AppEpics implements EpicClass<AppState> {
       }).onErrorReturnWith(ResetFiltersError.new);
     });
   }
+
+  // Stream<AppAction> _register(Stream<RegisterStart> actions, EpicStore<AppState> store) {
+  //   return actions.flatMap((RegisterStart action) {
+  //     return Stream<void>.value(null).asyncMap((_) async {
+  //       await authService.registerWithEmailAndPassword(
+  //         email: action.email,
+  //         password: action.password,
+  //       );
+  //     }).map<RegisterStart>((List<Movie> movies) {
+  //       return GetMoviesSuccessful(
+  //         movies: movies,
+  //         page: action.page,
+  //         genre: action.genre,
+  //         quality: action.quality,
+  //         sortBy: action.sortBy,
+  //         orderBy: action.orderBy,
+  //         searchText: action.searchText,
+  //       );
+  //     }).onErrorReturnWith((Object error, StackTrace stackTrace) {
+  //       return GetMoviesError(
+  //         error,
+  //         stackTrace,
+  //         genre: action.genre,
+  //         quality: action.quality,
+  //         sortBy: action.sortBy,
+  //         orderBy: action.orderBy,
+  //       );
+  //     });
+  //   });
+  // }
 }
