@@ -18,7 +18,7 @@ class _MoviesHomeState extends State<MoviesHome> {
 
   @override
   Widget build(BuildContext context) {
-    StoreProvider.of<AppState>(context).dispatch(const GetMoviesStart(page: 1));
+    StoreProvider.of<AppState>(context).dispatch(const GetMoviesStart());
 
     return Scaffold(
       appBar: AppBar(
