@@ -26,7 +26,7 @@ class AppEpics implements EpicClass<AppState> {
       TypedEpic<AppState, GetMoreMoviesStart>(_getMoreMovies),
       TypedEpic<AppState, GetDescriptionStart>(_getDescription),
       TypedEpic<AppState, ResetFiltersStart>(_resetFilters),
-      //TypedEpic<AppState, RegisterStart>(_register),
+      TypedEpic<AppState, RegisterStart>(_register),
     ])(actions, store);
   }
 
@@ -117,33 +117,16 @@ class AppEpics implements EpicClass<AppState> {
     });
   }
 
-  // Stream<AppAction> _register(Stream<RegisterStart> actions, EpicStore<AppState> store) {
-  //   return actions.flatMap((RegisterStart action) {
-  //     return Stream<void>.value(null).asyncMap((_) async {
-  //       await authService.registerWithEmailAndPassword(
-  //         email: action.email,
-  //         password: action.password,
-  //       );
-  //     }).map<RegisterStart>((List<Movie> movies) {
-  //       return GetMoviesSuccessful(
-  //         movies: movies,
-  //         page: action.page,
-  //         genre: action.genre,
-  //         quality: action.quality,
-  //         sortBy: action.sortBy,
-  //         orderBy: action.orderBy,
-  //         searchText: action.searchText,
-  //       );
-  //     }).onErrorReturnWith((Object error, StackTrace stackTrace) {
-  //       return GetMoviesError(
-  //         error,
-  //         stackTrace,
-  //         genre: action.genre,
-  //         quality: action.quality,
-  //         sortBy: action.sortBy,
-  //         orderBy: action.orderBy,
-  //       );
-  //     });
-  //   });
-  // }
+  Stream<AppAction> _register(Stream<RegisterStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((RegisterStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        await authService.registerWithEmailAndPassword(
+          email: action.email,
+          password: action.password,
+        );
+      }).map<Register>((_) {
+        return const RegisterSuccessful();
+      }).onErrorReturnWith(RegisterError.new);
+    });
+  }
 }

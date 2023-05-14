@@ -35,8 +35,7 @@ mixin _$Movie {
 
 /// @nodoc
 abstract class $MovieCopyWith<$Res> {
-  factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
-      _$MovieCopyWithImpl<$Res, Movie>;
+  factory $MovieCopyWith(Movie value, $Res Function(Movie) then) = _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
   $Res call(
       {int id,
@@ -47,8 +46,7 @@ abstract class $MovieCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MovieCopyWithImpl<$Res, $Val extends Movie>
-    implements $MovieCopyWith<$Res> {
+class _$MovieCopyWithImpl<$Res, $Val extends Movie> implements $MovieCopyWith<$Res> {
   _$MovieCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -92,8 +90,7 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
 
 /// @nodoc
 abstract class _$$Movie$CopyWith<$Res> implements $MovieCopyWith<$Res> {
-  factory _$$Movie$CopyWith(_$Movie$ value, $Res Function(_$Movie$) then) =
-      __$$Movie$CopyWithImpl<$Res>;
+  factory _$$Movie$CopyWith(_$Movie$ value, $Res Function(_$Movie$) then) = __$$Movie$CopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -105,10 +102,8 @@ abstract class _$$Movie$CopyWith<$Res> implements $MovieCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Movie$CopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$Movie$>
-    implements _$$Movie$CopyWith<$Res> {
-  __$$Movie$CopyWithImpl(_$Movie$ _value, $Res Function(_$Movie$) _then)
-      : super(_value, _then);
+class __$$Movie$CopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$Movie$> implements _$$Movie$CopyWith<$Res> {
+  __$$Movie$CopyWithImpl(_$Movie$ _value, $Res Function(_$Movie$) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -154,8 +149,7 @@ class _$Movie$ implements Movie$ {
       @JsonKey(name: 'medium_cover_image') required this.imageLink,
       @JsonKey(name: 'title_english') required this.titleEnglish});
 
-  factory _$Movie$.fromJson(Map<String, dynamic> json) =>
-      _$$Movie$FromJson(json);
+  factory _$Movie$.fromJson(Map<String, dynamic> json) => _$$Movie$FromJson(json);
 
   @override
   final int id;
@@ -183,22 +177,18 @@ class _$Movie$ implements Movie$ {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.year, year) || other.year == year) &&
-            (identical(other.imageLink, imageLink) ||
-                other.imageLink == imageLink) &&
-            (identical(other.titleEnglish, titleEnglish) ||
-                other.titleEnglish == titleEnglish));
+            (identical(other.imageLink, imageLink) || other.imageLink == imageLink) &&
+            (identical(other.titleEnglish, titleEnglish) || other.titleEnglish == titleEnglish));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, rating, year, imageLink, titleEnglish);
+  int get hashCode => Object.hash(runtimeType, id, rating, year, imageLink, titleEnglish);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Movie$CopyWith<_$Movie$> get copyWith =>
-      __$$Movie$CopyWithImpl<_$Movie$>(this, _$identity);
+  _$$Movie$CopyWith<_$Movie$> get copyWith => __$$Movie$CopyWithImpl<_$Movie$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -210,12 +200,11 @@ class _$Movie$ implements Movie$ {
 
 abstract class Movie$ implements Movie {
   const factory Movie$(
-          {required final int id,
-          required final double rating,
-          required final int year,
-          @JsonKey(name: 'medium_cover_image') required final String imageLink,
-          @JsonKey(name: 'title_english') required final String titleEnglish}) =
-      _$Movie$;
+      {required final int id,
+      required final double rating,
+      required final int year,
+      @JsonKey(name: 'medium_cover_image') required final String imageLink,
+      @JsonKey(name: 'title_english') required final String titleEnglish}) = _$Movie$;
 
   factory Movie$.fromJson(Map<String, dynamic> json) = _$Movie$.fromJson;
 
@@ -233,8 +222,7 @@ abstract class Movie$ implements Movie {
   String get titleEnglish;
   @override
   @JsonKey(ignore: true)
-  _$$Movie$CopyWith<_$Movie$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Movie$CopyWith<_$Movie$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -244,19 +232,14 @@ mixin _$AppState {
   RegisterState get registerState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call(
-      {MoviesState moviesState,
-      DescriptionState descriptionState,
-      RegisterState registerState});
+  $Res call({MoviesState moviesState, DescriptionState descriptionState, RegisterState registerState});
 
   $MoviesStateCopyWith<$Res> get moviesState;
   $DescriptionStateCopyWith<$Res> get descriptionState;
@@ -264,8 +247,7 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
-    implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -323,15 +305,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 
 /// @nodoc
 abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$$AppState$CopyWith(
-          _$AppState$ value, $Res Function(_$AppState$) then) =
-      __$$AppState$CopyWithImpl<$Res>;
+  factory _$$AppState$CopyWith(_$AppState$ value, $Res Function(_$AppState$) then) = __$$AppState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {MoviesState moviesState,
-      DescriptionState descriptionState,
-      RegisterState registerState});
+  $Res call({MoviesState moviesState, DescriptionState descriptionState, RegisterState registerState});
 
   @override
   $MoviesStateCopyWith<$Res> get moviesState;
@@ -342,12 +319,9 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppState$CopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppState$>
+class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppState$>
     implements _$$AppState$CopyWith<$Res> {
-  __$$AppState$CopyWithImpl(
-      _$AppState$ _value, $Res Function(_$AppState$) _then)
-      : super(_value, _then);
+  __$$AppState$CopyWithImpl(_$AppState$ _value, $Res Function(_$AppState$) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -401,23 +375,18 @@ class _$AppState$ implements AppState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppState$ &&
-            (identical(other.moviesState, moviesState) ||
-                other.moviesState == moviesState) &&
-            (identical(other.descriptionState, descriptionState) ||
-                other.descriptionState == descriptionState) &&
-            (identical(other.registerState, registerState) ||
-                other.registerState == registerState));
+            (identical(other.moviesState, moviesState) || other.moviesState == moviesState) &&
+            (identical(other.descriptionState, descriptionState) || other.descriptionState == descriptionState) &&
+            (identical(other.registerState, registerState) || other.registerState == registerState));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, moviesState, descriptionState, registerState);
+  int get hashCode => Object.hash(runtimeType, moviesState, descriptionState, registerState);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppState$CopyWith<_$AppState$> get copyWith =>
-      __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
+  _$$AppState$CopyWith<_$AppState$> get copyWith => __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
 }
 
 abstract class AppState$ implements AppState {
@@ -434,8 +403,7 @@ abstract class AppState$ implements AppState {
   RegisterState get registerState;
   @override
   @JsonKey(ignore: true)
-  _$$AppState$CopyWith<_$AppState$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppState$CopyWith<_$AppState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -449,14 +417,12 @@ mixin _$MoviesState {
   List<Movie> get movies => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MoviesStateCopyWith<MoviesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MoviesStateCopyWith<MoviesState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MoviesStateCopyWith<$Res> {
-  factory $MoviesStateCopyWith(
-          MoviesState value, $Res Function(MoviesState) then) =
+  factory $MoviesStateCopyWith(MoviesState value, $Res Function(MoviesState) then) =
       _$MoviesStateCopyWithImpl<$Res, MoviesState>;
   @useResult
   $Res call(
@@ -470,8 +436,7 @@ abstract class $MoviesStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState>
-    implements $MoviesStateCopyWith<$Res> {
+class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState> implements $MoviesStateCopyWith<$Res> {
   _$MoviesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -524,10 +489,8 @@ class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState>
 }
 
 /// @nodoc
-abstract class _$$MoviesState$CopyWith<$Res>
-    implements $MoviesStateCopyWith<$Res> {
-  factory _$$MoviesState$CopyWith(
-          _$MoviesState$ value, $Res Function(_$MoviesState$) then) =
+abstract class _$$MoviesState$CopyWith<$Res> implements $MoviesStateCopyWith<$Res> {
+  factory _$$MoviesState$CopyWith(_$MoviesState$ value, $Res Function(_$MoviesState$) then) =
       __$$MoviesState$CopyWithImpl<$Res>;
   @override
   @useResult
@@ -542,12 +505,9 @@ abstract class _$$MoviesState$CopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MoviesState$CopyWithImpl<$Res>
-    extends _$MoviesStateCopyWithImpl<$Res, _$MoviesState$>
+class __$$MoviesState$CopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res, _$MoviesState$>
     implements _$$MoviesState$CopyWith<$Res> {
-  __$$MoviesState$CopyWithImpl(
-      _$MoviesState$ _value, $Res Function(_$MoviesState$) _then)
-      : super(_value, _then);
+  __$$MoviesState$CopyWithImpl(_$MoviesState$ _value, $Res Function(_$MoviesState$) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -642,14 +602,13 @@ class _$MoviesState$ implements MoviesState$ {
             (identical(other.genre, genre) || other.genre == genre) &&
             (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
             (identical(other.orderBy, orderBy) || other.orderBy == orderBy) &&
-            (identical(other.searchText, searchText) ||
-                other.searchText == searchText) &&
+            (identical(other.searchText, searchText) || other.searchText == searchText) &&
             const DeepCollectionEquality().equals(other._movies, _movies));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, page, quality, genre, sortBy,
-      orderBy, searchText, const DeepCollectionEquality().hash(_movies));
+  int get hashCode => Object.hash(
+      runtimeType, page, quality, genre, sortBy, orderBy, searchText, const DeepCollectionEquality().hash(_movies));
 
   @JsonKey(ignore: true)
   @override
@@ -684,8 +643,7 @@ abstract class MoviesState$ implements MoviesState {
   List<Movie> get movies;
   @override
   @JsonKey(ignore: true)
-  _$$MoviesState$CopyWith<_$MoviesState$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MoviesState$CopyWith<_$MoviesState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 Description _$DescriptionFromJson(Map<String, dynamic> json) {
@@ -699,22 +657,19 @@ mixin _$Description {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DescriptionCopyWith<Description> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DescriptionCopyWith<Description> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DescriptionCopyWith<$Res> {
-  factory $DescriptionCopyWith(
-          Description value, $Res Function(Description) then) =
+  factory $DescriptionCopyWith(Description value, $Res Function(Description) then) =
       _$DescriptionCopyWithImpl<$Res, Description>;
   @useResult
   $Res call({@JsonKey(name: 'description_intro') String description});
 }
 
 /// @nodoc
-class _$DescriptionCopyWithImpl<$Res, $Val extends Description>
-    implements $DescriptionCopyWith<$Res> {
+class _$DescriptionCopyWithImpl<$Res, $Val extends Description> implements $DescriptionCopyWith<$Res> {
   _$DescriptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -737,10 +692,8 @@ class _$DescriptionCopyWithImpl<$Res, $Val extends Description>
 }
 
 /// @nodoc
-abstract class _$$Description$CopyWith<$Res>
-    implements $DescriptionCopyWith<$Res> {
-  factory _$$Description$CopyWith(
-          _$Description$ value, $Res Function(_$Description$) then) =
+abstract class _$$Description$CopyWith<$Res> implements $DescriptionCopyWith<$Res> {
+  factory _$$Description$CopyWith(_$Description$ value, $Res Function(_$Description$) then) =
       __$$Description$CopyWithImpl<$Res>;
   @override
   @useResult
@@ -748,12 +701,9 @@ abstract class _$$Description$CopyWith<$Res>
 }
 
 /// @nodoc
-class __$$Description$CopyWithImpl<$Res>
-    extends _$DescriptionCopyWithImpl<$Res, _$Description$>
+class __$$Description$CopyWithImpl<$Res> extends _$DescriptionCopyWithImpl<$Res, _$Description$>
     implements _$$Description$CopyWith<$Res> {
-  __$$Description$CopyWithImpl(
-      _$Description$ _value, $Res Function(_$Description$) _then)
-      : super(_value, _then);
+  __$$Description$CopyWithImpl(_$Description$ _value, $Res Function(_$Description$) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -772,12 +722,9 @@ class __$$Description$CopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$Description$ implements Description$ {
-  const _$Description$(
-      {@JsonKey(name: 'description_intro')
-          this.description = 'No description available'});
+  const _$Description$({@JsonKey(name: 'description_intro') this.description = 'No description available'});
 
-  factory _$Description$.fromJson(Map<String, dynamic> json) =>
-      _$$Description$FromJson(json);
+  factory _$Description$.fromJson(Map<String, dynamic> json) => _$$Description$FromJson(json);
 
   @override
   @JsonKey(name: 'description_intro')
@@ -793,8 +740,7 @@ class _$Description$ implements Description$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Description$ &&
-            (identical(other.description, description) ||
-                other.description == description));
+            (identical(other.description, description) || other.description == description));
   }
 
   @JsonKey(ignore: true)
@@ -816,20 +762,16 @@ class _$Description$ implements Description$ {
 }
 
 abstract class Description$ implements Description {
-  const factory Description$(
-          {@JsonKey(name: 'description_intro') final String description}) =
-      _$Description$;
+  const factory Description$({@JsonKey(name: 'description_intro') final String description}) = _$Description$;
 
-  factory Description$.fromJson(Map<String, dynamic> json) =
-      _$Description$.fromJson;
+  factory Description$.fromJson(Map<String, dynamic> json) = _$Description$.fromJson;
 
   @override
   @JsonKey(name: 'description_intro')
   String get description;
   @override
   @JsonKey(ignore: true)
-  _$$Description$CopyWith<_$Description$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Description$CopyWith<_$Description$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -837,14 +779,12 @@ mixin _$DescriptionState {
   Description get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DescriptionStateCopyWith<DescriptionState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DescriptionStateCopyWith<DescriptionState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DescriptionStateCopyWith<$Res> {
-  factory $DescriptionStateCopyWith(
-          DescriptionState value, $Res Function(DescriptionState) then) =
+  factory $DescriptionStateCopyWith(DescriptionState value, $Res Function(DescriptionState) then) =
       _$DescriptionStateCopyWithImpl<$Res, DescriptionState>;
   @useResult
   $Res call({Description description});
@@ -853,8 +793,7 @@ abstract class $DescriptionStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DescriptionStateCopyWithImpl<$Res, $Val extends DescriptionState>
-    implements $DescriptionStateCopyWith<$Res> {
+class _$DescriptionStateCopyWithImpl<$Res, $Val extends DescriptionState> implements $DescriptionStateCopyWith<$Res> {
   _$DescriptionStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -885,10 +824,8 @@ class _$DescriptionStateCopyWithImpl<$Res, $Val extends DescriptionState>
 }
 
 /// @nodoc
-abstract class _$$DescriptionState$CopyWith<$Res>
-    implements $DescriptionStateCopyWith<$Res> {
-  factory _$$DescriptionState$CopyWith(
-          _$DescriptionState$ value, $Res Function(_$DescriptionState$) then) =
+abstract class _$$DescriptionState$CopyWith<$Res> implements $DescriptionStateCopyWith<$Res> {
+  factory _$$DescriptionState$CopyWith(_$DescriptionState$ value, $Res Function(_$DescriptionState$) then) =
       __$$DescriptionState$CopyWithImpl<$Res>;
   @override
   @useResult
@@ -899,11 +836,9 @@ abstract class _$$DescriptionState$CopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DescriptionState$CopyWithImpl<$Res>
-    extends _$DescriptionStateCopyWithImpl<$Res, _$DescriptionState$>
+class __$$DescriptionState$CopyWithImpl<$Res> extends _$DescriptionStateCopyWithImpl<$Res, _$DescriptionState$>
     implements _$$DescriptionState$CopyWith<$Res> {
-  __$$DescriptionState$CopyWithImpl(
-      _$DescriptionState$ _value, $Res Function(_$DescriptionState$) _then)
+  __$$DescriptionState$CopyWithImpl(_$DescriptionState$ _value, $Res Function(_$DescriptionState$) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -939,8 +874,7 @@ class _$DescriptionState$ implements DescriptionState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DescriptionState$ &&
-            (identical(other.description, description) ||
-                other.description == description));
+            (identical(other.description, description) || other.description == description));
   }
 
   @override
@@ -954,39 +888,35 @@ class _$DescriptionState$ implements DescriptionState$ {
 }
 
 abstract class DescriptionState$ implements DescriptionState {
-  const factory DescriptionState$({final Description description}) =
-      _$DescriptionState$;
+  const factory DescriptionState$({final Description description}) = _$DescriptionState$;
 
   @override
   Description get description;
   @override
   @JsonKey(ignore: true)
-  _$$DescriptionState$CopyWith<_$DescriptionState$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DescriptionState$CopyWith<_$DescriptionState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$Register {
+mixin _$RegisterModel {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterCopyWith<Register> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegisterModelCopyWith<RegisterModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RegisterCopyWith<$Res> {
-  factory $RegisterCopyWith(Register value, $Res Function(Register) then) =
-      _$RegisterCopyWithImpl<$Res, Register>;
+abstract class $RegisterModelCopyWith<$Res> {
+  factory $RegisterModelCopyWith(RegisterModel value, $Res Function(RegisterModel) then) =
+      _$RegisterModelCopyWithImpl<$Res, RegisterModel>;
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class _$RegisterCopyWithImpl<$Res, $Val extends Register>
-    implements $RegisterCopyWith<$Res> {
-  _$RegisterCopyWithImpl(this._value, this._then);
+class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel> implements $RegisterModelCopyWith<$Res> {
+  _$RegisterModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1013,22 +943,18 @@ class _$RegisterCopyWithImpl<$Res, $Val extends Register>
 }
 
 /// @nodoc
-abstract class _$$Register$CopyWith<$Res> implements $RegisterCopyWith<$Res> {
-  factory _$$Register$CopyWith(
-          _$Register$ value, $Res Function(_$Register$) then) =
-      __$$Register$CopyWithImpl<$Res>;
+abstract class _$$RegisterModel$CopyWith<$Res> implements $RegisterModelCopyWith<$Res> {
+  factory _$$RegisterModel$CopyWith(_$RegisterModel$ value, $Res Function(_$RegisterModel$) then) =
+      __$$RegisterModel$CopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class __$$Register$CopyWithImpl<$Res>
-    extends _$RegisterCopyWithImpl<$Res, _$Register$>
-    implements _$$Register$CopyWith<$Res> {
-  __$$Register$CopyWithImpl(
-      _$Register$ _value, $Res Function(_$Register$) _then)
-      : super(_value, _then);
+class __$$RegisterModel$CopyWithImpl<$Res> extends _$RegisterModelCopyWithImpl<$Res, _$RegisterModel$>
+    implements _$$RegisterModel$CopyWith<$Res> {
+  __$$RegisterModel$CopyWithImpl(_$RegisterModel$ _value, $Res Function(_$RegisterModel$) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1036,7 +962,7 @@ class __$$Register$CopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$Register$(
+    return _then(_$RegisterModel$(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -1051,8 +977,8 @@ class __$$Register$CopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Register$ implements Register$ {
-  const _$Register$({this.email = '', this.password = ''});
+class _$RegisterModel$ implements RegisterModel$ {
+  const _$RegisterModel$({this.email = '', this.password = ''});
 
   @override
   @JsonKey()
@@ -1063,17 +989,16 @@ class _$Register$ implements Register$ {
 
   @override
   String toString() {
-    return 'Register(email: $email, password: $password)';
+    return 'RegisterModel(email: $email, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Register$ &&
+            other is _$RegisterModel$ &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.password, password) || other.password == password));
   }
 
   @override
@@ -1082,13 +1007,12 @@ class _$Register$ implements Register$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Register$CopyWith<_$Register$> get copyWith =>
-      __$$Register$CopyWithImpl<_$Register$>(this, _$identity);
+  _$$RegisterModel$CopyWith<_$RegisterModel$> get copyWith =>
+      __$$RegisterModel$CopyWithImpl<_$RegisterModel$>(this, _$identity);
 }
 
-abstract class Register$ implements Register {
-  const factory Register$({final String email, final String password}) =
-      _$Register$;
+abstract class RegisterModel$ implements RegisterModel {
+  const factory RegisterModel$({final String email, final String password}) = _$RegisterModel$;
 
   @override
   String get email;
@@ -1096,33 +1020,29 @@ abstract class Register$ implements Register {
   String get password;
   @override
   @JsonKey(ignore: true)
-  _$$Register$CopyWith<_$Register$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterModel$CopyWith<_$RegisterModel$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$RegisterState {
-  Register get register => throw _privateConstructorUsedError;
+  RegisterModel get register => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterStateCopyWith<RegisterState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegisterStateCopyWith<RegisterState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterStateCopyWith<$Res> {
-  factory $RegisterStateCopyWith(
-          RegisterState value, $Res Function(RegisterState) then) =
+  factory $RegisterStateCopyWith(RegisterState value, $Res Function(RegisterState) then) =
       _$RegisterStateCopyWithImpl<$Res, RegisterState>;
   @useResult
-  $Res call({Register register});
+  $Res call({RegisterModel register});
 
-  $RegisterCopyWith<$Res> get register;
+  $RegisterModelCopyWith<$Res> get register;
 }
 
 /// @nodoc
-class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
-    implements $RegisterStateCopyWith<$Res> {
+class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState> implements $RegisterStateCopyWith<$Res> {
   _$RegisterStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1139,40 +1059,35 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
       register: null == register
           ? _value.register
           : register // ignore: cast_nullable_to_non_nullable
-              as Register,
+              as RegisterModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RegisterCopyWith<$Res> get register {
-    return $RegisterCopyWith<$Res>(_value.register, (value) {
+  $RegisterModelCopyWith<$Res> get register {
+    return $RegisterModelCopyWith<$Res>(_value.register, (value) {
       return _then(_value.copyWith(register: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$RegisterState$CopyWith<$Res>
-    implements $RegisterStateCopyWith<$Res> {
-  factory _$$RegisterState$CopyWith(
-          _$RegisterState$ value, $Res Function(_$RegisterState$) then) =
+abstract class _$$RegisterState$CopyWith<$Res> implements $RegisterStateCopyWith<$Res> {
+  factory _$$RegisterState$CopyWith(_$RegisterState$ value, $Res Function(_$RegisterState$) then) =
       __$$RegisterState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Register register});
+  $Res call({RegisterModel register});
 
   @override
-  $RegisterCopyWith<$Res> get register;
+  $RegisterModelCopyWith<$Res> get register;
 }
 
 /// @nodoc
-class __$$RegisterState$CopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res, _$RegisterState$>
+class __$$RegisterState$CopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl<$Res, _$RegisterState$>
     implements _$$RegisterState$CopyWith<$Res> {
-  __$$RegisterState$CopyWithImpl(
-      _$RegisterState$ _value, $Res Function(_$RegisterState$) _then)
-      : super(_value, _then);
+  __$$RegisterState$CopyWithImpl(_$RegisterState$ _value, $Res Function(_$RegisterState$) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1183,7 +1098,7 @@ class __$$RegisterState$CopyWithImpl<$Res>
       register: null == register
           ? _value.register
           : register // ignore: cast_nullable_to_non_nullable
-              as Register,
+              as RegisterModel,
     ));
   }
 }
@@ -1191,11 +1106,11 @@ class __$$RegisterState$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$RegisterState$ implements RegisterState$ {
-  const _$RegisterState$({this.register = const Register()});
+  const _$RegisterState$({this.register = const RegisterModel()});
 
   @override
   @JsonKey()
-  final Register register;
+  final RegisterModel register;
 
   @override
   String toString() {
@@ -1207,8 +1122,7 @@ class _$RegisterState$ implements RegisterState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterState$ &&
-            (identical(other.register, register) ||
-                other.register == register));
+            (identical(other.register, register) || other.register == register));
   }
 
   @override
@@ -1222,12 +1136,11 @@ class _$RegisterState$ implements RegisterState$ {
 }
 
 abstract class RegisterState$ implements RegisterState {
-  const factory RegisterState$({final Register register}) = _$RegisterState$;
+  const factory RegisterState$({final RegisterModel register}) = _$RegisterState$;
 
   @override
-  Register get register;
+  RegisterModel get register;
   @override
   @JsonKey(ignore: true)
-  _$$RegisterState$CopyWith<_$RegisterState$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterState$CopyWith<_$RegisterState$> get copyWith => throw _privateConstructorUsedError;
 }

@@ -64,11 +64,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 onPressed: () async {
-                  // final RegisterService service = RegisterService();
-                  // await service.registerWithEmailAndPassword(
-                  //   email: 'ovidiu.ples27@gmail.com',
-                  //   password: 'NEBUNUL DE SALAM',
-                  // );
+                  final AuthService service = AuthService();
+                  await service.registerWithEmailAndPassword(
+                    email: 'ovidiu.ples30@gmail.com',
+                    password: 'NEBUNUL DE SALAM',
+                  );
                 },
               ),
             ),

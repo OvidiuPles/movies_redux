@@ -13,6 +13,8 @@ class Register with _$Register implements AppAction {
 
   @Implements<ActionDone>()
   const factory Register.successful([
+    @Default('') String email,
+    @Default('') String password,
     @Default('Inregistrat cu success') String text,
     @Default(_kRegisterPendingId) String pendingId,
   ]) = RegisterSuccessful;

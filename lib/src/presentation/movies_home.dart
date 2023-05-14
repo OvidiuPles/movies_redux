@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movies_redux/src/actions/index.dart';
-import 'package:movies_redux/src/firebase_freestyle/register_page.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:movies_redux/src/presentation/movies_list.dart';
+import 'package:movies_redux/src/presentation/register_page.dart';
 
 class MoviesHome extends StatefulWidget {
   const MoviesHome({super.key});
@@ -14,11 +14,11 @@ class MoviesHome extends StatefulWidget {
 
 class _MoviesHomeState extends State<MoviesHome> {
   int currentIndex = 0;
-  final List<Widget> pages = <Widget>[const MoviesList(), const RegisterPage()];
+  final List<Widget> pages = <Widget>[const MoviesList(), RegisterPage()];
 
   @override
   Widget build(BuildContext context) {
-    StoreProvider.of<AppState>(context).dispatch(const GetMoviesStart(page: 1));
+    StoreProvider.of<AppState>(context).dispatch(const GetMoviesStart());
 
     return Scaffold(
       appBar: AppBar(
