@@ -229,6 +229,7 @@ abstract class Movie$ implements Movie {
 mixin _$AppState {
   MoviesState get moviesState => throw _privateConstructorUsedError;
   DescriptionState get descriptionState => throw _privateConstructorUsedError;
+  RegisterState get registerState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
@@ -238,10 +239,11 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({MoviesState moviesState, DescriptionState descriptionState});
+  $Res call({MoviesState moviesState, DescriptionState descriptionState, RegisterState registerState});
 
   $MoviesStateCopyWith<$Res> get moviesState;
   $DescriptionStateCopyWith<$Res> get descriptionState;
+  $RegisterStateCopyWith<$Res> get registerState;
 }
 
 /// @nodoc
@@ -258,6 +260,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
   $Res call({
     Object? moviesState = null,
     Object? descriptionState = null,
+    Object? registerState = null,
   }) {
     return _then(_value.copyWith(
       moviesState: null == moviesState
@@ -268,6 +271,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.descriptionState
           : descriptionState // ignore: cast_nullable_to_non_nullable
               as DescriptionState,
+      registerState: null == registerState
+          ? _value.registerState
+          : registerState // ignore: cast_nullable_to_non_nullable
+              as RegisterState,
     ) as $Val);
   }
 
@@ -286,6 +293,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(descriptionState: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RegisterStateCopyWith<$Res> get registerState {
+    return $RegisterStateCopyWith<$Res>(_value.registerState, (value) {
+      return _then(_value.copyWith(registerState: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -293,12 +308,14 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$$AppState$CopyWith(_$AppState$ value, $Res Function(_$AppState$) then) = __$$AppState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MoviesState moviesState, DescriptionState descriptionState});
+  $Res call({MoviesState moviesState, DescriptionState descriptionState, RegisterState registerState});
 
   @override
   $MoviesStateCopyWith<$Res> get moviesState;
   @override
   $DescriptionStateCopyWith<$Res> get descriptionState;
+  @override
+  $RegisterStateCopyWith<$Res> get registerState;
 }
 
 /// @nodoc
@@ -311,6 +328,7 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
   $Res call({
     Object? moviesState = null,
     Object? descriptionState = null,
+    Object? registerState = null,
   }) {
     return _then(_$AppState$(
       moviesState: null == moviesState
@@ -321,6 +339,10 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
           ? _value.descriptionState
           : descriptionState // ignore: cast_nullable_to_non_nullable
               as DescriptionState,
+      registerState: null == registerState
+          ? _value.registerState
+          : registerState // ignore: cast_nullable_to_non_nullable
+              as RegisterState,
     ));
   }
 }
@@ -328,7 +350,10 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
 /// @nodoc
 
 class _$AppState$ implements AppState$ {
-  const _$AppState$({this.moviesState = const MoviesState(), this.descriptionState = const DescriptionState()});
+  const _$AppState$(
+      {this.moviesState = const MoviesState(),
+      this.descriptionState = const DescriptionState(),
+      this.registerState = const RegisterState()});
 
   @override
   @JsonKey()
@@ -336,10 +361,13 @@ class _$AppState$ implements AppState$ {
   @override
   @JsonKey()
   final DescriptionState descriptionState;
+  @override
+  @JsonKey()
+  final RegisterState registerState;
 
   @override
   String toString() {
-    return 'AppState(moviesState: $moviesState, descriptionState: $descriptionState)';
+    return 'AppState(moviesState: $moviesState, descriptionState: $descriptionState, registerState: $registerState)';
   }
 
   @override
@@ -348,11 +376,12 @@ class _$AppState$ implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$ &&
             (identical(other.moviesState, moviesState) || other.moviesState == moviesState) &&
-            (identical(other.descriptionState, descriptionState) || other.descriptionState == descriptionState));
+            (identical(other.descriptionState, descriptionState) || other.descriptionState == descriptionState) &&
+            (identical(other.registerState, registerState) || other.registerState == registerState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, moviesState, descriptionState);
+  int get hashCode => Object.hash(runtimeType, moviesState, descriptionState, registerState);
 
   @JsonKey(ignore: true)
   @override
@@ -361,12 +390,17 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({final MoviesState moviesState, final DescriptionState descriptionState}) = _$AppState$;
+  const factory AppState$(
+      {final MoviesState moviesState,
+      final DescriptionState descriptionState,
+      final RegisterState registerState}) = _$AppState$;
 
   @override
   MoviesState get moviesState;
   @override
   DescriptionState get descriptionState;
+  @override
+  RegisterState get registerState;
   @override
   @JsonKey(ignore: true)
   _$$AppState$CopyWith<_$AppState$> get copyWith => throw _privateConstructorUsedError;
@@ -861,4 +895,252 @@ abstract class DescriptionState$ implements DescriptionState {
   @override
   @JsonKey(ignore: true)
   _$$DescriptionState$CopyWith<_$DescriptionState$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$RegisterModel {
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RegisterModelCopyWith<RegisterModel> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterModelCopyWith<$Res> {
+  factory $RegisterModelCopyWith(RegisterModel value, $Res Function(RegisterModel) then) =
+      _$RegisterModelCopyWithImpl<$Res, RegisterModel>;
+  @useResult
+  $Res call({String email, String password});
+}
+
+/// @nodoc
+class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel> implements $RegisterModelCopyWith<$Res> {
+  _$RegisterModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+  }) {
+    return _then(_value.copyWith(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RegisterModel$CopyWith<$Res> implements $RegisterModelCopyWith<$Res> {
+  factory _$$RegisterModel$CopyWith(_$RegisterModel$ value, $Res Function(_$RegisterModel$) then) =
+      __$$RegisterModel$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String email, String password});
+}
+
+/// @nodoc
+class __$$RegisterModel$CopyWithImpl<$Res> extends _$RegisterModelCopyWithImpl<$Res, _$RegisterModel$>
+    implements _$$RegisterModel$CopyWith<$Res> {
+  __$$RegisterModel$CopyWithImpl(_$RegisterModel$ _value, $Res Function(_$RegisterModel$) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+  }) {
+    return _then(_$RegisterModel$(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterModel$ implements RegisterModel$ {
+  const _$RegisterModel$({this.email = '', this.password = ''});
+
+  @override
+  @JsonKey()
+  final String email;
+  @override
+  @JsonKey()
+  final String password;
+
+  @override
+  String toString() {
+    return 'RegisterModel(email: $email, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterModel$ &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) || other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterModel$CopyWith<_$RegisterModel$> get copyWith =>
+      __$$RegisterModel$CopyWithImpl<_$RegisterModel$>(this, _$identity);
+}
+
+abstract class RegisterModel$ implements RegisterModel {
+  const factory RegisterModel$({final String email, final String password}) = _$RegisterModel$;
+
+  @override
+  String get email;
+  @override
+  String get password;
+  @override
+  @JsonKey(ignore: true)
+  _$$RegisterModel$CopyWith<_$RegisterModel$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$RegisterState {
+  RegisterModel get register => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RegisterStateCopyWith<RegisterState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterStateCopyWith<$Res> {
+  factory $RegisterStateCopyWith(RegisterState value, $Res Function(RegisterState) then) =
+      _$RegisterStateCopyWithImpl<$Res, RegisterState>;
+  @useResult
+  $Res call({RegisterModel register});
+
+  $RegisterModelCopyWith<$Res> get register;
+}
+
+/// @nodoc
+class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState> implements $RegisterStateCopyWith<$Res> {
+  _$RegisterStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? register = null,
+  }) {
+    return _then(_value.copyWith(
+      register: null == register
+          ? _value.register
+          : register // ignore: cast_nullable_to_non_nullable
+              as RegisterModel,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RegisterModelCopyWith<$Res> get register {
+    return $RegisterModelCopyWith<$Res>(_value.register, (value) {
+      return _then(_value.copyWith(register: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$RegisterState$CopyWith<$Res> implements $RegisterStateCopyWith<$Res> {
+  factory _$$RegisterState$CopyWith(_$RegisterState$ value, $Res Function(_$RegisterState$) then) =
+      __$$RegisterState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({RegisterModel register});
+
+  @override
+  $RegisterModelCopyWith<$Res> get register;
+}
+
+/// @nodoc
+class __$$RegisterState$CopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl<$Res, _$RegisterState$>
+    implements _$$RegisterState$CopyWith<$Res> {
+  __$$RegisterState$CopyWithImpl(_$RegisterState$ _value, $Res Function(_$RegisterState$) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? register = null,
+  }) {
+    return _then(_$RegisterState$(
+      register: null == register
+          ? _value.register
+          : register // ignore: cast_nullable_to_non_nullable
+              as RegisterModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterState$ implements RegisterState$ {
+  const _$RegisterState$({this.register = const RegisterModel()});
+
+  @override
+  @JsonKey()
+  final RegisterModel register;
+
+  @override
+  String toString() {
+    return 'RegisterState(register: $register)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterState$ &&
+            (identical(other.register, register) || other.register == register));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, register);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterState$CopyWith<_$RegisterState$> get copyWith =>
+      __$$RegisterState$CopyWithImpl<_$RegisterState$>(this, _$identity);
+}
+
+abstract class RegisterState$ implements RegisterState {
+  const factory RegisterState$({final RegisterModel register}) = _$RegisterState$;
+
+  @override
+  RegisterModel get register;
+  @override
+  @JsonKey(ignore: true)
+  _$$RegisterState$CopyWith<_$RegisterState$> get copyWith => throw _privateConstructorUsedError;
 }

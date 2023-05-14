@@ -1,8 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:movies_redux/src/data/auth/auth_service.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  bool isObscure = true;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +24,30 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 130,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: emailController,
+              decoration: const InputDecoration(
                 hintText: 'Email',
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            const TextField(
+            TextField(
+              controller: passwordController,
+              obscureText: isObscure,
               decoration: InputDecoration(
                 hintText: 'Password',
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    isObscure ? Icons.visibility_off : Icons.visibility,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      isObscure = !isObscure;
+                    });
+                  },
+                ),
               ),
             ),
             const SizedBox(
@@ -41,12 +64,11 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-                  final FirebaseFirestore db = FirebaseFirestore.instance;
-
-                  await db.collection('users').doc('marian3').set(<String, String>{
-                    'name': 'mariann',
-                    'email': 'johndoe@example.com',
-                  });
+                  final AuthService service = AuthService();
+                  await service.registerWithEmailAndPassword(
+                    email: 'ovidiu.ples30@gmail.com',
+                    password: 'NEBUNUL DE SALAM',
+                  );
                 },
               ),
             ),
