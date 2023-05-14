@@ -38,11 +38,13 @@ void main() async {
     reducer,
     initialState: const AppState(),
     middleware: <Middleware<AppState>>[
-      EpicMiddleware<AppState>(AppEpics(
-        authService: authService,
-        moviesApi: moviesApi,
-        descriptionApi: descriptionApi,
-      )),
+      EpicMiddleware<AppState>(
+        AppEpics(
+          authService: authService,
+          moviesApi: moviesApi,
+          descriptionApi: descriptionApi,
+        ),
+      ),
       TypedMiddleware<AppState, AppAction>((Store<AppState> store, AppAction action, NextDispatcher next) {
         next(action);
         actions.add(action);
