@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/models/index.dart';
-import 'package:movies_redux/src/presentation/movies_list.dart';
-import 'package:movies_redux/src/presentation/register_page.dart';
+import 'package:movies_redux/src/presentation/home/movies_list.dart';
+import 'package:movies_redux/src/presentation/register/register_page.dart';
 
-class MoviesHome extends StatefulWidget {
-  const MoviesHome({super.key});
+class MoviesApp extends StatefulWidget {
+  const MoviesApp({super.key});
 
   @override
-  State<MoviesHome> createState() => _MoviesHomeState();
+  State<MoviesApp> createState() => _MoviesAppState();
 }
 
-class _MoviesHomeState extends State<MoviesHome> {
+class _MoviesAppState extends State<MoviesApp> {
   int currentIndex = 0;
   final List<Widget> pages = <Widget>[const MoviesList(), RegisterPage()];
 

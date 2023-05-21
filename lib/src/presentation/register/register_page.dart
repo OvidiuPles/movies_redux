@@ -3,6 +3,8 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/containers/register_container.dart';
 import 'package:movies_redux/src/models/index.dart';
+import 'package:movies_redux/src/presentation/register/custom_dialog.dart';
+import 'package:movies_redux/src/presentation/register/popup_text.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -14,6 +16,8 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return RegisterContainer(
       builder: (BuildContext context, RegisterState registerState) {
+        emailController.text = registerState.register.email;
+        passwordController.text = registerState.register.password;
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 55),
           child: SingleChildScrollView(
@@ -68,8 +72,7 @@ class RegisterPage extends StatelessWidget {
                           password: passwordController.text,
                         ),
                       );
-                      emailController.text = registerState.register.email;
-                      passwordController.text = registerState.register.password;
+                      CustomDialog.showCustomDialog(context: context);
                     },
                   ),
                 ),
@@ -86,14 +89,7 @@ class RegisterPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () async {
-                      // final FirebaseFirestore db = FirebaseFirestore.instance;
-                      //
-                      // await db.collection('users').doc('marian3').set(<String, String>{
-                      //   'name': 'mariann',
-                      //   'email': 'johndoe@example.com',
-                      // });
-                    },
+                    onPressed: () async {},
                   ),
                 ),
               ],

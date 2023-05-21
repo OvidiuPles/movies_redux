@@ -124,9 +124,17 @@ class AppEpics implements EpicClass<AppState> {
           email: action.email,
           password: action.password,
         );
+        return true;
       }).map<Register>((_) {
-        return const RegisterSuccessful();
-      }).onErrorReturnWith(RegisterError.new);
+        return const Register.successful();
+      }).onErrorReturnWith((Object error, StackTrace stackTrace) {
+        return RegisterError(
+          error,
+          stackTrace,
+          password : action.password,
+          email: action.email,
+        );
+      });
     });
   }
 }

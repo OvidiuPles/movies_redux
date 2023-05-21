@@ -3,7 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/containers/movies_container.dart';
 import 'package:movies_redux/src/models/index.dart';
-import 'package:movies_redux/src/presentation/description_text.dart';
+import 'package:movies_redux/src/presentation/home/description_text.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({super.key});

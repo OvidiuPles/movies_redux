@@ -4,5 +4,6 @@ part of models;
 class RegisterState with _$RegisterState {
   const factory RegisterState({
     @Default(RegisterModel()) RegisterModel register,
+    @Default('default') String popUpInfo,
   }) = RegisterState$;
 }

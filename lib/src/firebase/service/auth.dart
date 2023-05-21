@@ -31,4 +31,13 @@ class AuthService {
 // register with email and password
 
 // sign out
+
+
+//add in database
+// final FirebaseFirestore db = FirebaseFirestore.instance;
+//
+// await db.collection('users').doc('marian3').set(<String, String>{
+//   'name': 'mariann',
+//   'email': 'johndoe@example.com',
+// });
 }

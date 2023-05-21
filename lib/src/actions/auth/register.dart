@@ -15,7 +15,7 @@ class Register with _$Register implements AppAction {
   const factory Register.successful([
     @Default('') String email,
     @Default('') String password,
-    @Default('Inregistrat cu success') String text,
+    @Default('Register successful') String info,
     @Default(_kRegisterPendingId) String pendingId,
   ]) = RegisterSuccessful;
 
@@ -23,9 +23,12 @@ class Register with _$Register implements AppAction {
   @Implements<ErrorAction>()
   const factory Register.error(
     Object error,
-    StackTrace stackTrace, [
+    StackTrace stackTrace, {
+    @Default('') String email,
+    @Default('') String password,
+    @Default('Eroare la inregistrare') String info,
     @Default(_kRegisterPendingId) String pendingId,
-  ]) = RegisterError;
+  }) = RegisterError;
 
   static String get pendingKey => _kRegisterPendingId;
 }

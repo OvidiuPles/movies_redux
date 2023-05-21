@@ -9,7 +9,7 @@ import 'package:movies_redux/src/data/movies/description_api.dart';
 import 'package:movies_redux/src/data/movies/movies_api.dart';
 import 'package:movies_redux/src/epics/app_epics.dart';
 import 'package:movies_redux/src/models/index.dart';
-import 'package:movies_redux/src/presentation/movies_home.dart';
+import 'package:movies_redux/src/presentation/movies_app.dart';
 import 'package:movies_redux/src/reducer/reducer.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
@@ -65,7 +65,7 @@ class MyMoviesApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: const MaterialApp(
-        home: MoviesHome(),
+        home: MoviesApp(),
       ),
     );
   }
