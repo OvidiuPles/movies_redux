@@ -4,18 +4,11 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> registerWithEmailAndPassword({required String email, required String password}) async {
+    await _auth.createUserWithEmailAndPassword(email: email, password: password);
+  }
 
-      await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      print('inregistrarea fost facuta');
-      //final User? user = result.user;
-
-
-    // create a new document for the user with the uid
-    //await DatabaseService(uid: user.uid).updateUserData('0','new crew member', 100);
-    //return _userFromFirebaseUser(user);
-    //} catch (error) {
-    //print('errrrrrrrrrrrrrrrrrrrrrrrrrrr');
-    //return null;
-    //}
+  Future<void> logInWithEmailAndPassword({required String email, required String password}) async {
+      UserCredential user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      //return user;
   }
 }

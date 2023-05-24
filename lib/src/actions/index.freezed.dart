@@ -3380,7 +3380,7 @@ mixin _$Register {
             String email, String password, String info, String pendingId)
         successful,
     required TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)
+            String password, String pendingId)
         error,
   }) =>
       throw _privateConstructorUsedError;
@@ -3391,7 +3391,7 @@ mixin _$Register {
             String email, String password, String info, String pendingId)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
   }) =>
       throw _privateConstructorUsedError;
@@ -3402,7 +3402,7 @@ mixin _$Register {
             String email, String password, String info, String pendingId)?
         successful,
     TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
     required TResult orElse(),
   }) =>
@@ -3571,7 +3571,7 @@ class _$RegisterStart implements RegisterStart {
             String email, String password, String info, String pendingId)
         successful,
     required TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)
+            String password, String pendingId)
         error,
   }) {
     return start(email, password, pendingId);
@@ -3585,7 +3585,7 @@ class _$RegisterStart implements RegisterStart {
             String email, String password, String info, String pendingId)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
   }) {
     return start?.call(email, password, pendingId);
@@ -3599,7 +3599,7 @@ class _$RegisterStart implements RegisterStart {
             String email, String password, String info, String pendingId)?
         successful,
     TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
     required TResult orElse(),
   }) {
@@ -3770,7 +3770,7 @@ class _$RegisterSuccessful implements RegisterSuccessful {
             String email, String password, String info, String pendingId)
         successful,
     required TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)
+            String password, String pendingId)
         error,
   }) {
     return successful(email, password, info, pendingId);
@@ -3784,7 +3784,7 @@ class _$RegisterSuccessful implements RegisterSuccessful {
             String email, String password, String info, String pendingId)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
   }) {
     return successful?.call(email, password, info, pendingId);
@@ -3798,7 +3798,7 @@ class _$RegisterSuccessful implements RegisterSuccessful {
             String email, String password, String info, String pendingId)?
         successful,
     TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
     required TResult orElse(),
   }) {
@@ -3876,7 +3876,6 @@ abstract class _$$RegisterErrorCopyWith<$Res>
       StackTrace stackTrace,
       String email,
       String password,
-      String info,
       String pendingId});
 }
 
@@ -3895,7 +3894,6 @@ class __$$RegisterErrorCopyWithImpl<$Res>
     Object? stackTrace = null,
     Object? email = null,
     Object? password = null,
-    Object? info = null,
     Object? pendingId = null,
   }) {
     return _then(_$RegisterError(
@@ -3912,10 +3910,6 @@ class __$$RegisterErrorCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      info: null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as String,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -3930,7 +3924,6 @@ class _$RegisterError implements RegisterError {
   const _$RegisterError(this.error, this.stackTrace,
       {this.email = '',
       this.password = '',
-      this.info = 'Eroare la inregistrare',
       this.pendingId = _kRegisterPendingId});
 
   @override
@@ -3945,14 +3938,11 @@ class _$RegisterError implements RegisterError {
   final String password;
   @override
   @JsonKey()
-  final String info;
-  @override
-  @JsonKey()
   final String pendingId;
 
   @override
   String toString() {
-    return 'Register.error(error: $error, stackTrace: $stackTrace, email: $email, password: $password, info: $info, pendingId: $pendingId)';
+    return 'Register.error(error: $error, stackTrace: $stackTrace, email: $email, password: $password, pendingId: $pendingId)';
   }
 
   @override
@@ -3966,7 +3956,6 @@ class _$RegisterError implements RegisterError {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.info, info) || other.info == info) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
   }
@@ -3978,7 +3967,6 @@ class _$RegisterError implements RegisterError {
       stackTrace,
       email,
       password,
-      info,
       pendingId);
 
   @JsonKey(ignore: true)
@@ -3996,10 +3984,10 @@ class _$RegisterError implements RegisterError {
             String email, String password, String info, String pendingId)
         successful,
     required TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)
+            String password, String pendingId)
         error,
   }) {
-    return error(this.error, stackTrace, email, password, info, pendingId);
+    return error(this.error, stackTrace, email, password, pendingId);
   }
 
   @override
@@ -4010,11 +3998,10 @@ class _$RegisterError implements RegisterError {
             String email, String password, String info, String pendingId)?
         successful,
     TResult? Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
   }) {
-    return error?.call(
-        this.error, stackTrace, email, password, info, pendingId);
+    return error?.call(this.error, stackTrace, email, password, pendingId);
   }
 
   @override
@@ -4025,12 +4012,12 @@ class _$RegisterError implements RegisterError {
             String email, String password, String info, String pendingId)?
         successful,
     TResult Function(Object error, StackTrace stackTrace, String email,
-            String password, String info, String pendingId)?
+            String password, String pendingId)?
         error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error, stackTrace, email, password, info, pendingId);
+      return error(this.error, stackTrace, email, password, pendingId);
     }
     return orElse();
   }
@@ -4074,7 +4061,6 @@ abstract class RegisterError implements Register, ActionDone, ErrorAction {
   const factory RegisterError(final Object error, final StackTrace stackTrace,
       {final String email,
       final String password,
-      final String info,
       final String pendingId}) = _$RegisterError;
 
   Object get error;
@@ -4083,11 +4069,1269 @@ abstract class RegisterError implements Register, ActionDone, ErrorAction {
   String get email;
   @override
   String get password;
-  String get info;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
   _$$RegisterErrorCopyWith<_$RegisterError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ObscureText {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId, RegisterModel register) start,
+    required TResult Function(RegisterModel register, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId, RegisterModel register)? start,
+    TResult? Function(RegisterModel register, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId, RegisterModel register)? start,
+    TResult Function(RegisterModel register, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ObscureTextStart value) start,
+    required TResult Function(ObscureTextSuccessful value) successful,
+    required TResult Function(ObscureTextError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ObscureTextStart value)? start,
+    TResult? Function(ObscureTextSuccessful value)? successful,
+    TResult? Function(ObscureTextError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ObscureTextStart value)? start,
+    TResult Function(ObscureTextSuccessful value)? successful,
+    TResult Function(ObscureTextError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ObscureTextCopyWith<ObscureText> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ObscureTextCopyWith<$Res> {
+  factory $ObscureTextCopyWith(
+          ObscureText value, $Res Function(ObscureText) then) =
+      _$ObscureTextCopyWithImpl<$Res, ObscureText>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ObscureTextCopyWithImpl<$Res, $Val extends ObscureText>
+    implements $ObscureTextCopyWith<$Res> {
+  _$ObscureTextCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ObscureTextStartCopyWith<$Res>
+    implements $ObscureTextCopyWith<$Res> {
+  factory _$$ObscureTextStartCopyWith(
+          _$ObscureTextStart value, $Res Function(_$ObscureTextStart) then) =
+      __$$ObscureTextStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId, RegisterModel register});
+
+  $RegisterModelCopyWith<$Res> get register;
+}
+
+/// @nodoc
+class __$$ObscureTextStartCopyWithImpl<$Res>
+    extends _$ObscureTextCopyWithImpl<$Res, _$ObscureTextStart>
+    implements _$$ObscureTextStartCopyWith<$Res> {
+  __$$ObscureTextStartCopyWithImpl(
+      _$ObscureTextStart _value, $Res Function(_$ObscureTextStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+    Object? register = null,
+  }) {
+    return _then(_$ObscureTextStart(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+      register: null == register
+          ? _value.register
+          : register // ignore: cast_nullable_to_non_nullable
+              as RegisterModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RegisterModelCopyWith<$Res> get register {
+    return $RegisterModelCopyWith<$Res>(_value.register, (value) {
+      return _then(_value.copyWith(register: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ObscureTextStart implements ObscureTextStart {
+  const _$ObscureTextStart(
+      {this.pendingId = _kObscureTextPendingId,
+      this.register = const RegisterModel()});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+  @override
+  @JsonKey()
+  final RegisterModel register;
+
+  @override
+  String toString() {
+    return 'ObscureText.start(pendingId: $pendingId, register: $register)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ObscureTextStart &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId) &&
+            (identical(other.register, register) ||
+                other.register == register));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId, register);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ObscureTextStartCopyWith<_$ObscureTextStart> get copyWith =>
+      __$$ObscureTextStartCopyWithImpl<_$ObscureTextStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId, RegisterModel register) start,
+    required TResult Function(RegisterModel register, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(pendingId, register);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId, RegisterModel register)? start,
+    TResult? Function(RegisterModel register, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(pendingId, register);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId, RegisterModel register)? start,
+    TResult Function(RegisterModel register, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(pendingId, register);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ObscureTextStart value) start,
+    required TResult Function(ObscureTextSuccessful value) successful,
+    required TResult Function(ObscureTextError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ObscureTextStart value)? start,
+    TResult? Function(ObscureTextSuccessful value)? successful,
+    TResult? Function(ObscureTextError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ObscureTextStart value)? start,
+    TResult Function(ObscureTextSuccessful value)? successful,
+    TResult Function(ObscureTextError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ObscureTextStart implements ObscureText, ActionStart {
+  const factory ObscureTextStart(
+      {final String pendingId,
+      final RegisterModel register}) = _$ObscureTextStart;
+
+  @override
+  String get pendingId;
+  RegisterModel get register;
+  @override
+  @JsonKey(ignore: true)
+  _$$ObscureTextStartCopyWith<_$ObscureTextStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ObscureTextSuccessfulCopyWith<$Res>
+    implements $ObscureTextCopyWith<$Res> {
+  factory _$$ObscureTextSuccessfulCopyWith(_$ObscureTextSuccessful value,
+          $Res Function(_$ObscureTextSuccessful) then) =
+      __$$ObscureTextSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({RegisterModel register, String pendingId});
+
+  $RegisterModelCopyWith<$Res> get register;
+}
+
+/// @nodoc
+class __$$ObscureTextSuccessfulCopyWithImpl<$Res>
+    extends _$ObscureTextCopyWithImpl<$Res, _$ObscureTextSuccessful>
+    implements _$$ObscureTextSuccessfulCopyWith<$Res> {
+  __$$ObscureTextSuccessfulCopyWithImpl(_$ObscureTextSuccessful _value,
+      $Res Function(_$ObscureTextSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? register = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ObscureTextSuccessful(
+      register: null == register
+          ? _value.register
+          : register // ignore: cast_nullable_to_non_nullable
+              as RegisterModel,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RegisterModelCopyWith<$Res> get register {
+    return $RegisterModelCopyWith<$Res>(_value.register, (value) {
+      return _then(_value.copyWith(register: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ObscureTextSuccessful implements ObscureTextSuccessful {
+  const _$ObscureTextSuccessful(
+      {this.register = const RegisterModel(),
+      this.pendingId = _kObscureTextPendingId});
+
+  @override
+  @JsonKey()
+  final RegisterModel register;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ObscureText.successful(register: $register, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ObscureTextSuccessful &&
+            (identical(other.register, register) ||
+                other.register == register) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, register, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ObscureTextSuccessfulCopyWith<_$ObscureTextSuccessful> get copyWith =>
+      __$$ObscureTextSuccessfulCopyWithImpl<_$ObscureTextSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId, RegisterModel register) start,
+    required TResult Function(RegisterModel register, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(register, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId, RegisterModel register)? start,
+    TResult? Function(RegisterModel register, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(register, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId, RegisterModel register)? start,
+    TResult Function(RegisterModel register, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(register, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ObscureTextStart value) start,
+    required TResult Function(ObscureTextSuccessful value) successful,
+    required TResult Function(ObscureTextError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ObscureTextStart value)? start,
+    TResult? Function(ObscureTextSuccessful value)? successful,
+    TResult? Function(ObscureTextError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ObscureTextStart value)? start,
+    TResult Function(ObscureTextSuccessful value)? successful,
+    TResult Function(ObscureTextError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ObscureTextSuccessful implements ObscureText, ActionDone {
+  const factory ObscureTextSuccessful(
+      {final RegisterModel register,
+      final String pendingId}) = _$ObscureTextSuccessful;
+
+  RegisterModel get register;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ObscureTextSuccessfulCopyWith<_$ObscureTextSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ObscureTextErrorCopyWith<$Res>
+    implements $ObscureTextCopyWith<$Res> {
+  factory _$$ObscureTextErrorCopyWith(
+          _$ObscureTextError value, $Res Function(_$ObscureTextError) then) =
+      __$$ObscureTextErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ObscureTextErrorCopyWithImpl<$Res>
+    extends _$ObscureTextCopyWithImpl<$Res, _$ObscureTextError>
+    implements _$$ObscureTextErrorCopyWith<$Res> {
+  __$$ObscureTextErrorCopyWithImpl(
+      _$ObscureTextError _value, $Res Function(_$ObscureTextError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ObscureTextError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ObscureTextError implements ObscureTextError {
+  const _$ObscureTextError(this.error, this.stackTrace,
+      [this.pendingId = _kObscureTextPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ObscureText.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ObscureTextError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ObscureTextErrorCopyWith<_$ObscureTextError> get copyWith =>
+      __$$ObscureTextErrorCopyWithImpl<_$ObscureTextError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId, RegisterModel register) start,
+    required TResult Function(RegisterModel register, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId, RegisterModel register)? start,
+    TResult? Function(RegisterModel register, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId, RegisterModel register)? start,
+    TResult Function(RegisterModel register, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ObscureTextStart value) start,
+    required TResult Function(ObscureTextSuccessful value) successful,
+    required TResult Function(ObscureTextError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ObscureTextStart value)? start,
+    TResult? Function(ObscureTextSuccessful value)? successful,
+    TResult? Function(ObscureTextError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ObscureTextStart value)? start,
+    TResult Function(ObscureTextSuccessful value)? successful,
+    TResult Function(ObscureTextError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ObscureTextError
+    implements ObscureText, ActionDone, ErrorAction {
+  const factory ObscureTextError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$ObscureTextError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ObscureTextErrorCopyWith<_$ObscureTextError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$LogIn {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, String pendingId)
+        start,
+    required TResult Function(String pendingId, User user) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, String pendingId)? start,
+    TResult? Function(String pendingId, User user)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, String pendingId)? start,
+    TResult Function(String pendingId, User user)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogInStart value) start,
+    required TResult Function(LogInSuccessful value) successful,
+    required TResult Function(LogInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogInStart value)? start,
+    TResult? Function(LogInSuccessful value)? successful,
+    TResult? Function(LogInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogInStart value)? start,
+    TResult Function(LogInSuccessful value)? successful,
+    TResult Function(LogInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $LogInCopyWith<LogIn> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LogInCopyWith<$Res> {
+  factory $LogInCopyWith(LogIn value, $Res Function(LogIn) then) =
+      _$LogInCopyWithImpl<$Res, LogIn>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$LogInCopyWithImpl<$Res, $Val extends LogIn>
+    implements $LogInCopyWith<$Res> {
+  _$LogInCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LogInStartCopyWith<$Res> implements $LogInCopyWith<$Res> {
+  factory _$$LogInStartCopyWith(
+          _$LogInStart value, $Res Function(_$LogInStart) then) =
+      __$$LogInStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String email, String password, String pendingId});
+}
+
+/// @nodoc
+class __$$LogInStartCopyWithImpl<$Res>
+    extends _$LogInCopyWithImpl<$Res, _$LogInStart>
+    implements _$$LogInStartCopyWith<$Res> {
+  __$$LogInStartCopyWithImpl(
+      _$LogInStart _value, $Res Function(_$LogInStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$LogInStart(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogInStart implements LogInStart {
+  const _$LogInStart(
+      {required this.email,
+      required this.password,
+      this.pendingId = _kLogInPendingId});
+
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'LogIn.start(email: $email, password: $password, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogInStart &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, password, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogInStartCopyWith<_$LogInStart> get copyWith =>
+      __$$LogInStartCopyWithImpl<_$LogInStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, String pendingId)
+        start,
+    required TResult Function(String pendingId, User user) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)
+        error,
+  }) {
+    return start(email, password, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, String pendingId)? start,
+    TResult? Function(String pendingId, User user)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+  }) {
+    return start?.call(email, password, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, String pendingId)? start,
+    TResult Function(String pendingId, User user)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(email, password, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogInStart value) start,
+    required TResult Function(LogInSuccessful value) successful,
+    required TResult Function(LogInError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogInStart value)? start,
+    TResult? Function(LogInSuccessful value)? successful,
+    TResult? Function(LogInError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogInStart value)? start,
+    TResult Function(LogInSuccessful value)? successful,
+    TResult Function(LogInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogInStart implements LogIn, ActionStart {
+  const factory LogInStart(
+      {required final String email,
+      required final String password,
+      final String pendingId}) = _$LogInStart;
+
+  String get email;
+  String get password;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogInStartCopyWith<_$LogInStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogInSuccessfulCopyWith<$Res>
+    implements $LogInCopyWith<$Res> {
+  factory _$$LogInSuccessfulCopyWith(
+          _$LogInSuccessful value, $Res Function(_$LogInSuccessful) then) =
+      __$$LogInSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId, User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$LogInSuccessfulCopyWithImpl<$Res>
+    extends _$LogInCopyWithImpl<$Res, _$LogInSuccessful>
+    implements _$$LogInSuccessfulCopyWith<$Res> {
+  __$$LogInSuccessfulCopyWithImpl(
+      _$LogInSuccessful _value, $Res Function(_$LogInSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+    Object? user = null,
+  }) {
+    return _then(_$LogInSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$LogInSuccessful implements LogInSuccessful {
+  const _$LogInSuccessful(
+      [this.pendingId = _kLogInPendingId, this.user = const User()]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+  @override
+  @JsonKey()
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogIn.successful(pendingId: $pendingId, user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogInSuccessful &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId) &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogInSuccessfulCopyWith<_$LogInSuccessful> get copyWith =>
+      __$$LogInSuccessfulCopyWithImpl<_$LogInSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, String pendingId)
+        start,
+    required TResult Function(String pendingId, User user) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)
+        error,
+  }) {
+    return successful(pendingId, user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, String pendingId)? start,
+    TResult? Function(String pendingId, User user)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+  }) {
+    return successful?.call(pendingId, user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, String pendingId)? start,
+    TResult Function(String pendingId, User user)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId, user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogInStart value) start,
+    required TResult Function(LogInSuccessful value) successful,
+    required TResult Function(LogInError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogInStart value)? start,
+    TResult? Function(LogInSuccessful value)? successful,
+    TResult? Function(LogInError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogInStart value)? start,
+    TResult Function(LogInSuccessful value)? successful,
+    TResult Function(LogInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogInSuccessful implements LogIn, ActionDone {
+  const factory LogInSuccessful([final String pendingId, final User user]) =
+      _$LogInSuccessful;
+
+  @override
+  String get pendingId;
+  User get user;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogInSuccessfulCopyWith<_$LogInSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogInErrorCopyWith<$Res> implements $LogInCopyWith<$Res> {
+  factory _$$LogInErrorCopyWith(
+          _$LogInError value, $Res Function(_$LogInError) then) =
+      __$$LogInErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {Object error,
+      StackTrace stackTrace,
+      String email,
+      String password,
+      String pendingId});
+}
+
+/// @nodoc
+class __$$LogInErrorCopyWithImpl<$Res>
+    extends _$LogInCopyWithImpl<$Res, _$LogInError>
+    implements _$$LogInErrorCopyWith<$Res> {
+  __$$LogInErrorCopyWithImpl(
+      _$LogInError _value, $Res Function(_$LogInError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? email = null,
+    Object? password = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$LogInError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogInError implements LogInError {
+  const _$LogInError(this.error, this.stackTrace,
+      {this.email = '',
+      this.password = '',
+      this.pendingId = _kRegisterPendingId});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String email;
+  @override
+  @JsonKey()
+  final String password;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'LogIn.error(error: $error, stackTrace: $stackTrace, email: $email, password: $password, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogInError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      stackTrace,
+      email,
+      password,
+      pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogInErrorCopyWith<_$LogInError> get copyWith =>
+      __$$LogInErrorCopyWithImpl<_$LogInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password, String pendingId)
+        start,
+    required TResult Function(String pendingId, User user) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, email, password, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password, String pendingId)? start,
+    TResult? Function(String pendingId, User user)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, email, password, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password, String pendingId)? start,
+    TResult Function(String pendingId, User user)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String email,
+            String password, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, email, password, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogInStart value) start,
+    required TResult Function(LogInSuccessful value) successful,
+    required TResult Function(LogInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogInStart value)? start,
+    TResult? Function(LogInSuccessful value)? successful,
+    TResult? Function(LogInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogInStart value)? start,
+    TResult Function(LogInSuccessful value)? successful,
+    TResult Function(LogInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogInError implements LogIn, ActionDone, ErrorAction {
+  const factory LogInError(final Object error, final StackTrace stackTrace,
+      {final String email,
+      final String password,
+      final String pendingId}) = _$LogInError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  String get email;
+  String get password;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogInErrorCopyWith<_$LogInError> get copyWith =>
       throw _privateConstructorUsedError;
 }

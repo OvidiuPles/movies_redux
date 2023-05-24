@@ -9,6 +9,8 @@ environment:
   sdk: '>=2.19.4 <3.0.0'
 
 dependencies:
+  auto_route: ^7.2.0
+  auto_route_generator: ^7.1.1
   cloud_firestore: ^4.6.0
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.5.0

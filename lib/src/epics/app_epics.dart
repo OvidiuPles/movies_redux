@@ -27,7 +27,40 @@ class AppEpics implements EpicClass<AppState> {
       TypedEpic<AppState, GetDescriptionStart>(_getDescription),
       TypedEpic<AppState, ResetFiltersStart>(_resetFilters),
       TypedEpic<AppState, RegisterStart>(_register),
+      TypedEpic<AppState, ObscureTextStart>(_obscureText),
+      TypedEpic<AppState, LogInStart>(_logIn),
     ])(actions, store);
+  }
+
+  Stream<AppAction> _logIn(Stream<LogInStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((LogInStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        await authService.logInWithEmailAndPassword(
+          email: action.email,
+          password: action.password,
+        );
+        return true;
+      }).map<LogIn>((_) {
+        return const LogInSuccessful();
+      }).onErrorReturnWith((Object error, StackTrace stackTrace) {
+        return LogInError(
+          error,
+          stackTrace,
+          password: action.password,
+          email: action.email,
+        );
+      });
+    });
+  }
+
+  Stream<AppAction> _obscureText(Stream<ObscureTextStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ObscureTextStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        return true;
+      }).map<ObscureText>((_) {
+        return ObscureTextSuccessful(register: action.register);
+      }).onErrorReturnWith(ObscureTextError.new);
+    });
   }
 
   Stream<AppAction> _getMovies(Stream<GetMoviesStart> actions, EpicStore<AppState> store) {
@@ -131,7 +164,7 @@ class AppEpics implements EpicClass<AppState> {
         return RegisterError(
           error,
           stackTrace,
-          password : action.password,
+          password: action.password,
           email: action.email,
         );
       });

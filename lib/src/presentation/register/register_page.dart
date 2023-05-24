@@ -1,11 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/containers/register_container.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:movies_redux/src/presentation/register/custom_dialog.dart';
-import 'package:movies_redux/src/presentation/register/popup_text.dart';
+import 'package:auto_route/auto_route.dart';
 
+import '../home/movies_list.dart';
+
+@RoutePage()
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
 
@@ -37,19 +41,24 @@ class RegisterPage extends StatelessWidget {
                 ),
                 TextField(
                   controller: passwordController,
-                  //obscureText: isObscure,
-                  decoration: const InputDecoration(
+                  obscureText: registerState.obscureText,
+                  decoration: InputDecoration(
                     hintText: 'Password',
-                    // suffixIcon: IconButton(
-                    //   icon: Icon(
-                    //     isObscure ? Icons.visibility_off : Icons.visibility,
-                    //   ),
-                    //   onPressed: () {
-                    //     setState(() {
-                    //       isObscure = !isObscure;
-                    //     });
-                    //   },
-                    // ),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        registerState.obscureText ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        StoreProvider.of<AppState>(context).dispatch(
+                          ObscureTextStart(
+                            register: RegisterModel(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -89,7 +98,18 @@ class RegisterPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () async {},
+                    onPressed: () async {
+                      StoreProvider.of<AppState>(context).dispatch(
+                        LogInStart(
+                          email: emailController.text,
+                          password: passwordController.text,
+                        ),
+
+
+
+
+                      );
+                    },
                   ),
                 ),
               ],

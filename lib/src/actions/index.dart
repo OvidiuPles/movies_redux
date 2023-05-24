@@ -9,6 +9,8 @@ part 'movies/get_description.dart';
 part 'movies/get_more_movies.dart';
 part 'movies/reset_filters.dart';
 part 'auth/register.dart';
+part 'auth/obscure_text.dart';
+part 'auth/log_in.dart';
 
 abstract class AppAction {}
 

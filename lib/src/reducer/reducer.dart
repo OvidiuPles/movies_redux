@@ -1,7 +1,7 @@
 import 'package:movies_redux/src/models/index.dart';
-import 'package:movies_redux/src/reducer/description_reducer.dart';
-import 'package:movies_redux/src/reducer/movies_reducer.dart';
-import 'package:movies_redux/src/reducer/register_reducer.dart';
+import 'package:movies_redux/src/reducer/movies/description_reducer.dart';
+import 'package:movies_redux/src/reducer/movies/movies_reducer.dart';
+import 'package:movies_redux/src/reducer/auth/register_reducer.dart';
 
 /// State + Actions => State
 

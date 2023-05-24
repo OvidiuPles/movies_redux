@@ -20,7 +20,7 @@ class MoviesApi {
       'yts.mx',
       'api/v2/list_movies.json',
       <String, dynamic>{
-        'limit': '6',
+        //'limit': '6',
         'page': '$page',
         'genre': genre,
         'quality': quality,

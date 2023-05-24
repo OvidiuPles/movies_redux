@@ -26,7 +26,6 @@ class Register with _$Register implements AppAction {
     StackTrace stackTrace, {
     @Default('') String email,
     @Default('') String password,
-    @Default('Eroare la inregistrare') String info,
     @Default(_kRegisterPendingId) String pendingId,
   }) = RegisterError;
 
