@@ -1,23 +1,24 @@
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/models/index.dart';
-import 'package:movies_redux/src/presentation/home/movies_list.dart';
+import 'package:movies_redux/src/presentation/movies/movies_page.dart';
 import 'package:movies_redux/src/presentation/register/register_page.dart';
-//import 'package:movies_redux/src/presentation/routes/app_router.dart';
-import 'package:movies_redux/src/presentation/home/movies_list.dart';
+import 'package:movies_redux/src/presentation/routes/app_router.dart';
 
+//@RoutePage()
 class MoviesApp extends StatefulWidget {
-   const MoviesApp({super.key});
-  //final AppRouter _appRouter = AppRouter();
+   MoviesApp({super.key});
 
   @override
   State<MoviesApp> createState() => _MoviesAppState();
 }
 
 class _MoviesAppState extends State<MoviesApp> {
-  int currentIndex = 0;
-  final List<Widget> pages = <Widget>[const MoviesList(), RegisterPage(), RegisterPage()];
+  int currentIndex = 1;
+  final List<Widget> pages = <Widget>[MoviesPage(), RegisterPage(), RegisterPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -88,9 +89,11 @@ class _MoviesAppState extends State<MoviesApp> {
         fixedColor: Colors.cyan,
         currentIndex: currentIndex,
         onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
+          //_appRouter.
+          // currentIndex = index;
+          // setState(() {
+          //
+          // });
         },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

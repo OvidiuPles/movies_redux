@@ -242,6 +242,7 @@ mixin _$AppState {
   MoviesState get moviesState => throw _privateConstructorUsedError;
   DescriptionState get descriptionState => throw _privateConstructorUsedError;
   RegisterState get registerState => throw _privateConstructorUsedError;
+  NavigationState get navigationState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith =>
@@ -256,11 +257,13 @@ abstract class $AppStateCopyWith<$Res> {
   $Res call(
       {MoviesState moviesState,
       DescriptionState descriptionState,
-      RegisterState registerState});
+      RegisterState registerState,
+      NavigationState navigationState});
 
   $MoviesStateCopyWith<$Res> get moviesState;
   $DescriptionStateCopyWith<$Res> get descriptionState;
   $RegisterStateCopyWith<$Res> get registerState;
+  $NavigationStateCopyWith<$Res> get navigationState;
 }
 
 /// @nodoc
@@ -279,6 +282,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? moviesState = null,
     Object? descriptionState = null,
     Object? registerState = null,
+    Object? navigationState = null,
   }) {
     return _then(_value.copyWith(
       moviesState: null == moviesState
@@ -293,6 +297,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.registerState
           : registerState // ignore: cast_nullable_to_non_nullable
               as RegisterState,
+      navigationState: null == navigationState
+          ? _value.navigationState
+          : navigationState // ignore: cast_nullable_to_non_nullable
+              as NavigationState,
     ) as $Val);
   }
 
@@ -319,6 +327,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return _then(_value.copyWith(registerState: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationStateCopyWith<$Res> get navigationState {
+    return $NavigationStateCopyWith<$Res>(_value.navigationState, (value) {
+      return _then(_value.copyWith(navigationState: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -331,7 +347,8 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $Res call(
       {MoviesState moviesState,
       DescriptionState descriptionState,
-      RegisterState registerState});
+      RegisterState registerState,
+      NavigationState navigationState});
 
   @override
   $MoviesStateCopyWith<$Res> get moviesState;
@@ -339,6 +356,8 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $DescriptionStateCopyWith<$Res> get descriptionState;
   @override
   $RegisterStateCopyWith<$Res> get registerState;
+  @override
+  $NavigationStateCopyWith<$Res> get navigationState;
 }
 
 /// @nodoc
@@ -355,6 +374,7 @@ class __$$AppState$CopyWithImpl<$Res>
     Object? moviesState = null,
     Object? descriptionState = null,
     Object? registerState = null,
+    Object? navigationState = null,
   }) {
     return _then(_$AppState$(
       moviesState: null == moviesState
@@ -369,6 +389,10 @@ class __$$AppState$CopyWithImpl<$Res>
           ? _value.registerState
           : registerState // ignore: cast_nullable_to_non_nullable
               as RegisterState,
+      navigationState: null == navigationState
+          ? _value.navigationState
+          : navigationState // ignore: cast_nullable_to_non_nullable
+              as NavigationState,
     ));
   }
 }
@@ -379,7 +403,8 @@ class _$AppState$ implements AppState$ {
   const _$AppState$(
       {this.moviesState = const MoviesState(),
       this.descriptionState = const DescriptionState(),
-      this.registerState = const RegisterState()});
+      this.registerState = const RegisterState(),
+      this.navigationState = const NavigationState()});
 
   @override
   @JsonKey()
@@ -390,10 +415,13 @@ class _$AppState$ implements AppState$ {
   @override
   @JsonKey()
   final RegisterState registerState;
+  @override
+  @JsonKey()
+  final NavigationState navigationState;
 
   @override
   String toString() {
-    return 'AppState(moviesState: $moviesState, descriptionState: $descriptionState, registerState: $registerState)';
+    return 'AppState(moviesState: $moviesState, descriptionState: $descriptionState, registerState: $registerState, navigationState: $navigationState)';
   }
 
   @override
@@ -406,12 +434,14 @@ class _$AppState$ implements AppState$ {
             (identical(other.descriptionState, descriptionState) ||
                 other.descriptionState == descriptionState) &&
             (identical(other.registerState, registerState) ||
-                other.registerState == registerState));
+                other.registerState == registerState) &&
+            (identical(other.navigationState, navigationState) ||
+                other.navigationState == navigationState));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, moviesState, descriptionState, registerState);
+  int get hashCode => Object.hash(runtimeType, moviesState, descriptionState,
+      registerState, navigationState);
 
   @JsonKey(ignore: true)
   @override
@@ -424,7 +454,8 @@ abstract class AppState$ implements AppState {
   const factory AppState$(
       {final MoviesState moviesState,
       final DescriptionState descriptionState,
-      final RegisterState registerState}) = _$AppState$;
+      final RegisterState registerState,
+      final NavigationState navigationState}) = _$AppState$;
 
   @override
   MoviesState get moviesState;
@@ -432,6 +463,8 @@ abstract class AppState$ implements AppState {
   DescriptionState get descriptionState;
   @override
   RegisterState get registerState;
+  @override
+  NavigationState get navigationState;
   @override
   @JsonKey(ignore: true)
   _$$AppState$CopyWith<_$AppState$> get copyWith =>
@@ -1279,6 +1312,7 @@ abstract class RegisterState$ implements RegisterState {
 
 /// @nodoc
 mixin _$User {
+  bool get loged => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
 
@@ -1291,7 +1325,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String email, String uid});
+  $Res call({bool loged, String email, String uid});
 }
 
 /// @nodoc
@@ -1307,10 +1341,15 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? loged = null,
     Object? email = null,
     Object? uid = null,
   }) {
     return _then(_value.copyWith(
+      loged: null == loged
+          ? _value.loged
+          : loged // ignore: cast_nullable_to_non_nullable
+              as bool,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -1329,7 +1368,7 @@ abstract class _$$User$CopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$User$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String uid});
+  $Res call({bool loged, String email, String uid});
 }
 
 /// @nodoc
@@ -1341,10 +1380,15 @@ class __$$User$CopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$User$>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? loged = null,
     Object? email = null,
     Object? uid = null,
   }) {
     return _then(_$User$(
+      loged: null == loged
+          ? _value.loged
+          : loged // ignore: cast_nullable_to_non_nullable
+              as bool,
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -1360,8 +1404,11 @@ class __$$User$CopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$User$>
 /// @nodoc
 
 class _$User$ implements User$ {
-  const _$User$({this.email = 'default mail', this.uid = 'default uid'});
+  const _$User$({this.loged = true, this.email = '', this.uid = ''});
 
+  @override
+  @JsonKey()
+  final bool loged;
   @override
   @JsonKey()
   final String email;
@@ -1371,7 +1418,7 @@ class _$User$ implements User$ {
 
   @override
   String toString() {
-    return 'User(email: $email, uid: $uid)';
+    return 'User(loged: $loged, email: $email, uid: $uid)';
   }
 
   @override
@@ -1379,12 +1426,13 @@ class _$User$ implements User$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$User$ &&
+            (identical(other.loged, loged) || other.loged == loged) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, uid);
+  int get hashCode => Object.hash(runtimeType, loged, email, uid);
 
   @JsonKey(ignore: true)
   @override
@@ -1394,8 +1442,11 @@ class _$User$ implements User$ {
 }
 
 abstract class User$ implements User {
-  const factory User$({final String email, final String uid}) = _$User$;
+  const factory User$(
+      {final bool loged, final String email, final String uid}) = _$User$;
 
+  @override
+  bool get loged;
   @override
   String get email;
   @override
@@ -1403,4 +1454,309 @@ abstract class User$ implements User {
   @override
   @JsonKey(ignore: true)
   _$$User$CopyWith<_$User$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$NavigationState {
+  User get user => throw _privateConstructorUsedError;
+  int get tabIndex =>
+      throw _privateConstructorUsedError; // for bottomNavigationBar
+  DrawerMenu get drawerMenu => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $NavigationStateCopyWith<NavigationState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NavigationStateCopyWith<$Res> {
+  factory $NavigationStateCopyWith(
+          NavigationState value, $Res Function(NavigationState) then) =
+      _$NavigationStateCopyWithImpl<$Res, NavigationState>;
+  @useResult
+  $Res call({User user, int tabIndex, DrawerMenu drawerMenu});
+
+  $UserCopyWith<$Res> get user;
+  $DrawerMenuCopyWith<$Res> get drawerMenu;
+}
+
+/// @nodoc
+class _$NavigationStateCopyWithImpl<$Res, $Val extends NavigationState>
+    implements $NavigationStateCopyWith<$Res> {
+  _$NavigationStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? tabIndex = null,
+    Object? drawerMenu = null,
+  }) {
+    return _then(_value.copyWith(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      tabIndex: null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      drawerMenu: null == drawerMenu
+          ? _value.drawerMenu
+          : drawerMenu // ignore: cast_nullable_to_non_nullable
+              as DrawerMenu,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DrawerMenuCopyWith<$Res> get drawerMenu {
+    return $DrawerMenuCopyWith<$Res>(_value.drawerMenu, (value) {
+      return _then(_value.copyWith(drawerMenu: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$NavigationState$CopyWith<$Res>
+    implements $NavigationStateCopyWith<$Res> {
+  factory _$$NavigationState$CopyWith(
+          _$NavigationState$ value, $Res Function(_$NavigationState$) then) =
+      __$$NavigationState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({User user, int tabIndex, DrawerMenu drawerMenu});
+
+  @override
+  $UserCopyWith<$Res> get user;
+  @override
+  $DrawerMenuCopyWith<$Res> get drawerMenu;
+}
+
+/// @nodoc
+class __$$NavigationState$CopyWithImpl<$Res>
+    extends _$NavigationStateCopyWithImpl<$Res, _$NavigationState$>
+    implements _$$NavigationState$CopyWith<$Res> {
+  __$$NavigationState$CopyWithImpl(
+      _$NavigationState$ _value, $Res Function(_$NavigationState$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? tabIndex = null,
+    Object? drawerMenu = null,
+  }) {
+    return _then(_$NavigationState$(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      tabIndex: null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      drawerMenu: null == drawerMenu
+          ? _value.drawerMenu
+          : drawerMenu // ignore: cast_nullable_to_non_nullable
+              as DrawerMenu,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NavigationState$ implements NavigationState$ {
+  const _$NavigationState$(
+      {this.user = const User(),
+      this.tabIndex = 0,
+      this.drawerMenu = const DrawerMenu()});
+
+  @override
+  @JsonKey()
+  final User user;
+  @override
+  @JsonKey()
+  final int tabIndex;
+// for bottomNavigationBar
+  @override
+  @JsonKey()
+  final DrawerMenu drawerMenu;
+
+  @override
+  String toString() {
+    return 'NavigationState(user: $user, tabIndex: $tabIndex, drawerMenu: $drawerMenu)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NavigationState$ &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.tabIndex, tabIndex) ||
+                other.tabIndex == tabIndex) &&
+            (identical(other.drawerMenu, drawerMenu) ||
+                other.drawerMenu == drawerMenu));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user, tabIndex, drawerMenu);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NavigationState$CopyWith<_$NavigationState$> get copyWith =>
+      __$$NavigationState$CopyWithImpl<_$NavigationState$>(this, _$identity);
+}
+
+abstract class NavigationState$ implements NavigationState {
+  const factory NavigationState$(
+      {final User user,
+      final int tabIndex,
+      final DrawerMenu drawerMenu}) = _$NavigationState$;
+
+  @override
+  User get user;
+  @override
+  int get tabIndex;
+  @override // for bottomNavigationBar
+  DrawerMenu get drawerMenu;
+  @override
+  @JsonKey(ignore: true)
+  _$$NavigationState$CopyWith<_$NavigationState$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$DrawerMenu {
+  String get authItem => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DrawerMenuCopyWith<DrawerMenu> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DrawerMenuCopyWith<$Res> {
+  factory $DrawerMenuCopyWith(
+          DrawerMenu value, $Res Function(DrawerMenu) then) =
+      _$DrawerMenuCopyWithImpl<$Res, DrawerMenu>;
+  @useResult
+  $Res call({String authItem});
+}
+
+/// @nodoc
+class _$DrawerMenuCopyWithImpl<$Res, $Val extends DrawerMenu>
+    implements $DrawerMenuCopyWith<$Res> {
+  _$DrawerMenuCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? authItem = null,
+  }) {
+    return _then(_value.copyWith(
+      authItem: null == authItem
+          ? _value.authItem
+          : authItem // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DrawerMenu$CopyWith<$Res>
+    implements $DrawerMenuCopyWith<$Res> {
+  factory _$$DrawerMenu$CopyWith(
+          _$DrawerMenu$ value, $Res Function(_$DrawerMenu$) then) =
+      __$$DrawerMenu$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String authItem});
+}
+
+/// @nodoc
+class __$$DrawerMenu$CopyWithImpl<$Res>
+    extends _$DrawerMenuCopyWithImpl<$Res, _$DrawerMenu$>
+    implements _$$DrawerMenu$CopyWith<$Res> {
+  __$$DrawerMenu$CopyWithImpl(
+      _$DrawerMenu$ _value, $Res Function(_$DrawerMenu$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? authItem = null,
+  }) {
+    return _then(_$DrawerMenu$(
+      authItem: null == authItem
+          ? _value.authItem
+          : authItem // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DrawerMenu$ implements DrawerMenu$ {
+  const _$DrawerMenu$({this.authItem = 'Sign in'});
+
+  @override
+  @JsonKey()
+  final String authItem;
+
+  @override
+  String toString() {
+    return 'DrawerMenu(authItem: $authItem)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DrawerMenu$ &&
+            (identical(other.authItem, authItem) ||
+                other.authItem == authItem));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, authItem);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DrawerMenu$CopyWith<_$DrawerMenu$> get copyWith =>
+      __$$DrawerMenu$CopyWithImpl<_$DrawerMenu$>(this, _$identity);
+}
+
+abstract class DrawerMenu$ implements DrawerMenu {
+  const factory DrawerMenu$({final String authItem}) = _$DrawerMenu$;
+
+  @override
+  String get authItem;
+  @override
+  @JsonKey(ignore: true)
+  _$$DrawerMenu$CopyWith<_$DrawerMenu$> get copyWith =>
+      throw _privateConstructorUsedError;
 }

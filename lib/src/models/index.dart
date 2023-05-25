@@ -12,3 +12,5 @@ part 'description/description_state.dart';
 part 'auth/register_model.dart';
 part 'auth/register_state.dart';
 part 'auth/user.dart';
+part 'navigation/navigation_state.dart';
+part 'navigation/drawer_menu.dart';

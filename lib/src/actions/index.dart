@@ -11,6 +11,7 @@ part 'movies/reset_filters.dart';
 part 'auth/register.dart';
 part 'auth/obscure_text.dart';
 part 'auth/log_in.dart';
+part 'navigation/change_tab.dart';
 
 abstract class AppAction {}
 

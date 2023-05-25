@@ -4985,11 +4985,11 @@ class __$$LogInSuccessfulCopyWithImpl<$Res>
     Object? user = null,
   }) {
     return _then(_$LogInSuccessful(
-      null == pendingId
+      pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
-      null == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -5009,13 +5009,12 @@ class __$$LogInSuccessfulCopyWithImpl<$Res>
 
 class _$LogInSuccessful implements LogInSuccessful {
   const _$LogInSuccessful(
-      [this.pendingId = _kLogInPendingId, this.user = const User()]);
+      {this.pendingId = _kLogInPendingId, required this.user});
 
   @override
   @JsonKey()
   final String pendingId;
   @override
-  @JsonKey()
   final User user;
 
   @override
@@ -5119,8 +5118,8 @@ class _$LogInSuccessful implements LogInSuccessful {
 }
 
 abstract class LogInSuccessful implements LogIn, ActionDone {
-  const factory LogInSuccessful([final String pendingId, final User user]) =
-      _$LogInSuccessful;
+  const factory LogInSuccessful(
+      {final String pendingId, required final User user}) = _$LogInSuccessful;
 
   @override
   String get pendingId;
@@ -5333,5 +5332,586 @@ abstract class LogInError implements LogIn, ActionDone, ErrorAction {
   @override
   @JsonKey(ignore: true)
   _$$LogInErrorCopyWith<_$LogInError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ChangeTab {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int tabIndex, String pendingId) start,
+    required TResult Function(int tabIndex, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int tabIndex, String pendingId)? start,
+    TResult? Function(int tabIndex, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int tabIndex, String pendingId)? start,
+    TResult Function(int tabIndex, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTabStart value) start,
+    required TResult Function(ChangeTabSuccessful value) successful,
+    required TResult Function(ChangeTabError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTabStart value)? start,
+    TResult? Function(ChangeTabSuccessful value)? successful,
+    TResult? Function(ChangeTabError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTabStart value)? start,
+    TResult Function(ChangeTabSuccessful value)? successful,
+    TResult Function(ChangeTabError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ChangeTabCopyWith<ChangeTab> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChangeTabCopyWith<$Res> {
+  factory $ChangeTabCopyWith(ChangeTab value, $Res Function(ChangeTab) then) =
+      _$ChangeTabCopyWithImpl<$Res, ChangeTab>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ChangeTabCopyWithImpl<$Res, $Val extends ChangeTab>
+    implements $ChangeTabCopyWith<$Res> {
+  _$ChangeTabCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ChangeTabStartCopyWith<$Res>
+    implements $ChangeTabCopyWith<$Res> {
+  factory _$$ChangeTabStartCopyWith(
+          _$ChangeTabStart value, $Res Function(_$ChangeTabStart) then) =
+      __$$ChangeTabStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int tabIndex, String pendingId});
+}
+
+/// @nodoc
+class __$$ChangeTabStartCopyWithImpl<$Res>
+    extends _$ChangeTabCopyWithImpl<$Res, _$ChangeTabStart>
+    implements _$$ChangeTabStartCopyWith<$Res> {
+  __$$ChangeTabStartCopyWithImpl(
+      _$ChangeTabStart _value, $Res Function(_$ChangeTabStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tabIndex = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ChangeTabStart(
+      tabIndex: null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTabStart implements ChangeTabStart {
+  const _$ChangeTabStart(
+      {required this.tabIndex, this.pendingId = _kChangeTabPendingId});
+
+  @override
+  final int tabIndex;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ChangeTab.start(tabIndex: $tabIndex, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTabStart &&
+            (identical(other.tabIndex, tabIndex) ||
+                other.tabIndex == tabIndex) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, tabIndex, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTabStartCopyWith<_$ChangeTabStart> get copyWith =>
+      __$$ChangeTabStartCopyWithImpl<_$ChangeTabStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int tabIndex, String pendingId) start,
+    required TResult Function(int tabIndex, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(tabIndex, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int tabIndex, String pendingId)? start,
+    TResult? Function(int tabIndex, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(tabIndex, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int tabIndex, String pendingId)? start,
+    TResult Function(int tabIndex, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(tabIndex, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTabStart value) start,
+    required TResult Function(ChangeTabSuccessful value) successful,
+    required TResult Function(ChangeTabError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTabStart value)? start,
+    TResult? Function(ChangeTabSuccessful value)? successful,
+    TResult? Function(ChangeTabError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTabStart value)? start,
+    TResult Function(ChangeTabSuccessful value)? successful,
+    TResult Function(ChangeTabError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTabStart implements ChangeTab, ActionStart {
+  const factory ChangeTabStart(
+      {required final int tabIndex, final String pendingId}) = _$ChangeTabStart;
+
+  int get tabIndex;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChangeTabStartCopyWith<_$ChangeTabStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeTabSuccessfulCopyWith<$Res>
+    implements $ChangeTabCopyWith<$Res> {
+  factory _$$ChangeTabSuccessfulCopyWith(_$ChangeTabSuccessful value,
+          $Res Function(_$ChangeTabSuccessful) then) =
+      __$$ChangeTabSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int tabIndex, String pendingId});
+}
+
+/// @nodoc
+class __$$ChangeTabSuccessfulCopyWithImpl<$Res>
+    extends _$ChangeTabCopyWithImpl<$Res, _$ChangeTabSuccessful>
+    implements _$$ChangeTabSuccessfulCopyWith<$Res> {
+  __$$ChangeTabSuccessfulCopyWithImpl(
+      _$ChangeTabSuccessful _value, $Res Function(_$ChangeTabSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tabIndex = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ChangeTabSuccessful(
+      tabIndex: null == tabIndex
+          ? _value.tabIndex
+          : tabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTabSuccessful implements ChangeTabSuccessful {
+  const _$ChangeTabSuccessful(
+      {required this.tabIndex, this.pendingId = _kChangeTabPendingId});
+
+  @override
+  final int tabIndex;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ChangeTab.successful(tabIndex: $tabIndex, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTabSuccessful &&
+            (identical(other.tabIndex, tabIndex) ||
+                other.tabIndex == tabIndex) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, tabIndex, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTabSuccessfulCopyWith<_$ChangeTabSuccessful> get copyWith =>
+      __$$ChangeTabSuccessfulCopyWithImpl<_$ChangeTabSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int tabIndex, String pendingId) start,
+    required TResult Function(int tabIndex, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(tabIndex, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int tabIndex, String pendingId)? start,
+    TResult? Function(int tabIndex, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(tabIndex, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int tabIndex, String pendingId)? start,
+    TResult Function(int tabIndex, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(tabIndex, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTabStart value) start,
+    required TResult Function(ChangeTabSuccessful value) successful,
+    required TResult Function(ChangeTabError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTabStart value)? start,
+    TResult? Function(ChangeTabSuccessful value)? successful,
+    TResult? Function(ChangeTabError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTabStart value)? start,
+    TResult Function(ChangeTabSuccessful value)? successful,
+    TResult Function(ChangeTabError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTabSuccessful implements ChangeTab, ActionDone {
+  const factory ChangeTabSuccessful(
+      {required final int tabIndex,
+      final String pendingId}) = _$ChangeTabSuccessful;
+
+  int get tabIndex;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChangeTabSuccessfulCopyWith<_$ChangeTabSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeTabErrorCopyWith<$Res>
+    implements $ChangeTabCopyWith<$Res> {
+  factory _$$ChangeTabErrorCopyWith(
+          _$ChangeTabError value, $Res Function(_$ChangeTabError) then) =
+      __$$ChangeTabErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ChangeTabErrorCopyWithImpl<$Res>
+    extends _$ChangeTabCopyWithImpl<$Res, _$ChangeTabError>
+    implements _$$ChangeTabErrorCopyWith<$Res> {
+  __$$ChangeTabErrorCopyWithImpl(
+      _$ChangeTabError _value, $Res Function(_$ChangeTabError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ChangeTabError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTabError implements ChangeTabError {
+  const _$ChangeTabError(this.error, this.stackTrace,
+      [this.pendingId = _kChangeTabPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ChangeTab.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTabError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTabErrorCopyWith<_$ChangeTabError> get copyWith =>
+      __$$ChangeTabErrorCopyWithImpl<_$ChangeTabError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int tabIndex, String pendingId) start,
+    required TResult Function(int tabIndex, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int tabIndex, String pendingId)? start,
+    TResult? Function(int tabIndex, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int tabIndex, String pendingId)? start,
+    TResult Function(int tabIndex, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeTabStart value) start,
+    required TResult Function(ChangeTabSuccessful value) successful,
+    required TResult Function(ChangeTabError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeTabStart value)? start,
+    TResult? Function(ChangeTabSuccessful value)? successful,
+    TResult? Function(ChangeTabError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeTabStart value)? start,
+    TResult Function(ChangeTabSuccessful value)? successful,
+    TResult Function(ChangeTabError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTabError implements ChangeTab, ActionDone, ErrorAction {
+  const factory ChangeTabError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$ChangeTabError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ChangeTabErrorCopyWith<_$ChangeTabError> get copyWith =>
       throw _privateConstructorUsedError;
 }

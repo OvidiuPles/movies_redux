@@ -12,10 +12,10 @@ class LogIn with _$LogIn implements AppAction {
   }) = LogInStart;
 
   @Implements<ActionDone>()
-  const factory LogIn.successful([
+  const factory LogIn.successful({
     @Default(_kLogInPendingId) String pendingId,
-    @Default(User()) User user,
-  ]) = LogInSuccessful;
+    required User user,
+  }) = LogInSuccessful;
 
   @Implements<ActionDone>()
   @Implements<ErrorAction>()

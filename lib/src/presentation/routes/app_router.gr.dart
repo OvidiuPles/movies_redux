@@ -15,12 +15,6 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    MoviesList.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const MoviesList(),
-      );
-    },
     RegisterRoute.name: (routeData) {
       final args = routeData.argsAs<RegisterRouteArgs>(
           orElse: () => const RegisterRouteArgs());
@@ -29,21 +23,13 @@ abstract class _$AppRouter extends RootStackRouter {
         child: RegisterPage(key: args.key),
       );
     },
+    MoviesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MoviesPage(),
+      );
+    },
   };
-}
-
-/// generated route for
-/// [MoviesList]
-class MoviesList extends PageRouteInfo<void> {
-  const MoviesList({List<PageRouteInfo>? children})
-      : super(
-          MoviesList.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MoviesList';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -73,4 +59,18 @@ class RegisterRouteArgs {
   String toString() {
     return 'RegisterRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [MoviesPage]
+class MoviesRoute extends PageRouteInfo<void> {
+  const MoviesRoute({List<PageRouteInfo>? children})
+      : super(
+          MoviesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MoviesRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

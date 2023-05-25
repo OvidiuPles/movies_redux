@@ -29,7 +29,20 @@ class AppEpics implements EpicClass<AppState> {
       TypedEpic<AppState, RegisterStart>(_register),
       TypedEpic<AppState, ObscureTextStart>(_obscureText),
       TypedEpic<AppState, LogInStart>(_logIn),
+      TypedEpic<AppState, ChangeTabStart>(_changeTab),
     ])(actions, store);
+  }
+
+  Stream<AppAction> _changeTab(Stream<ChangeTabStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ChangeTabStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        return true;
+      }).map<ChangeTab>((_) {
+        return ChangeTabSuccessful(
+          tabIndex: action.tabIndex,
+        );
+      }).onErrorReturnWith(ChangeTabError.new);
+    });
   }
 
   Stream<AppAction> _logIn(Stream<LogInStart> actions, EpicStore<AppState> store) {
@@ -41,7 +54,12 @@ class AppEpics implements EpicClass<AppState> {
         );
         return true;
       }).map<LogIn>((_) {
-        return const LogInSuccessful();
+        return LogInSuccessful(
+          user: User(
+            email: action.email,
+            uid: '123',
+          ),
+        );
       }).onErrorReturnWith((Object error, StackTrace stackTrace) {
         return LogInError(
           error,
