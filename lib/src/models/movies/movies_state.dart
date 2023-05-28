@@ -10,5 +10,6 @@ class MoviesState with _$MoviesState {
     String? orderBy,
     String? searchText,
     @Default(<Movie>[]) List<Movie> movies,
+    @Default(<Movie>[]) List<Movie> favorites,
   }) = MoviesState$;
 }

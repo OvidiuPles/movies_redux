@@ -5,7 +5,9 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
 import 'package:movies_redux/src/actions/index.dart';
 import 'package:movies_redux/src/data/auth/auth_service.dart';
+import 'package:movies_redux/src/data/database/database.dart';
 import 'package:movies_redux/src/data/movies/description_api.dart';
+import 'package:movies_redux/src/data/movies/favorites_api.dart';
 import 'package:movies_redux/src/data/movies/movies_api.dart';
 import 'package:movies_redux/src/epics/app_epics.dart';
 import 'package:movies_redux/src/models/index.dart';
@@ -54,6 +56,9 @@ void main() async {
   );
 
   runApp(MyMoviesApp(store: store));
+
+  await Database.addToFavorites(uid: 'userId3', movieId: 3);
+  await Database.getFavorites(uid: 'userId3');
 }
 
 class MyMoviesApp extends StatelessWidget {

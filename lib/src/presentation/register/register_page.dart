@@ -9,7 +9,11 @@ import 'register_box.dart';
 
 @RoutePage()
 class RegisterPage extends StatelessWidget {
-  RegisterPage({Key? key}) : super(key: key);
+  RegisterPage({super.key});
+
+  RegisterPage.simple({super.key});
+
+  //final bool simpleVersion;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -22,7 +26,25 @@ class RegisterPage extends StatelessWidget {
       ),
       body: const RegisterBox(),
       bottomNavigationBar: const BottomNavigation(),
-      drawer: CustomDrawer(),
+      drawer: CustomDrawer(scaffoldKey: scaffoldKey),
+    );
+  }
+}
+
+@RoutePage()
+class RegisterPageSimple extends StatelessWidget {
+   RegisterPageSimple({super.key});
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      appBar: PreferredSize(
+        preferredSize:  const Size.fromHeight(kToolbarHeight),
+        child: CustomAppBar(scaffoldKey: scaffoldKey),
+      ),
+      body: const RegisterBox(),
+      drawer: CustomDrawer(scaffoldKey: scaffoldKey),
     );
   }
 }

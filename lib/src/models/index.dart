@@ -14,3 +14,4 @@ part 'auth/register_state.dart';
 part 'auth/user.dart';
 part 'navigation/navigation_state.dart';
 part 'navigation/drawer_menu.dart';
+part 'favorites/favorites_state.dart';

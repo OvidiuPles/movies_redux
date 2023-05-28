@@ -8,6 +8,7 @@ Reducer<RegisterState> registerReducer = combineReducers(<Reducer<RegisterState>
   TypedReducer<RegisterState, RegisterError>(_registerError),
   TypedReducer<RegisterState, ObscureTextSuccessful>(_obscureSuccessful),
   TypedReducer<RegisterState, LogInError>(_logInError),
+  TypedReducer<RegisterState, LogInSuccessful>(_logInSuccessful),
 ]);
 
 RegisterState _obscureSuccessful(RegisterState state, ObscureTextSuccessful action) {
@@ -45,5 +46,11 @@ RegisterState _logInError(RegisterState state, LogInError action) {
       password: action.password,
     ),
     popUpInfo: action.error.toString(),//.split(']').last.replaceAll('String', 'data').replaceAll('or null', ''),
+  );
+}
+
+RegisterState _logInSuccessful(RegisterState state, LogInSuccessful action) {
+  return state.copyWith(
+    isLoged: true,
   );
 }

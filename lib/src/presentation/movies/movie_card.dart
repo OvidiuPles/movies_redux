@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 import '../../actions/index.dart';
+import '../../data/database/database.dart';
 import '../../models/index.dart';
 import 'description_text.dart';
 
 class MovieCard extends StatelessWidget {
   const MovieCard({super.key, required this.movie});
+
   final Movie movie;
 
   @override
@@ -28,7 +30,7 @@ class MovieCard extends StatelessWidget {
                     errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
                       return Image.network(
                         'https://th.bing.com/th/id/R.eb64d5f8cca8c759c8d279e4dc4a2dba?rik=q%2f57AUPCNlV6uQ&riu=http%3a%2f%2fwww.clker.com%2fcli'
-                            'parts%2f0%2f4%2fK%2fi%2fq%2fS%2fno-image-hi.png&ehk=nS4TlgFP5amtgXbWKkaSQ82qqMisdUO9yZRyFjN%2fjCg%3d&risl=&pid=ImgRaw&r=0',
+                        'parts%2f0%2f4%2fK%2fi%2fq%2fS%2fno-image-hi.png&ehk=nS4TlgFP5amtgXbWKkaSQ82qqMisdUO9yZRyFjN%2fjCg%3d&risl=&pid=ImgRaw&r=0',
                         width: 145,
                         height: 145,
                       );
@@ -51,6 +53,12 @@ class MovieCard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  IconButton(
+                    icon: Icon(Icons.favorite_border),
+                    onPressed: () {
+                      Database.addToFavorites(uid: 'userId3', movieId: movie.id);
+                    },
+                  ),
                 ],
               ),
               onTap: () {
@@ -60,10 +68,6 @@ class MovieCard extends StatelessWidget {
                   movie: movie,
                 );
               },
-            ),
-            IconButton(
-              icon: Icon(Icons.favorite_border),
-              onPressed: () {},
             ),
           ],
         ),

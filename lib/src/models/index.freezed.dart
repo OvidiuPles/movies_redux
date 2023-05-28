@@ -480,6 +480,7 @@ mixin _$MoviesState {
   String? get orderBy => throw _privateConstructorUsedError;
   String? get searchText => throw _privateConstructorUsedError;
   List<Movie> get movies => throw _privateConstructorUsedError;
+  List<Movie> get favorites => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MoviesStateCopyWith<MoviesState> get copyWith =>
@@ -499,7 +500,8 @@ abstract class $MoviesStateCopyWith<$Res> {
       String? sortBy,
       String? orderBy,
       String? searchText,
-      List<Movie> movies});
+      List<Movie> movies,
+      List<Movie> favorites});
 }
 
 /// @nodoc
@@ -522,6 +524,7 @@ class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState>
     Object? orderBy = freezed,
     Object? searchText = freezed,
     Object? movies = null,
+    Object? favorites = null,
   }) {
     return _then(_value.copyWith(
       page: freezed == page
@@ -552,6 +555,10 @@ class _$MoviesStateCopyWithImpl<$Res, $Val extends MoviesState>
           ? _value.movies
           : movies // ignore: cast_nullable_to_non_nullable
               as List<Movie>,
+      favorites: null == favorites
+          ? _value.favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
     ) as $Val);
   }
 }
@@ -571,7 +578,8 @@ abstract class _$$MoviesState$CopyWith<$Res>
       String? sortBy,
       String? orderBy,
       String? searchText,
-      List<Movie> movies});
+      List<Movie> movies,
+      List<Movie> favorites});
 }
 
 /// @nodoc
@@ -592,6 +600,7 @@ class __$$MoviesState$CopyWithImpl<$Res>
     Object? orderBy = freezed,
     Object? searchText = freezed,
     Object? movies = null,
+    Object? favorites = null,
   }) {
     return _then(_$MoviesState$(
       page: freezed == page
@@ -622,6 +631,10 @@ class __$$MoviesState$CopyWithImpl<$Res>
           ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
               as List<Movie>,
+      favorites: null == favorites
+          ? _value._favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
     ));
   }
 }
@@ -636,8 +649,10 @@ class _$MoviesState$ implements MoviesState$ {
       this.sortBy,
       this.orderBy,
       this.searchText,
-      final List<Movie> movies = const <Movie>[]})
-      : _movies = movies;
+      final List<Movie> movies = const <Movie>[],
+      final List<Movie> favorites = const <Movie>[]})
+      : _movies = movies,
+        _favorites = favorites;
 
   @override
   final int? page;
@@ -660,9 +675,18 @@ class _$MoviesState$ implements MoviesState$ {
     return EqualUnmodifiableListView(_movies);
   }
 
+  final List<Movie> _favorites;
+  @override
+  @JsonKey()
+  List<Movie> get favorites {
+    if (_favorites is EqualUnmodifiableListView) return _favorites;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favorites);
+  }
+
   @override
   String toString() {
-    return 'MoviesState(page: $page, quality: $quality, genre: $genre, sortBy: $sortBy, orderBy: $orderBy, searchText: $searchText, movies: $movies)';
+    return 'MoviesState(page: $page, quality: $quality, genre: $genre, sortBy: $sortBy, orderBy: $orderBy, searchText: $searchText, movies: $movies, favorites: $favorites)';
   }
 
   @override
@@ -677,12 +701,22 @@ class _$MoviesState$ implements MoviesState$ {
             (identical(other.orderBy, orderBy) || other.orderBy == orderBy) &&
             (identical(other.searchText, searchText) ||
                 other.searchText == searchText) &&
-            const DeepCollectionEquality().equals(other._movies, _movies));
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
+            const DeepCollectionEquality()
+                .equals(other._favorites, _favorites));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, page, quality, genre, sortBy,
-      orderBy, searchText, const DeepCollectionEquality().hash(_movies));
+  int get hashCode => Object.hash(
+      runtimeType,
+      page,
+      quality,
+      genre,
+      sortBy,
+      orderBy,
+      searchText,
+      const DeepCollectionEquality().hash(_movies),
+      const DeepCollectionEquality().hash(_favorites));
 
   @JsonKey(ignore: true)
   @override
@@ -699,7 +733,8 @@ abstract class MoviesState$ implements MoviesState {
       final String? sortBy,
       final String? orderBy,
       final String? searchText,
-      final List<Movie> movies}) = _$MoviesState$;
+      final List<Movie> movies,
+      final List<Movie> favorites}) = _$MoviesState$;
 
   @override
   int? get page;
@@ -715,6 +750,8 @@ abstract class MoviesState$ implements MoviesState {
   String? get searchText;
   @override
   List<Movie> get movies;
+  @override
+  List<Movie> get favorites;
   @override
   @JsonKey(ignore: true)
   _$$MoviesState$CopyWith<_$MoviesState$> get copyWith =>
@@ -1137,6 +1174,7 @@ abstract class RegisterModel$ implements RegisterModel {
 
 /// @nodoc
 mixin _$RegisterState {
+  bool get isLoged => throw _privateConstructorUsedError;
   RegisterModel get register => throw _privateConstructorUsedError;
   String get popUpInfo => throw _privateConstructorUsedError;
   bool get obscureText => throw _privateConstructorUsedError;
@@ -1152,7 +1190,11 @@ abstract class $RegisterStateCopyWith<$Res> {
           RegisterState value, $Res Function(RegisterState) then) =
       _$RegisterStateCopyWithImpl<$Res, RegisterState>;
   @useResult
-  $Res call({RegisterModel register, String popUpInfo, bool obscureText});
+  $Res call(
+      {bool isLoged,
+      RegisterModel register,
+      String popUpInfo,
+      bool obscureText});
 
   $RegisterModelCopyWith<$Res> get register;
 }
@@ -1170,11 +1212,16 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isLoged = null,
     Object? register = null,
     Object? popUpInfo = null,
     Object? obscureText = null,
   }) {
     return _then(_value.copyWith(
+      isLoged: null == isLoged
+          ? _value.isLoged
+          : isLoged // ignore: cast_nullable_to_non_nullable
+              as bool,
       register: null == register
           ? _value.register
           : register // ignore: cast_nullable_to_non_nullable
@@ -1207,7 +1254,11 @@ abstract class _$$RegisterState$CopyWith<$Res>
       __$$RegisterState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RegisterModel register, String popUpInfo, bool obscureText});
+  $Res call(
+      {bool isLoged,
+      RegisterModel register,
+      String popUpInfo,
+      bool obscureText});
 
   @override
   $RegisterModelCopyWith<$Res> get register;
@@ -1224,11 +1275,16 @@ class __$$RegisterState$CopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? isLoged = null,
     Object? register = null,
     Object? popUpInfo = null,
     Object? obscureText = null,
   }) {
     return _then(_$RegisterState$(
+      isLoged: null == isLoged
+          ? _value.isLoged
+          : isLoged // ignore: cast_nullable_to_non_nullable
+              as bool,
       register: null == register
           ? _value.register
           : register // ignore: cast_nullable_to_non_nullable
@@ -1249,10 +1305,14 @@ class __$$RegisterState$CopyWithImpl<$Res>
 
 class _$RegisterState$ implements RegisterState$ {
   const _$RegisterState$(
-      {this.register = const RegisterModel(),
+      {this.isLoged = false,
+      this.register = const RegisterModel(),
       this.popUpInfo = 'default',
       this.obscureText = true});
 
+  @override
+  @JsonKey()
+  final bool isLoged;
   @override
   @JsonKey()
   final RegisterModel register;
@@ -1265,7 +1325,7 @@ class _$RegisterState$ implements RegisterState$ {
 
   @override
   String toString() {
-    return 'RegisterState(register: $register, popUpInfo: $popUpInfo, obscureText: $obscureText)';
+    return 'RegisterState(isLoged: $isLoged, register: $register, popUpInfo: $popUpInfo, obscureText: $obscureText)';
   }
 
   @override
@@ -1273,6 +1333,7 @@ class _$RegisterState$ implements RegisterState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterState$ &&
+            (identical(other.isLoged, isLoged) || other.isLoged == isLoged) &&
             (identical(other.register, register) ||
                 other.register == register) &&
             (identical(other.popUpInfo, popUpInfo) ||
@@ -1283,7 +1344,7 @@ class _$RegisterState$ implements RegisterState$ {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, register, popUpInfo, obscureText);
+      Object.hash(runtimeType, isLoged, register, popUpInfo, obscureText);
 
   @JsonKey(ignore: true)
   @override
@@ -1294,10 +1355,13 @@ class _$RegisterState$ implements RegisterState$ {
 
 abstract class RegisterState$ implements RegisterState {
   const factory RegisterState$(
-      {final RegisterModel register,
+      {final bool isLoged,
+      final RegisterModel register,
       final String popUpInfo,
       final bool obscureText}) = _$RegisterState$;
 
+  @override
+  bool get isLoged;
   @override
   RegisterModel get register;
   @override
@@ -1312,9 +1376,9 @@ abstract class RegisterState$ implements RegisterState {
 
 /// @nodoc
 mixin _$User {
-  bool get loged => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get uid => throw _privateConstructorUsedError;
+  bool get isLoged => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -1325,7 +1389,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({bool loged, String email, String uid});
+  $Res call({bool isLoged, String? email, String? uid});
 }
 
 /// @nodoc
@@ -1341,23 +1405,23 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? loged = null,
-    Object? email = null,
-    Object? uid = null,
+    Object? isLoged = null,
+    Object? email = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
-      loged: null == loged
-          ? _value.loged
-          : loged // ignore: cast_nullable_to_non_nullable
+      isLoged: null == isLoged
+          ? _value.isLoged
+          : isLoged // ignore: cast_nullable_to_non_nullable
               as bool,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      uid: null == uid
+              as String?,
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -1368,7 +1432,7 @@ abstract class _$$User$CopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$User$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool loged, String email, String uid});
+  $Res call({bool isLoged, String? email, String? uid});
 }
 
 /// @nodoc
@@ -1380,23 +1444,23 @@ class __$$User$CopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$User$>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? loged = null,
-    Object? email = null,
-    Object? uid = null,
+    Object? isLoged = null,
+    Object? email = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_$User$(
-      loged: null == loged
-          ? _value.loged
-          : loged // ignore: cast_nullable_to_non_nullable
+      isLoged: null == isLoged
+          ? _value.isLoged
+          : isLoged // ignore: cast_nullable_to_non_nullable
               as bool,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      uid: null == uid
+              as String?,
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1404,21 +1468,21 @@ class __$$User$CopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$User$>
 /// @nodoc
 
 class _$User$ implements User$ {
-  const _$User$({this.loged = true, this.email = '', this.uid = ''});
+  const _$User$({this.isLoged = false, this.email = '', this.uid = ''});
 
   @override
   @JsonKey()
-  final bool loged;
+  final bool isLoged;
   @override
   @JsonKey()
-  final String email;
+  final String? email;
   @override
   @JsonKey()
-  final String uid;
+  final String? uid;
 
   @override
   String toString() {
-    return 'User(loged: $loged, email: $email, uid: $uid)';
+    return 'User(isLoged: $isLoged, email: $email, uid: $uid)';
   }
 
   @override
@@ -1426,13 +1490,13 @@ class _$User$ implements User$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$User$ &&
-            (identical(other.loged, loged) || other.loged == loged) &&
+            (identical(other.isLoged, isLoged) || other.isLoged == isLoged) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loged, email, uid);
+  int get hashCode => Object.hash(runtimeType, isLoged, email, uid);
 
   @JsonKey(ignore: true)
   @override
@@ -1443,14 +1507,14 @@ class _$User$ implements User$ {
 
 abstract class User$ implements User {
   const factory User$(
-      {final bool loged, final String email, final String uid}) = _$User$;
+      {final bool isLoged, final String? email, final String? uid}) = _$User$;
 
   @override
-  bool get loged;
+  bool get isLoged;
   @override
-  String get email;
+  String? get email;
   @override
-  String get uid;
+  String? get uid;
   @override
   @JsonKey(ignore: true)
   _$$User$CopyWith<_$User$> get copyWith => throw _privateConstructorUsedError;
@@ -1758,5 +1822,130 @@ abstract class DrawerMenu$ implements DrawerMenu {
   @override
   @JsonKey(ignore: true)
   _$$DrawerMenu$CopyWith<_$DrawerMenu$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$FavoritesState {
+  List<Movie> get movies => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $FavoritesStateCopyWith<FavoritesState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FavoritesStateCopyWith<$Res> {
+  factory $FavoritesStateCopyWith(
+          FavoritesState value, $Res Function(FavoritesState) then) =
+      _$FavoritesStateCopyWithImpl<$Res, FavoritesState>;
+  @useResult
+  $Res call({List<Movie> movies});
+}
+
+/// @nodoc
+class _$FavoritesStateCopyWithImpl<$Res, $Val extends FavoritesState>
+    implements $FavoritesStateCopyWith<$Res> {
+  _$FavoritesStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movies = null,
+  }) {
+    return _then(_value.copyWith(
+      movies: null == movies
+          ? _value.movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FavoritesState$CopyWith<$Res>
+    implements $FavoritesStateCopyWith<$Res> {
+  factory _$$FavoritesState$CopyWith(
+          _$FavoritesState$ value, $Res Function(_$FavoritesState$) then) =
+      __$$FavoritesState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Movie> movies});
+}
+
+/// @nodoc
+class __$$FavoritesState$CopyWithImpl<$Res>
+    extends _$FavoritesStateCopyWithImpl<$Res, _$FavoritesState$>
+    implements _$$FavoritesState$CopyWith<$Res> {
+  __$$FavoritesState$CopyWithImpl(
+      _$FavoritesState$ _value, $Res Function(_$FavoritesState$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movies = null,
+  }) {
+    return _then(_$FavoritesState$(
+      movies: null == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FavoritesState$ implements FavoritesState$ {
+  const _$FavoritesState$({final List<Movie> movies = const <Movie>[]})
+      : _movies = movies;
+
+  final List<Movie> _movies;
+  @override
+  @JsonKey()
+  List<Movie> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
+
+  @override
+  String toString() {
+    return 'FavoritesState(movies: $movies)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FavoritesState$ &&
+            const DeepCollectionEquality().equals(other._movies, _movies));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_movies));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FavoritesState$CopyWith<_$FavoritesState$> get copyWith =>
+      __$$FavoritesState$CopyWithImpl<_$FavoritesState$>(this, _$identity);
+}
+
+abstract class FavoritesState$ implements FavoritesState {
+  const factory FavoritesState$({final List<Movie> movies}) = _$FavoritesState$;
+
+  @override
+  List<Movie> get movies;
+  @override
+  @JsonKey(ignore: true)
+  _$$FavoritesState$CopyWith<_$FavoritesState$> get copyWith =>
       throw _privateConstructorUsedError;
 }

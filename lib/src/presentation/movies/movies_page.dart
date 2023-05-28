@@ -6,6 +6,7 @@ import 'package:movies_redux/src/containers/movies_container.dart';
 import 'package:movies_redux/src/models/index.dart';
 import 'package:movies_redux/src/presentation/movies/movie_filters.dart';
 import 'package:movies_redux/src/presentation/widgets/app_bar.dart';
+
 //import 'package:movies_redux/src/presentation/widgets/app_bar.dart';
 import 'package:movies_redux/src/presentation/widgets/bottom_navigation.dart';
 import 'package:movies_redux/src/presentation/widgets/drawer.dart';
@@ -13,7 +14,7 @@ import 'movie_card.dart';
 
 @RoutePage()
 class MoviesPage extends StatelessWidget {
-  const MoviesPage({Key? key}) : super(key: key);
+  const MoviesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,7 @@ class MoviesPage extends StatelessWidget {
           );
         },
       ),
-      drawer: CustomDrawer(),
+      drawer: CustomDrawer(scaffoldKey: scaffoldKey),
       bottomNavigationBar: const BottomNavigation(),
     );
   }

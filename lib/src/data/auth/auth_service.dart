@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:movies_redux/src/models/index.dart' as models;
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -7,8 +8,12 @@ class AuthService {
     await _auth.createUserWithEmailAndPassword(email: email, password: password);
   }
 
-  Future<void> logInWithEmailAndPassword({required String email, required String password}) async {
-      UserCredential user = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      //return user;
+  Future<models.User> logInWithEmailAndPassword({required String email, required String password}) async {
+    final UserCredential firebaseUser = await _auth.signInWithEmailAndPassword(email: email, password: password);
+    final models.User user = models.User(
+      email: firebaseUser.user?.email,
+      uid: firebaseUser.user?.uid,
+    );
+    return user;
   }
 }

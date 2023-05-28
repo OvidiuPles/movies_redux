@@ -48,16 +48,17 @@ class AppEpics implements EpicClass<AppState> {
   Stream<AppAction> _logIn(Stream<LogInStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((LogInStart action) {
       return Stream<void>.value(null).asyncMap((_) async {
-        await authService.logInWithEmailAndPassword(
+        final User user = await authService.logInWithEmailAndPassword(
           email: action.email,
           password: action.password,
         );
-        return true;
-      }).map<LogIn>((_) {
+        return user;
+      }).map<LogIn>((User user) {
         return LogInSuccessful(
           user: User(
-            email: action.email,
-            uid: '123',
+            isLoged: true,
+            email: user.email,
+            uid: user.uid,
           ),
         );
       }).onErrorReturnWith((Object error, StackTrace stackTrace) {
