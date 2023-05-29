@@ -12,6 +12,8 @@ part 'auth/register.dart';
 part 'auth/obscure_text.dart';
 part 'auth/log_in.dart';
 part 'navigation/change_tab.dart';
+part 'favorites/add_favorite.dart';
+part 'favorites/get_favorites.dart';
 
 abstract class AppAction {}
 

@@ -19,7 +19,6 @@ class MoviesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-    StoreProvider.of<AppState>(context).dispatch(const GetMoviesStart());
 
     return Scaffold(
       key: scaffoldKey,

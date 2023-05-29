@@ -51,6 +51,7 @@ RegisterState _logInError(RegisterState state, LogInError action) {
 
 RegisterState _logInSuccessful(RegisterState state, LogInSuccessful action) {
   return state.copyWith(
+    user: action.user,
     isLoged: true,
   );
 }

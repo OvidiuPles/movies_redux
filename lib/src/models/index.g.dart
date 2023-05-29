@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of models;
+part of 'index.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -12,6 +12,7 @@ _$Movie$ _$$Movie$FromJson(Map<String, dynamic> json) => _$Movie$(
       year: json['year'] as int,
       imageLink: json['medium_cover_image'] as String,
       titleEnglish: json['title_english'] as String,
+      isFavorite: json['isFavorite'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$Movie$ToJson(_$Movie$ instance) => <String, dynamic>{
@@ -20,6 +21,7 @@ Map<String, dynamic> _$$Movie$ToJson(_$Movie$ instance) => <String, dynamic>{
       'year': instance.year,
       'medium_cover_image': instance.imageLink,
       'title_english': instance.titleEnglish,
+      'isFavorite': instance.isFavorite,
     };
 
 _$Description$ _$$Description$FromJson(Map<String, dynamic> json) =>

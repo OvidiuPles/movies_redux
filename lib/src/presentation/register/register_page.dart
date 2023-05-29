@@ -36,6 +36,7 @@ class RegisterPageSimple extends StatelessWidget {
    RegisterPageSimple({super.key});
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,

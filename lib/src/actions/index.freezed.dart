@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of actions;
+part of 'index.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -5913,5 +5913,1210 @@ abstract class ChangeTabError implements ChangeTab, ActionDone, ErrorAction {
   @override
   @JsonKey(ignore: true)
   _$$ChangeTabErrorCopyWith<_$ChangeTabError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$AddFavorite {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Movie movie, String pendingId) start,
+    required TResult Function(Movie movie, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Movie movie, String pendingId)? start,
+    TResult? Function(Movie movie, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Movie movie, String pendingId)? start,
+    TResult Function(Movie movie, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteStart value) start,
+    required TResult Function(AddFavoriteSuccessful value) successful,
+    required TResult Function(AddFavoriteError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteStart value)? start,
+    TResult? Function(AddFavoriteSuccessful value)? successful,
+    TResult? Function(AddFavoriteError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteStart value)? start,
+    TResult Function(AddFavoriteSuccessful value)? successful,
+    TResult Function(AddFavoriteError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddFavoriteCopyWith<AddFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddFavoriteCopyWith<$Res> {
+  factory $AddFavoriteCopyWith(
+          AddFavorite value, $Res Function(AddFavorite) then) =
+      _$AddFavoriteCopyWithImpl<$Res, AddFavorite>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddFavoriteCopyWithImpl<$Res, $Val extends AddFavorite>
+    implements $AddFavoriteCopyWith<$Res> {
+  _$AddFavoriteCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteStartCopyWith<$Res>
+    implements $AddFavoriteCopyWith<$Res> {
+  factory _$$AddFavoriteStartCopyWith(
+          _$AddFavoriteStart value, $Res Function(_$AddFavoriteStart) then) =
+      __$$AddFavoriteStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Movie movie, String pendingId});
+
+  $MovieCopyWith<$Res> get movie;
+}
+
+/// @nodoc
+class __$$AddFavoriteStartCopyWithImpl<$Res>
+    extends _$AddFavoriteCopyWithImpl<$Res, _$AddFavoriteStart>
+    implements _$$AddFavoriteStartCopyWith<$Res> {
+  __$$AddFavoriteStartCopyWithImpl(
+      _$AddFavoriteStart _value, $Res Function(_$AddFavoriteStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movie = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddFavoriteStart(
+      movie: null == movie
+          ? _value.movie
+          : movie // ignore: cast_nullable_to_non_nullable
+              as Movie,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MovieCopyWith<$Res> get movie {
+    return $MovieCopyWith<$Res>(_value.movie, (value) {
+      return _then(_value.copyWith(movie: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteStart implements AddFavoriteStart {
+  const _$AddFavoriteStart(
+      {required this.movie, this.pendingId = _kAddFavoritePendingId});
+
+  @override
+  final Movie movie;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddFavorite.start(movie: $movie, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteStart &&
+            (identical(other.movie, movie) || other.movie == movie) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, movie, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteStartCopyWith<_$AddFavoriteStart> get copyWith =>
+      __$$AddFavoriteStartCopyWithImpl<_$AddFavoriteStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Movie movie, String pendingId) start,
+    required TResult Function(Movie movie, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(movie, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Movie movie, String pendingId)? start,
+    TResult? Function(Movie movie, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(movie, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Movie movie, String pendingId)? start,
+    TResult Function(Movie movie, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(movie, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteStart value) start,
+    required TResult Function(AddFavoriteSuccessful value) successful,
+    required TResult Function(AddFavoriteError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteStart value)? start,
+    TResult? Function(AddFavoriteSuccessful value)? successful,
+    TResult? Function(AddFavoriteError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteStart value)? start,
+    TResult Function(AddFavoriteSuccessful value)? successful,
+    TResult Function(AddFavoriteError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteStart implements AddFavorite, ActionStart {
+  const factory AddFavoriteStart(
+      {required final Movie movie,
+      final String pendingId}) = _$AddFavoriteStart;
+
+  Movie get movie;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddFavoriteStartCopyWith<_$AddFavoriteStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteSuccessfulCopyWith<$Res>
+    implements $AddFavoriteCopyWith<$Res> {
+  factory _$$AddFavoriteSuccessfulCopyWith(_$AddFavoriteSuccessful value,
+          $Res Function(_$AddFavoriteSuccessful) then) =
+      __$$AddFavoriteSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Movie movie, String pendingId});
+
+  $MovieCopyWith<$Res> get movie;
+}
+
+/// @nodoc
+class __$$AddFavoriteSuccessfulCopyWithImpl<$Res>
+    extends _$AddFavoriteCopyWithImpl<$Res, _$AddFavoriteSuccessful>
+    implements _$$AddFavoriteSuccessfulCopyWith<$Res> {
+  __$$AddFavoriteSuccessfulCopyWithImpl(_$AddFavoriteSuccessful _value,
+      $Res Function(_$AddFavoriteSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movie = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddFavoriteSuccessful(
+      movie: null == movie
+          ? _value.movie
+          : movie // ignore: cast_nullable_to_non_nullable
+              as Movie,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MovieCopyWith<$Res> get movie {
+    return $MovieCopyWith<$Res>(_value.movie, (value) {
+      return _then(_value.copyWith(movie: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteSuccessful implements AddFavoriteSuccessful {
+  const _$AddFavoriteSuccessful(
+      {required this.movie, this.pendingId = _kAddFavoritePendingId});
+
+  @override
+  final Movie movie;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddFavorite.successful(movie: $movie, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteSuccessful &&
+            (identical(other.movie, movie) || other.movie == movie) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, movie, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteSuccessfulCopyWith<_$AddFavoriteSuccessful> get copyWith =>
+      __$$AddFavoriteSuccessfulCopyWithImpl<_$AddFavoriteSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Movie movie, String pendingId) start,
+    required TResult Function(Movie movie, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(movie, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Movie movie, String pendingId)? start,
+    TResult? Function(Movie movie, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(movie, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Movie movie, String pendingId)? start,
+    TResult Function(Movie movie, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(movie, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteStart value) start,
+    required TResult Function(AddFavoriteSuccessful value) successful,
+    required TResult Function(AddFavoriteError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteStart value)? start,
+    TResult? Function(AddFavoriteSuccessful value)? successful,
+    TResult? Function(AddFavoriteError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteStart value)? start,
+    TResult Function(AddFavoriteSuccessful value)? successful,
+    TResult Function(AddFavoriteError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteSuccessful implements AddFavorite, ActionDone {
+  const factory AddFavoriteSuccessful(
+      {required final Movie movie,
+      final String pendingId}) = _$AddFavoriteSuccessful;
+
+  Movie get movie;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddFavoriteSuccessfulCopyWith<_$AddFavoriteSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteErrorCopyWith<$Res>
+    implements $AddFavoriteCopyWith<$Res> {
+  factory _$$AddFavoriteErrorCopyWith(
+          _$AddFavoriteError value, $Res Function(_$AddFavoriteError) then) =
+      __$$AddFavoriteErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddFavoriteErrorCopyWithImpl<$Res>
+    extends _$AddFavoriteCopyWithImpl<$Res, _$AddFavoriteError>
+    implements _$$AddFavoriteErrorCopyWith<$Res> {
+  __$$AddFavoriteErrorCopyWithImpl(
+      _$AddFavoriteError _value, $Res Function(_$AddFavoriteError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddFavoriteError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteError implements AddFavoriteError {
+  const _$AddFavoriteError(this.error, this.stackTrace,
+      [this.pendingId = _kAddFavoritePendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddFavorite.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteErrorCopyWith<_$AddFavoriteError> get copyWith =>
+      __$$AddFavoriteErrorCopyWithImpl<_$AddFavoriteError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Movie movie, String pendingId) start,
+    required TResult Function(Movie movie, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Movie movie, String pendingId)? start,
+    TResult? Function(Movie movie, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Movie movie, String pendingId)? start,
+    TResult Function(Movie movie, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddFavoriteStart value) start,
+    required TResult Function(AddFavoriteSuccessful value) successful,
+    required TResult Function(AddFavoriteError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddFavoriteStart value)? start,
+    TResult? Function(AddFavoriteSuccessful value)? successful,
+    TResult? Function(AddFavoriteError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddFavoriteStart value)? start,
+    TResult Function(AddFavoriteSuccessful value)? successful,
+    TResult Function(AddFavoriteError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFavoriteError
+    implements AddFavorite, ActionDone, ErrorAction {
+  const factory AddFavoriteError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$AddFavoriteError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddFavoriteErrorCopyWith<_$AddFavoriteError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$GetFavorites {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user, String pendingId) start,
+    required TResult Function(List<Movie> movies, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(User user, String pendingId)? start,
+    TResult? Function(List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user, String pendingId)? start,
+    TResult Function(List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetFavoritesStart value) start,
+    required TResult Function(GetFavoritesSuccessful value) successful,
+    required TResult Function(GetFavoritesError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetFavoritesStart value)? start,
+    TResult? Function(GetFavoritesSuccessful value)? successful,
+    TResult? Function(GetFavoritesError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetFavoritesStart value)? start,
+    TResult Function(GetFavoritesSuccessful value)? successful,
+    TResult Function(GetFavoritesError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetFavoritesCopyWith<GetFavorites> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetFavoritesCopyWith<$Res> {
+  factory $GetFavoritesCopyWith(
+          GetFavorites value, $Res Function(GetFavorites) then) =
+      _$GetFavoritesCopyWithImpl<$Res, GetFavorites>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetFavoritesCopyWithImpl<$Res, $Val extends GetFavorites>
+    implements $GetFavoritesCopyWith<$Res> {
+  _$GetFavoritesCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GetFavoritesStartCopyWith<$Res>
+    implements $GetFavoritesCopyWith<$Res> {
+  factory _$$GetFavoritesStartCopyWith(
+          _$GetFavoritesStart value, $Res Function(_$GetFavoritesStart) then) =
+      __$$GetFavoritesStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({User user, String pendingId});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$GetFavoritesStartCopyWithImpl<$Res>
+    extends _$GetFavoritesCopyWithImpl<$Res, _$GetFavoritesStart>
+    implements _$$GetFavoritesStartCopyWith<$Res> {
+  __$$GetFavoritesStartCopyWithImpl(
+      _$GetFavoritesStart _value, $Res Function(_$GetFavoritesStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetFavoritesStart(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetFavoritesStart implements GetFavoritesStart {
+  const _$GetFavoritesStart(
+      {required this.user, this.pendingId = _kGetFavoritesPendingId});
+
+  @override
+  final User user;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetFavorites.start(user: $user, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFavoritesStart &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFavoritesStartCopyWith<_$GetFavoritesStart> get copyWith =>
+      __$$GetFavoritesStartCopyWithImpl<_$GetFavoritesStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user, String pendingId) start,
+    required TResult Function(List<Movie> movies, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(User user, String pendingId)? start,
+    TResult? Function(List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user, String pendingId)? start,
+    TResult Function(List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(user, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetFavoritesStart value) start,
+    required TResult Function(GetFavoritesSuccessful value) successful,
+    required TResult Function(GetFavoritesError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetFavoritesStart value)? start,
+    TResult? Function(GetFavoritesSuccessful value)? successful,
+    TResult? Function(GetFavoritesError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetFavoritesStart value)? start,
+    TResult Function(GetFavoritesSuccessful value)? successful,
+    TResult Function(GetFavoritesError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFavoritesStart implements GetFavorites, ActionStart {
+  const factory GetFavoritesStart(
+      {required final User user, final String pendingId}) = _$GetFavoritesStart;
+
+  User get user;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetFavoritesStartCopyWith<_$GetFavoritesStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetFavoritesSuccessfulCopyWith<$Res>
+    implements $GetFavoritesCopyWith<$Res> {
+  factory _$$GetFavoritesSuccessfulCopyWith(_$GetFavoritesSuccessful value,
+          $Res Function(_$GetFavoritesSuccessful) then) =
+      __$$GetFavoritesSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Movie> movies, String pendingId});
+}
+
+/// @nodoc
+class __$$GetFavoritesSuccessfulCopyWithImpl<$Res>
+    extends _$GetFavoritesCopyWithImpl<$Res, _$GetFavoritesSuccessful>
+    implements _$$GetFavoritesSuccessfulCopyWith<$Res> {
+  __$$GetFavoritesSuccessfulCopyWithImpl(_$GetFavoritesSuccessful _value,
+      $Res Function(_$GetFavoritesSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movies = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetFavoritesSuccessful(
+      movies: null == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetFavoritesSuccessful implements GetFavoritesSuccessful {
+  const _$GetFavoritesSuccessful(
+      {final List<Movie> movies = const <Movie>[],
+      this.pendingId = _kGetFavoritesPendingId})
+      : _movies = movies;
+
+  final List<Movie> _movies;
+  @override
+  @JsonKey()
+  List<Movie> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetFavorites.successful(movies: $movies, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFavoritesSuccessful &&
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_movies), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFavoritesSuccessfulCopyWith<_$GetFavoritesSuccessful> get copyWith =>
+      __$$GetFavoritesSuccessfulCopyWithImpl<_$GetFavoritesSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user, String pendingId) start,
+    required TResult Function(List<Movie> movies, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(movies, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(User user, String pendingId)? start,
+    TResult? Function(List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(movies, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user, String pendingId)? start,
+    TResult Function(List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(movies, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetFavoritesStart value) start,
+    required TResult Function(GetFavoritesSuccessful value) successful,
+    required TResult Function(GetFavoritesError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetFavoritesStart value)? start,
+    TResult? Function(GetFavoritesSuccessful value)? successful,
+    TResult? Function(GetFavoritesError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetFavoritesStart value)? start,
+    TResult Function(GetFavoritesSuccessful value)? successful,
+    TResult Function(GetFavoritesError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFavoritesSuccessful implements GetFavorites, ActionDone {
+  const factory GetFavoritesSuccessful(
+      {final List<Movie> movies,
+      final String pendingId}) = _$GetFavoritesSuccessful;
+
+  List<Movie> get movies;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetFavoritesSuccessfulCopyWith<_$GetFavoritesSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetFavoritesErrorCopyWith<$Res>
+    implements $GetFavoritesCopyWith<$Res> {
+  factory _$$GetFavoritesErrorCopyWith(
+          _$GetFavoritesError value, $Res Function(_$GetFavoritesError) then) =
+      __$$GetFavoritesErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GetFavoritesErrorCopyWithImpl<$Res>
+    extends _$GetFavoritesCopyWithImpl<$Res, _$GetFavoritesError>
+    implements _$$GetFavoritesErrorCopyWith<$Res> {
+  __$$GetFavoritesErrorCopyWithImpl(
+      _$GetFavoritesError _value, $Res Function(_$GetFavoritesError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetFavoritesError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetFavoritesError implements GetFavoritesError {
+  const _$GetFavoritesError(this.error, this.stackTrace,
+      [this.pendingId = _kGetFavoritesPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetFavorites.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFavoritesError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFavoritesErrorCopyWith<_$GetFavoritesError> get copyWith =>
+      __$$GetFavoritesErrorCopyWithImpl<_$GetFavoritesError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user, String pendingId) start,
+    required TResult Function(List<Movie> movies, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(User user, String pendingId)? start,
+    TResult? Function(List<Movie> movies, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user, String pendingId)? start,
+    TResult Function(List<Movie> movies, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetFavoritesStart value) start,
+    required TResult Function(GetFavoritesSuccessful value) successful,
+    required TResult Function(GetFavoritesError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetFavoritesStart value)? start,
+    TResult? Function(GetFavoritesSuccessful value)? successful,
+    TResult? Function(GetFavoritesError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetFavoritesStart value)? start,
+    TResult Function(GetFavoritesSuccessful value)? successful,
+    TResult Function(GetFavoritesError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFavoritesError
+    implements GetFavorites, ActionDone, ErrorAction {
+  const factory GetFavoritesError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GetFavoritesError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetFavoritesErrorCopyWith<_$GetFavoritesError> get copyWith =>
       throw _privateConstructorUsedError;
 }

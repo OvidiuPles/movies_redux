@@ -23,15 +23,11 @@ class RegisterBox extends StatelessWidget {
       builder: (BuildContext context, RegisterState registerState) {
         emailController.text = registerState.register.email;
         passwordController.text = registerState.register.password;
-        final bool isLoged = registerState.isLoged;
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 55),
+          padding: const EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                const SizedBox(
-                  height: 165,
-                ),
                 TextField(
                   controller: emailController,
                   decoration: const InputDecoration(
@@ -111,35 +107,25 @@ class RegisterBox extends StatelessWidget {
                         ),
                       );
 
+
+                      final StackRouter router = AutoRouter.of(context);
                       store.onChange.listen((AppState state) {
                         if (state.registerState.isLoged == true) {
+                          //StoreProvider.of<AppState>(context).dispatch(GetFavoritesStart(user: registerState.user));
+                          //Navigator.of(context).pop();
                           switch (store.state.navigationState.tabIndex) {
                             case 0:
-                              context.router.navigate(const MoviesRoute());
+                              router.navigate(const MoviesRoute());
                               break;
                             case 1:
-                              context.router.navigate(FavoritesRoute());
+                              router.navigate(FavoritesRoute());
                               break;
                             case 2:
-                              context.router.navigate(FriendsRoute());
+                              router.navigate(FriendsRoute());
                               break;
                           }
                         }
                       });
-                      // final Store<AppState> store = StoreProvider.of<AppState>(context);
-                      // if (isLoged == true) {
-                      //   switch (store.state.navigationState.tabIndex) {
-                      //     case 0:
-                      //       context.router.replace(const MoviesRoute());
-                      //       break;
-                      //     case 1:
-                      //       context.router.replace(FavoritesRoute());
-                      //       break;
-                      //     case 2:
-                      //       context.router.replace(FriendsRoute());
-                      //       break;
-                      //   }
-                      // }
                     },
                   ),
                 ),

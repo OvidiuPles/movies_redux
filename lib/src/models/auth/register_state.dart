@@ -7,5 +7,6 @@ class RegisterState with _$RegisterState {
     @Default(RegisterModel()) RegisterModel register,
     @Default('default') String popUpInfo,
     @Default(true) bool obscureText,
+    @Default(User()) User user,
   }) = RegisterState$;
 }

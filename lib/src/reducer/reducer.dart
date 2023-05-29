@@ -1,4 +1,5 @@
 import 'package:movies_redux/src/models/index.dart';
+import 'package:movies_redux/src/reducer/favorites/favorites_reducer.dart';
 import 'package:movies_redux/src/reducer/movies/description_reducer.dart';
 import 'package:movies_redux/src/reducer/movies/movies_reducer.dart';
 import 'package:movies_redux/src/reducer/auth/register_reducer.dart';
@@ -12,5 +13,6 @@ AppState reducer(AppState state, dynamic action) {
     descriptionState: descriptionReducer(state.descriptionState, action),
     registerState: registerReducer(state.registerState, action),
     navigationState: navigationReducer(state.navigationState, action),
+    favoritesState: favoritesReducer(state.favoritesState, action),
   );
 }

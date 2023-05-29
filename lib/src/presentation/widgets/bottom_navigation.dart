@@ -18,20 +18,21 @@ class BottomNavigation extends StatelessWidget {
           fixedColor: Colors.cyan,
           currentIndex: navigationState.tabIndex,
           onTap: (int index) {
+            final StackRouter router = AutoRouter.of(context);
             StoreProvider.of<AppState>(context).dispatch(
               ChangeTabStart(tabIndex: index),
             );
             switch (index) {
               case 0:
-                context.router.replace(const MoviesRoute());
+                router.navigate(const MoviesRoute());
                 break;
               case 1:
                 navigationState.user.isLoged
-                    ? context.router.replace(FavoritesRoute())
-                    : context.router.replace(RegisterRoute());
+                    ? router.navigate(FavoritesRoute())
+                    : router.navigate(RegisterRoute());
                 break;
               case 2:
-                context.router.replace(FriendsRoute());
+                router.navigate(FriendsRoute());
                 break;
             }
           },

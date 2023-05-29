@@ -6,6 +6,9 @@ import 'package:movies_redux/src/models/index.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../data/database/database.dart';
+import '../data/movies/favorites_api.dart';
+
 /// Actions in => Action out
 
 class AppEpics implements EpicClass<AppState> {
@@ -13,11 +16,13 @@ class AppEpics implements EpicClass<AppState> {
     required this.moviesApi,
     required this.descriptionApi,
     required this.authService,
+    required this.favoritesApi,
   });
 
   final MoviesApi moviesApi;
   final DescriptionApi descriptionApi;
   final AuthService authService;
+  final FavoritesApi favoritesApi;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
@@ -30,7 +35,36 @@ class AppEpics implements EpicClass<AppState> {
       TypedEpic<AppState, ObscureTextStart>(_obscureText),
       TypedEpic<AppState, LogInStart>(_logIn),
       TypedEpic<AppState, ChangeTabStart>(_changeTab),
+      TypedEpic<AppState, AddFavoriteStart>(_addFavorite),
+      TypedEpic<AppState, GetFavoritesStart>(_getFavorites),
     ])(actions, store);
+  }
+
+  Stream<AppAction> _getFavorites(Stream<GetFavoritesStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GetFavoritesStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        final List<int> ids = await Database.getFavorites(uid: action.user.uid);
+
+        final List<Movie> response = <Movie>[];
+        //for (int i = 0; i < ids.length; i++) {
+          //final Movie movie = await favoritesApi.getFavorite(id: ids[0]);
+         // response.add(movie);
+        //}
+        return response;
+      }).map<GetFavorites>((List<Movie> movies) {
+        return GetFavoritesSuccessful(movies: movies);
+      }).onErrorReturnWith(GetFavoritesError.new);
+    });
+  }
+
+  Stream<AppAction> _addFavorite(Stream<AddFavoriteStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((AddFavoriteStart action) {
+      return Stream<void>.value(null).asyncMap((_) async {
+        return true;
+      }).map<AddFavorite>((_) {
+        return AddFavoriteSuccessful(movie: action.movie.copyWith(isFavorite: true));
+      }).onErrorReturnWith(AddFavoriteError.new);
+    });
   }
 
   Stream<AppAction> _changeTab(Stream<ChangeTabStart> actions, EpicStore<AppState> store) {
@@ -93,7 +127,6 @@ class AppEpics implements EpicClass<AppState> {
           orderBy: action.orderBy,
           searchText: action.searchText,
         );
-
         return response;
       }).map<GetMovies>((List<Movie> movies) {
         return GetMoviesSuccessful(

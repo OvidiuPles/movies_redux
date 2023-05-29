@@ -36,6 +36,7 @@ void main() async {
   final MoviesApi moviesApi = MoviesApi(client: httpClient);
   final DescriptionApi descriptionApi = DescriptionApi(client: httpClient);
   final AuthService authService = AuthService();
+  final FavoritesApi favoritesApi = FavoritesApi(client: httpClient);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -43,6 +44,7 @@ void main() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(
         AppEpics(
+          favoritesApi: favoritesApi,
           authService: authService,
           moviesApi: moviesApi,
           descriptionApi: descriptionApi,

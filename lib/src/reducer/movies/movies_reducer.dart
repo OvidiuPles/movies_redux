@@ -7,7 +7,29 @@ Reducer<MoviesState> moviesReducer = combineReducers(<Reducer<MoviesState>>[
   TypedReducer<MoviesState, GetMoreMoviesSuccessful>(_getMoreMoviesSuccessful),
   TypedReducer<MoviesState, ResetFiltersSuccessful>(_resetFiltersSuccessful),
   TypedReducer<MoviesState, GetMoviesError>(_getMoviesError),
+  TypedReducer<MoviesState, AddFavoriteSuccessful>(_addFavoriteSuccessful),
+  TypedReducer<MoviesState, LogInSuccessful>(_logInSuccessful),
 ]);
+
+MoviesState _logInSuccessful(MoviesState state, LogInSuccessful action) {
+  return state.copyWith(
+    user: action.user,
+  );
+}
+
+MoviesState _addFavoriteSuccessful(MoviesState state, AddFavoriteSuccessful action) {
+  final List<Movie> updatedList = List<Movie>.from(state.movies);
+
+  final Movie favoriteMovie = action.movie;
+
+  final int index = updatedList.indexWhere((Movie movie) => movie.id == favoriteMovie.id);
+  if (index != -1) {
+    updatedList[index] = favoriteMovie;
+  }
+  return state.copyWith(
+    movies: updatedList,
+  );
+}
 
 MoviesState _getMoviesSuccessful(MoviesState state, GetMoviesSuccessful action) {
   final int nextPage = action.page! + 1;

@@ -2,13 +2,13 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_redux/src/presentation/widgets/drawer.dart';
 
+import '../movies/movies_page.dart';
 import '../widgets/app_bar.dart';
 import '../widgets/bottom_navigation.dart';
 
 @RoutePage()
 class FriendsPage extends StatelessWidget {
   FriendsPage({super.key});
-
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
